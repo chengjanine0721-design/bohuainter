@@ -1,0 +1,13 @@
+# Cloudflare Pages routing for bohuainter.com
+# 200 rewrites keep the public URL while serving the file layout from the spec.
+
+# Spec: /about-us/ is served from about/index.html
+/about-us/  /about/  200
+/about-us   /about/  301
+
+# Spec: /contact-us/ is served from contact/index.html
+/contact-us/  /contact/  200
+/contact-us   /contact/  301
+
+# Canonical host, no trailing slash variants
+/index.html  /  301
