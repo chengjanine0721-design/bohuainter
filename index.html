@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bohuainter | Free Word and Character Counter Tools</title>
+<meta name="description" content="Free word and character counting tools for writers. Count characters, words, pages and reading time live in your browser, with nothing uploaded.">
+<link rel="canonical" href="https://bohuainter.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bohuainter | Free Word and Character Counter Tools">
+<meta property="og:description" content="Free word and character counting tools for writers. Count characters, words, pages and reading time live in your browser, with nothing uploaded.">
+<meta property="og:url" content="https://bohuainter.com/">
+<meta property="og:site_name" content="Bohuainter">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<script>
+(function(){
+  var ta = document.getElementById('home-demo');
+  if(!ta) return;
+  var w = document.getElementById('hd-words'),
+      c = document.getElementById('hd-chars'),
+      s = document.getElementById('hd-sent');
+  function up(){
+    var t = ta.value;
+    c.textContent = t.length.toLocaleString('en-US');
+    w.textContent = (t.trim() ? t.trim().split(/\s+/).length : 0).toLocaleString('en-US');
+    s.textContent = (t.split(/[.!?]+(?:\s|$)/).filter(function(x){return x.trim().length>0;}).length).toLocaleString('en-US');
+  }
+  ta.addEventListener('input', up); up();
+})();
+</script></head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-mark">B</span>
+      <span class="brand-text"><b>bohua</b><span>inter</span></span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <a class="nav-link" href="/" aria-current="page">Home</a>
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          Tools
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown">
+          <div class="dropdown-head">Free writing tools</div>
+          <a class="dropdown-item" href="/tool/character-counter/">
+            <span class="dd-icon">Aa</span>
+            <span>
+              <span class="dd-title">Character Counter</span>
+              <span class="dd-desc">Count characters, words, sentences and paragraphs as you type.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/words-to-page-calculator/">
+            <span class="dd-icon">¶</span>
+            <span>
+              <span class="dd-title">Words to Pages</span>
+              <span class="dd-desc">Convert words to pages, single or double spaced, for essays and reports.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/character-to-words-calculator/">
+            <span class="dd-icon">↔</span>
+            <span>
+              <span class="dd-title">Characters to Words</span>
+              <span class="dd-desc">Estimate how many words a given number of characters turns into.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/eassy-word-counter/">
+            <span class="dd-icon">✎</span>
+            <span>
+              <span class="dd-title">Essay Word Counter</span>
+              <span class="dd-desc">Track essay length against a target with pages, reading time and averages.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/upper-case-generator/">
+            <span class="dd-icon">AB</span>
+            <span>
+              <span class="dd-title">Upper Case</span>
+              <span class="dd-desc">Convert any text to UPPER CASE, title case or sentence case instantly.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/lower-case-generator/">
+            <span class="dd-icon">ab</span>
+            <span>
+              <span class="dd-title">Lower Case</span>
+              <span class="dd-desc">Convert any text to lower case, title case or sentence case instantly.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/twitter-charactor-generator/">
+            <span class="dd-icon">𝕏</span>
+            <span>
+              <span class="dd-title">Twitter Counter</span>
+              <span class="dd-desc">Check your post against the 280 character limit before you publish.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/google-meta-counter/">
+            <span class="dd-icon">G</span>
+            <span>
+              <span class="dd-title">Google Meta Counter</span>
+              <span class="dd-desc">Write SEO titles and descriptions that fit Google's display width.</span>
+            </span>
+          </a>
+          <div class="dropdown-foot"><a href="/tool/">See all tools <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          More
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown" style="width:260px">
+          <div class="dropdown-head">Bohuainter</div>
+          <a class="dropdown-item" href="/about-us/"><span class="dd-icon">i</span><span><span class="dd-title">About Us</span><span class="dd-desc">Why this site exists</span></span></a>
+          <a class="dropdown-item" href="/contact-us/"><span class="dd-icon">@</span><span><span class="dd-title">Contact Us</span><span class="dd-desc">Questions and feedback</span></span></a>
+          <a class="dropdown-item" href="/privacy/"><span class="dd-icon">✓</span><span><span class="dd-title">Privacy</span><span class="dd-desc">What we do with your text</span></span></a>
+          <a class="dropdown-item" href="/terms/"><span class="dd-icon">§</span><span><span class="dd-title">Terms</span><span class="dd-desc">The rules of the road</span></span></a>
+          <div class="dropdown-foot"><a href="/blog/">Read the blog <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="wrap"><nav class="crumbs crumbs-bar" aria-label="Breadcrumb"><span aria-current="page">Home</span></nav></div>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-center">
+      <span class="eyebrow"><i>★</i> Private by design, free to use</span>
+      <h1>Know your <span class="mark">word count</span><br>before you publish</h1>
+      <p class="lead">Bohuainter counts characters, words, pages and reading time as you type. Eight focused tools, no sign up, and nothing sent to a server.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/tool/character-counter/">Start counting <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a class="btn btn-ghost" href="/tool/">Browse all tools</a>
+      </div>
+      <div class="pill-row" style="justify-content:center;margin-top:26px">
+        <span class="pill">Live as you type</span>
+        <span class="pill">Works offline</span>
+        <span class="pill">No account needed</span>
+        <span class="pill">Free forever</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">The toolkit</span>
+      <h2>Everything you need to measure a draft</h2>
+      <p>Each tool opens in a single screen. Paste your text, read the numbers, keep writing.</p>
+    </div>
+    <div class="grid">
+      <a class="card" href="/tool/character-counter/">
+        <span class="card-icon" aria-hidden="true">Aa</span>
+        <h3>Character Counter</h3>
+        <p>Count characters, words, sentences and paragraphs as you type.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/words-to-page-calculator/">
+        <span class="card-icon" aria-hidden="true">¶</span>
+        <h3>Words to Pages Calculator</h3>
+        <p>Convert words to pages, single or double spaced, for essays and reports.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/character-to-words-calculator/">
+        <span class="card-icon" aria-hidden="true">↔</span>
+        <h3>Character to Words Calculator</h3>
+        <p>Estimate how many words a given number of characters turns into.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/eassy-word-counter/">
+        <span class="card-icon" aria-hidden="true">✎</span>
+        <h3>Essay Word Counter</h3>
+        <p>Track essay length against a target with pages, reading time and averages.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/upper-case-generator/">
+        <span class="card-icon" aria-hidden="true">AB</span>
+        <h3>Upper Case Generator</h3>
+        <p>Convert any text to UPPER CASE, title case or sentence case instantly.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/lower-case-generator/">
+        <span class="card-icon" aria-hidden="true">ab</span>
+        <h3>Lower Case Generator</h3>
+        <p>Convert any text to lower case, title case or sentence case instantly.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/twitter-charactor-generator/">
+        <span class="card-icon" aria-hidden="true">𝕏</span>
+        <h3>Twitter Character Counter</h3>
+        <p>Check your post against the 280 character limit before you publish.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/google-meta-counter/">
+        <span class="card-icon" aria-hidden="true">G</span>
+        <h3>Google Meta Counter</h3>
+        <p>Write SEO titles and descriptions that fit Google's display width.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-cream">
+  <div class="wrap">
+    <div class="grid grid-2" style="align-items:center;gap:52px">
+      <div>
+        <span class="kicker">Why writers use it</span>
+        <h2 style="font-size:clamp(26px,3.4vw,36px)">Counting is the easy part.<br>The hard part is staying in flow.</h2>
+        <p style="margin-top:16px;color:var(--gray-600);font-size:16.5px;line-height:1.8">Most counters make you paste text into an ad covered page and squint at a number buried under a cookie banner. Bohuainter puts the number directly under the box you type in and updates it on every keystroke.</p>
+        <ul style="list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px">
+          <li style="display:flex;gap:10px;align-items:flex-start"><span style="color:var(--blue);flex:0 0 20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Your text never leaves the tab.</b> Every count runs in JavaScript on your own machine.</span></li>
+          <li style="display:flex;gap:10px;align-items:flex-start"><span style="color:var(--blue);flex:0 0 20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Numbers you can act on.</b> Pages, reading time and average sentence length, not just a total.</span></li>
+          <li style="display:flex;gap:10px;align-items:flex-start"><span style="color:var(--blue);flex:0 0 20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Formatted for real limits.</b> Google title widths and X character rules are built in.</span></li>
+        </ul>
+      </div>
+      <div class="tool-panel">
+        <div class="tool-toolbar">
+          <span class="chip active">Live preview</span>
+          <span class="spacer"></span>
+          <span style="font-size:12.5px;color:var(--gray-400)">character-counter</span>
+        </div>
+        <textarea class="tool-input" id="home-demo" aria-label="Demo text">Clear writing is a habit. Count what you produce, then read it out loud.</textarea>
+        <div class="tool-stats">
+          <div class="stat"><div class="num" id="hd-chars">0</div><div class="lab">Characters</div></div>
+          <div class="stat"><div class="num" id="hd-words">0</div><div class="lab">Words</div></div>
+          <div class="stat"><div class="num" id="hd-sent">0</div><div class="lab">Sentences</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Guides</span>
+      <h2>Word counting, explained</h2>
+      <p>Short practical answers to the questions people type into search bars every day.</p>
+    </div>
+    <div class="post-list">
+      <a class="post-card" href="/blog/how-do-you-get-word-count-on-pages/">
+        <div class="pc-body">
+          <span class="post-tag">Writing</span>
+          <h3>How Do You Get Word Count on Pages</h3>
+          <p>Apple Pages hides the running total in the footer. Here is where to find it and how to keep it on screen while you write.</p>
+          <div class="post-meta"><span>2026-10-28</span><span aria-hidden="true">·</span><span>5 min read</span></div>
+        </div>
+      </a>
+      <a class="post-card" href="/blog/how-to-find-word-count-on-google-docs/">
+        <div class="pc-body">
+          <span class="post-tag">Writing</span>
+          <h3>How to Find Word Count on Google Docs</h3>
+          <p>Three ways to open the word count panel in Google Docs, plus the setting that keeps it visible in the corner.</p>
+          <div class="post-meta"><span>2026-10-21</span><span aria-hidden="true">·</span><span>4 min read</span></div>
+        </div>
+      </a>
+      <a class="post-card" href="/blog/how-to-count-words-in-excel/">
+        <div class="pc-body">
+          <span class="post-tag">Data</span>
+          <h3>How to Count Words in Excel</h3>
+          <p>Excel has no word count button. One short formula gives you the total for a cell, a column or a whole sheet.</p>
+          <div class="post-meta"><span>2026-10-14</span><span aria-hidden="true">·</span><span>6 min read</span></div>
+        </div>
+      </a>
+      <a class="post-card" href="/blog/how-many-words-is-a-typical-novel/">
+        <div class="pc-body">
+          <span class="post-tag">Writing</span>
+          <h3>How Many Words Is a Typical Novel</h3>
+          <p>Genres differ more than most guides admit. Here are real ranges for debut and established novels by category.</p>
+          <div class="post-meta"><span>2026-10-07</span><span aria-hidden="true">·</span><span>7 min read</span></div>
+        </div>
+      </a>
+    </div>
+    <div class="center" style="margin-top:28px"><a class="btn btn-ghost" href="/blog/">Read all guides <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">FAQ</span>
+      <h2>Common questions</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq">
+        <summary>Do these tools send my text anywhere?</summary>
+        <div class="faq-body"><p>No. Every count runs in JavaScript inside your browser tab. Nothing is uploaded, logged or stored on a server.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Are the tools really free?</summary>
+        <div class="faq-body"><p>Yes. There is no account, no trial and no character limit. The site is supported by unobtrusive advertising.</p></div>
+      </details>
+      <details class="faq">
+        <summary>How accurate is the word count?</summary>
+        <div class="faq-body"><p>The counter splits text on whitespace, which matches how Microsoft Word and Google Docs count words. Hyphenated words count as one word.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Can I use these tools offline?</summary>
+        <div class="faq-body"><p>Once a page has loaded it keeps working if your connection drops, because there is no server call involved in the counting.</p></div>
+      </details>
+    </div>
+    <div class="center" style="margin-top:28px"><a class="btn btn-ghost" href="/faq/">See all questions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <span class="brand-mark">B</span>
+          <span class="brand-text"><b>bohua</b><span>inter</span></span>
+        </a>
+        <p>Free word and character counting tools built for people who write. Everything runs in your browser, so your drafts stay yours.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="/tool/character-counter/">Character Counter</a></li>
+          <li><a href="/tool/words-to-page-calculator/">Words to Pages</a></li>
+          <li><a href="/tool/character-to-words-calculator/">Characters to Words</a></li>
+          <li><a href="/tool/eassy-word-counter/">Essay Word Counter</a></li>
+          <li><a href="/tool/twitter-charactor-generator/">Twitter Counter</a></li>
+          <li><a href="/tool/google-meta-counter/">Google Meta Counter</a></li>
+          <li><a href="/tool/">All tools</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about-us/">About Us</a></li>
+          <li><a href="/contact-us/">Contact Us</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/terms/">Terms</a></li>
+          <li><a href="mailto:contact@bohuainter.com">contact@bohuainter.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-wordmark" aria-hidden="true">bohuainter</div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Bohuainter. All rights reserved.</span>
+      <span>
+        <a href="/privacy/">Privacy</a> ·
+        <a href="/terms/">Terms</a> ·
+        <a href="/contact-us/">Contact</a>
+      </span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>
