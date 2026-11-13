@@ -206,6 +206,17 @@ img, svg { display: block; max-width: 100%; }
 }
 .dropdown-foot a { font-size: 13px; font-weight: 650; display: inline-flex; align-items: center; gap: 4px; }
 
+/* Tools dropdown: two columns to keep the panel short */
+.dropdown-tools {
+  width: min(640px, calc(100vw - 32px));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2px;
+  align-items: start;
+}
+.dropdown-tools .dropdown-head,
+.dropdown-tools .dropdown-foot { grid-column: 1 / -1; }
+
 .menu-toggle {
   display: none;
   margin-left: auto;
