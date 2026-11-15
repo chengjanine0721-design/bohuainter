@@ -35,6 +35,25 @@
   function countChars(t, spaces) {
     return spaces ? t.length : t.replace(/\s/g, "").length;
   }
+  function countGraphemes(t) {
+    try {
+      if (typeof Intl !== "undefined" && Intl.Segmenter) {
+        var seg = new Intl.Segmenter("en", { granularity: "grapheme" });
+        var n = 0;
+        seg.segment(t).forEach(function () { n++; });
+        return n;
+      }
+    } catch (e) {}
+    return Array.from(t).length;
+  }
+  var NOEMOJI_RE = /[\p{Extended_Pictographic}\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}\u{200D}\u{1F3FB}-\u{1F3FF}\u{1F1E6}-\u{1F1FF}\p{S}]/gu;
+  function countNoEmoji(t) {
+    try {
+      return t.replace(NOEMOJI_RE, "").length;
+    } catch (e) {
+      return t.length;
+    }
+  }
   function countSentences(t) {
     var parts = t.split(/[.!?]+(?:\s|$)/).filter(function (s) {
       return s.trim().length > 0;
@@ -70,7 +89,9 @@
       sentences: document.getElementById("cc-sentences"),
       paragraphs: document.getElementById("cc-paragraphs"),
       lines: document.getElementById("cc-lines"),
-      reading: document.getElementById("cc-reading")
+      reading: document.getElementById("cc-reading"),
+      emoji: document.getElementById("cc-emoji"),
+      noemoji: document.getElementById("cc-noemoji")
     };
     var ccLimit = document.getElementById("cc-limit");
     var ccRemain = document.getElementById("cc-remaining");
@@ -78,6 +99,8 @@
       var t = cc.value;
       ccOut.chars.textContent = fmt(t.length);
       ccOut.charsNs.textContent = fmt(countChars(t, false));
+      if (ccOut.emoji) ccOut.emoji.textContent = fmt(countGraphemes(t));
+      if (ccOut.noemoji) ccOut.noemoji.textContent = fmt(countNoEmoji(t));
       ccOut.words.textContent = fmt(countWords(t));
       ccOut.sentences.textContent = fmt(countSentences(t));
       ccOut.paragraphs.textContent = fmt(countParagraphs(t));
