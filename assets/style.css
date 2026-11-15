@@ -633,6 +633,9 @@ textarea.tool-input:focus { background: #fff; }
 .prose table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; }
 .prose th, .prose td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--line); }
 .prose th { background: var(--bg-soft); font-weight: 700; color: var(--ink); font-size: 13.5px; }
+.limits-table td:first-child { font-weight: 600; white-space: nowrap; }
+.tbl-logo { display: inline-flex; width: 18px; height: 18px; margin-right: 9px; vertical-align: -3px; }
+.tbl-logo svg { width: 18px; height: 18px; display: block; }
 
 /* live demo figure */
 .demo-figure { margin: 26px 0; }
@@ -677,7 +680,7 @@ textarea.tool-input:focus { background: #fff; }
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   gap: 40px;
   align-items: center;
-  padding-top: 44px;
+  padding-top: 16px;
 }
 .hero-split .hero-copy p { max-width: 560px; }
 .hero-demo { margin: 0; }
@@ -692,7 +695,7 @@ textarea.tool-input:focus { background: #fff; }
 }
 .hero-demo figcaption { font-size: 12.5px; color: var(--gray-500); margin-top: 10px; text-align: center; }
 @media (max-width: 880px) {
-  .hero-split-grid { grid-template-columns: 1fr; gap: 24px; padding-top: 36px; }
+  .hero-split-grid { grid-template-columns: 1fr; gap: 24px; padding-top: 12px; }
 }
 
 /* ---------- FAQ ---------- */
