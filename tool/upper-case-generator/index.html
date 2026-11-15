@@ -126,7 +126,7 @@
   <div class="wrap hero-split-grid">
     <div class="hero-copy">
       <span class="eyebrow"><i>★</i> Capitalise without retyping</span>
-      <h1>Upper Case Generator</h1>
+      <h1>Upper Case Converter Tool</h1>
       <p>Turn any text into UPPERCASE, Title Case or Sentence case in one click, then copy it straight into your document or post.</p>
     </div>
     <figure class="hero-demo">
@@ -149,6 +149,7 @@
           <span class="spacer"></span>
           <button class="link-btn" type="button" id="case-sample" data-sample="the quick brown fox jumps over the lazy dog. IT IS STILL FASTER THAN THE SLEEPING HOUND.">Sample</button>
             <span class="toolbar-break" aria-hidden="true"></span>
+            <button class="chip" type="button" data-case="alternating">Alternating Case</button>
             <button class="chip" type="button" data-case="slug">URL Slug</button>
             <button class="chip" type="button" data-case="inverse">Inverse Case</button>
             <button class="chip" type="button" data-case="camel">Camel Case</button>
@@ -183,15 +184,66 @@
 <section class="section">
   <div class="wrap">
     <div class="prose">
-      <h2>Four cases, one click</h2>
-      <p>Upper case capitalises every letter. Lower case removes every capital. Title case capitalises the first letter of each word and leaves the rest lower. Sentence case capitalises only the start of each sentence, which is what most style guides call the default for body text.</p>
-      <h2>Where upper case actually helps</h2>
-      <p>Text arrives in the wrong case from surprising places. Headlines pasted out of a design file, spreadsheet exports that shout in all caps, OCR output from a scanned page, and captions typed with caps lock on by accident. Retyping is the slow fix and the one that introduces new typos.</p>
-      <p>Title case is the trickiest of the four, because proper style rules for English say short prepositions and articles stay lower unless they begin or end the title. This tool capitalises every word in title case, which suits headings, buttons and most web interfaces. For a book or article title that must follow a specific house style, review the result before publishing.</p>
-      <h2>Careful with acronyms</h2>
-      <p>Lower case conversion will flatten acronyms such as NASA into nasa and proper nouns into common words. That is the nature of the operation rather than a bug. If a paragraph mixes acronyms with prose, convert it first and fix the handful of acronyms afterwards.</p>
-      <h2>All caps and readability</h2>
-      <p>Long stretches of upper case text read slower, because every letter has the same rectangular outline and readers lose the shape cues they use to recognise whole words. Use upper case for short emphasis, labels and acronyms. For anything a person has to read rather than scan, sentence case wins.</p>
+      <h2>Case Styles Explained: 10 Modes With Examples</h2>
+      <p>Ten modes cover almost every case fix you will run into, from shouting spreadsheet exports to clean code variable names. Each one runs the moment you click it, on whatever text is in the box above.</p>
+
+      <p><strong>Basic Text Transformations</strong></p>
+      <table class="limits-table">
+        <thead>
+          <tr><th>Mode</th><th>What it does</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>All Upper Case</td><td>Converts all text to uppercase.</td><td><code>important note</code> → <code>IMPORTANT NOTE</code></td></tr>
+          <tr><td>Lower Case</td><td>Converts all text to lowercase.</td><td><code>HELLO WORLD</code> → <code>hello world</code></td></tr>
+          <tr><td>Sentence Case</td><td>Capitalizes the first letter of sentences.</td><td><code>this is a sentence.</code> → <code>This is a sentence.</code></td></tr>
+          <tr><td>Capitalized Case</td><td>Capitalizes the first letter of every word.</td><td><code>all first letter big</code> → <code>All First Letter Big</code></td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>Stylistic and Functional Formats</strong></p>
+      <table class="limits-table">
+        <thead>
+          <tr><th>Mode</th><th>What it does</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Alternating Case</td><td>Swaps letters between upper and lower case for playful or code focused text.</td><td><code>algorithm</code> → <code>aLgOrItHm</code></td></tr>
+          <tr><td>Title Case</td><td>Formats text like a title, keeping articles and prepositions lowercase.</td><td><code>the art of programming</code> → <code>The Art of Programming</code></td></tr>
+          <tr><td>Inverse Case</td><td>Flips the existing casing of every letter.</td><td><code>ReVerse Me</code> → <code>rEvERSE mE</code></td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>Programming Conventions</strong></p>
+      <table class="limits-table">
+        <thead>
+          <tr><th>Mode</th><th>What it does</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>URL Slug</td><td>Generates SEO friendly URLs in lowercase with hyphens.</td><td><code>AI Growth Tips 2025</code> → <code>ai-growth-tips-2025</code></td></tr>
+          <tr><td>Camel Case</td><td>Removes spaces and capitalizes subsequent words.</td><td><code>user profile</code> → <code>userProfile</code></td></tr>
+          <tr><td>Pascal Case</td><td>Similar to Camel Case but capitalizes the first word too.</td><td><code>camel case</code> → <code>CamelCase</code></td></tr>
+        </tbody>
+      </table>
+
+      <h2>How to Use the Case Converter</h2>
+      <p>Three steps, and no account anywhere in the flow.</p>
+      <ol>
+        <li>Paste or type your text into the box at the top of this page. The Sample button loads a test line if you want to see the modes in action first.</li>
+        <li>Click the mode you need. The result panel updates on every keystroke as well, so you can switch between modes without retyping anything.</li>
+        <li>Press Copy result and paste it where it belongs. Clear empties both boxes when you are finished.</li>
+      </ol>
+      <p>The same single click handles a headline or a full chapter, because the conversion runs locally in your browser rather than through a queue on a server.</p>
+
+      <h2>Why Use Bohuainter Case Converter: No Signup, Unlimited Use</h2>
+      <p>No account, no email address, no daily quota and no watermark on the output. The converter is a short script that runs inside the tab, so the text you paste never travels to a server and nothing is stored once the page is closed.</p>
+      <p>Having ten modes in one panel also means less hopping between tools. A headline fix, a URL slug and a variable rename take place in the same box, with the same Copy button.</p>
+
+      <h2>Why We Created This Tool: Built for 3 Common Use Cases</h2>
+      <p>Case errors show up in predictable places. These are the three that prompted this tool.</p>
+      <ul>
+        <li><strong>Text that arrives in the wrong case.</strong> Spreadsheet exports that shout in caps, copy pasted out of a design file, OCR output from a scanned page and captions typed with caps lock on. Retyping is the slow fix and the one that adds new typos.</li>
+        <li><strong>Headlines, titles and metadata.</strong> Title case for headings, sentence case for body copy, and URL Slug when the same headline has to become a clean permalink.</li>
+        <li><strong>Code and developer handoff.</strong> Camel Case and Pascal Case keep variables, components and file names consistent without a manual pass through every line.</li>
+      </ul>
 
     </div>
   </div>
@@ -293,6 +345,6 @@
     </div>
   </div>
 </footer>
-<script src="/assets/site.js?v=20261115g"></script>
+<script src="/assets/site.js?v=20261115h"></script>
 </body>
 </html>
