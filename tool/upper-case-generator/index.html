@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://rsms.me/">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-<link rel="stylesheet" href="/assets/style.css?v=20261115i">
+<link rel="stylesheet" href="/assets/style.css?v=20261115j">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the conversion keep my paragraphs?","acceptedAnswer":{"@type":"Answer","text":"Yes. Line breaks, spaces and punctuation are preserved exactly. Only the case of the letters changes."}},{"@type":"Question","name":"Is there a length limit?","acceptedAnswer":{"@type":"Answer","text":"No limit is enforced. The text is processed in your browser, so a few hundred thousand characters will still convert instantly."}},{"@type":"Question","name":"Which should I use for headings?","acceptedAnswer":{"@type":"Answer","text":"Title case is the common convention for headings and buttons on the web. Sentence case is the convention in many style guides for article titles and body copy."}}]}
@@ -143,14 +143,16 @@
         <div class="tool-toolbar">
             <button class="chip active" type="button" data-case="upper">UPPER CASE</button>
             <button class="chip" type="button" data-case="lower">lower case</button>
+            <button class="chip" type="button" data-case="firstbig">All First Letter Big</button>
             <button class="chip" type="button" data-case="title">Title Case</button>
             <button class="chip" type="button" data-case="sentence">Sentence Case</button>
+          <span class="spacer"></span>
+          <button class="link-btn" type="button" id="case-sample" data-sample="the quick brown fox jumps over the lazy dog. IT IS STILL FASTER THAN THE SLEEPING HOUND.">Sample</button>
+            <span class="toolbar-break" aria-hidden="true"></span>
             <button class="chip" type="button" data-case="slug">URL Slug</button>
             <button class="chip" type="button" data-case="inverse">Inverse Case</button>
             <button class="chip" type="button" data-case="camel">Camel Case</button>
             <button class="chip" type="button" data-case="pascal">Pascal Case</button>
-          <span class="spacer"></span>
-          <button class="link-btn" type="button" id="case-sample" data-sample="the quick brown fox jumps over the lazy dog. IT IS STILL FASTER THAN THE SLEEPING HOUND.">Sample</button>
         </div>
         <textarea class="tool-input" id="case-input" placeholder="Paste your text here and pick a case above." aria-label="Input text" style="min-height:180px"></textarea>
         <div class="tool-toolbar" style="border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);background:#fcfdff">
