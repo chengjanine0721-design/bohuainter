@@ -297,7 +297,28 @@
             r = v.replace(/(^|\s|["'(\[])(\S)/g, function (m, p, c) { return p + c.toUpperCase(); });
             break;
           case "title":
-            r = v.toLowerCase().replace(/(^|\s|["'(\[])([a-z])/g, function (m, p, c) { return p + c.toUpperCase(); });
+            r = (function (str) {
+              var minor = { a: 1, an: 1, the: 1, and: 1, but: 1, or: 1, nor: 1, for: 1, so: 1, yet: 1, at: 1, by: 1, in: 1, of: 1, on: 1, per: 1, to: 1, up: 1, via: 1, as: 1, vs: 1 };
+              var words = str.toLowerCase().split(/(\s+)/);
+              var seen = 0;
+              var total = words.filter(function (w) { return /\S/.test(w); }).length;
+              return words.map(function (w) {
+                if (!/\S/.test(w)) return w;
+                seen++;
+                var bare = w.replace(/^[^a-z0-9]+|[^a-z0-9]+$/g, "");
+                var keepLower = seen > 1 && seen < total && minor[bare] === 1;
+                return w.replace(/[a-z]/, function (c) { return keepLower ? c : c.toUpperCase(); });
+              }).join("");
+            })(v);
+            break;
+          case "alternating":
+            r = (function (str) {
+              var n = 0;
+              return str.replace(/[a-zA-Z]/g, function (c) {
+                n++;
+                return n % 2 === 1 ? c.toLowerCase() : c.toUpperCase();
+              });
+            })(v);
             break;
           case "sentence":
             r = v.toLowerCase().replace(/(^\s*\w|[.!?]\s+\w)/g, function (m) { return m.toUpperCase(); });
