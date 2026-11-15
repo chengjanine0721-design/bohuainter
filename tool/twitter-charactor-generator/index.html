@@ -122,11 +122,16 @@
 <div class="wrap"><nav class="crumbs crumbs-bar" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/tool/">Tools</a><span class="sep">/</span><span aria-current="page">Twitter Counter</span></nav></div>
 <main id="main">
 
-<section class="page-hero">
-  <div class="wrap">
-    <span class="eyebrow"><i>★</i> Post within the limit</span>
-    <h1>Twitter/X Character Counter</h1>
-    <p>Our free Twitter character counter automatically counts the characters, words and paragraphs in your Tweet, DM or other text. Handy for social media, essays and anywhere else a limit is hiding. It doubles as an X post length checker for posts, replies, bios and DMs. Just paste your text below and the count updates as you type.</p>
+<section class="page-hero hero-split">
+  <div class="wrap hero-split-grid">
+    <div class="hero-copy">
+      <span class="eyebrow"><i>★</i> Post within the limit</span>
+      <h1>Twitter/X Character Counter</h1>
+      <p>Our free Twitter character counter automatically counts the characters, words and paragraphs in your Tweet, DM or other text. Handy for social media, essays and anywhere else a limit is hiding. It doubles as an X post length checker for posts, replies, bios and DMs. Just paste your text below and the count updates as you type.</p>
+    </div>
+    <figure class="hero-demo">
+      <img src="/assets/img/twitter-counter-demo.gif" alt="Twitter Character Counter Check X Post Length" width="760" height="430" loading="lazy">
+    </figure>
   </div>
 </section>
 
@@ -135,6 +140,13 @@
     <div class="tool-layout">
       <div>
       <div class="tool-panel">
+        <div class="tool-stats top">
+          <div class="stat"><div class="num" id="tw-chars">0</div><div class="lab">Counted units</div></div>
+          <div class="stat"><div class="num" id="tw-remain">280</div><div class="lab">Remaining</div></div>
+          <div class="stat"><div class="num" id="tw-words">0</div><div class="lab">Words</div></div>
+          <div class="stat"><div class="num" id="tw-weighted">0</div><div class="lab">Raw characters</div></div>
+          <div class="stat"><div class="num" id="tw-para">0</div><div class="lab">Paragraphs</div></div>
+        </div>
         <div class="tool-toolbar">
           <button class="chip active" type="button" data-limit="280">Tweet 280</button>
           <button class="chip" type="button" data-limit="280">Reply 280</button>
@@ -152,13 +164,6 @@
             <span id="tw-status">Ready to post</span>
           </div>
           <div class="meter"><i id="tw-meter" style="width:0%"></i></div>
-        </div>
-        <div class="tool-stats">
-          <div class="stat"><div class="num" id="tw-chars">0</div><div class="lab">Counted units</div></div>
-          <div class="stat"><div class="num" id="tw-remain">280</div><div class="lab">Remaining</div></div>
-          <div class="stat"><div class="num" id="tw-words">0</div><div class="lab">Words</div></div>
-          <div class="stat"><div class="num" id="tw-weighted">0</div><div class="lab">Raw characters</div></div>
-          <div class="stat"><div class="num" id="tw-para">0</div><div class="lab">Paragraphs</div></div>
         </div>
       </div>
         <div class="callout" style="margin-top:22px">
