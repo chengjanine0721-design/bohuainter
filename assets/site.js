@@ -302,6 +302,24 @@
           case "sentence":
             r = v.toLowerCase().replace(/(^\s*\w|[.!?]\s+\w)/g, function (m) { return m.toUpperCase(); });
             break;
+          case "slug":
+            r = v.toLowerCase().trim()
+              .replace(/['"\u2018\u2019\u201C\u201D]/g, "")
+              .replace(/[^a-z0-9]+/g, "-")
+              .replace(/^-+|-+$/g, "");
+            break;
+          case "inverse":
+            r = v.replace(/[a-zA-Z]/g, function (c) {
+              return c === c.toLowerCase() ? c.toUpperCase() : c.toLowerCase();
+            });
+            break;
+          case "camel":
+            r = v.toLowerCase().replace(/[^a-z0-9]+(.)/g, function (m, c) { return c.toUpperCase(); })
+              .replace(/^[A-Z]/, function (c) { return c.toLowerCase(); });
+            break;
+          case "pascal":
+            r = v.toLowerCase().replace(/(^|[^a-z0-9]+)(.)/g, function (m, p, c) { return c.toUpperCase(); });
+            break;
         }
       }
       caseOut.value = r;
