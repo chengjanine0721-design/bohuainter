@@ -641,6 +641,11 @@ textarea.tool-input:focus { background: #fff; }
 .page-hero.hero-split { padding-bottom: 22px; }
 .section-tight.tight-top { padding-top: 20px; }
 .section.snug-top { padding-top: 36px; }
+.tool-stats.top { grid-template-columns: repeat(5, 1fr); }
+.hero-crumb { padding-top: 18px; }
+@media (max-width: 760px) {
+  .tool-stats.top { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+}
 
 /* live demo figure */
 .demo-figure { margin: 26px 0; }
