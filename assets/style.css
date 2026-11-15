@@ -634,6 +634,19 @@ textarea.tool-input:focus { background: #fff; }
 .prose th, .prose td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--line); }
 .prose th { background: var(--bg-soft); font-weight: 700; color: var(--ink); font-size: 13.5px; }
 
+/* live demo figure */
+.demo-figure { margin: 26px 0; }
+.demo-figure img {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+.demo-figure figcaption { font-size: 13px; color: var(--gray-500); margin-top: 10px; text-align: center; }
+
 /* callout */
 .callout {
   display: flex;
