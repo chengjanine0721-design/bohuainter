@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="/assets/style.css">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the character counter include spaces","acceptedAnswer":{"@type":"Answer","text":"Yes, the main Characters figure includes spaces and line breaks. The No spaces figure next to it excludes every whitespace character, which is the number to use when a limit explicitly says characters without spaces."}},{"@type":"Question","name":"How are words counted","acceptedAnswer":{"@type":"Answer","text":"Text is split on any run of whitespace, so punctuation attached to a word does not create a separate word. This is the same rule Word and Google Docs use, which is why totals usually match exactly."}},{"@type":"Question","name":"Is there a limit on how much I can paste","acceptedAnswer":{"@type":"Answer","text":"No limit is enforced by the tool. Practical limits come from your browser, which handles very long documents of several hundred thousand characters without trouble."}},{"@type":"Question","name":"Can I use this counter for Chinese or Japanese text","acceptedAnswer":{"@type":"Answer","text":"You can, but note that these languages do not separate words with spaces. The word count will read as one word while the character count stays accurate, so use the character figure for CJK text."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the character counter include spaces?","acceptedAnswer":{"@type":"Answer","text":"Yes, the main Characters figure includes spaces and line breaks. The No spaces figure next to it excludes every whitespace character, which is the number to use when a limit explicitly says characters without spaces."}},{"@type":"Question","name":"How are words counted?","acceptedAnswer":{"@type":"Answer","text":"Text is split on any run of whitespace, so punctuation attached to a word does not create a separate word. This is the same rule Word and Google Docs use, which is why totals usually match exactly."}},{"@type":"Question","name":"Is there a limit on how much I can paste?","acceptedAnswer":{"@type":"Answer","text":"No limit is enforced by the tool. Practical limits come from your browser, which handles very long documents of several hundred thousand characters without trouble."}},{"@type":"Question","name":"Can I use this counter for Chinese or Japanese text?","acceptedAnswer":{"@type":"Answer","text":"You can, but note that these languages do not separate words with spaces. The word count will read as one word while the character count stays accurate, so use the character figure for CJK text."}}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Character Counter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Count characters, words, sentences and paragraphs as you type.","url":"https://bohuainter.com/tool/character-counter/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
@@ -142,8 +142,7 @@
           <button class="link-btn" type="button" data-cc-action="copy">Copy text</button>
           <button class="link-btn" type="button" data-cc-action="clear">Clear</button>
         </div>
-        <textarea class="tool-input" id="cc-input" placeholder="Start typing or paste your text here. Counts update as you go." aria-label="Text to count"></textarea>
-        <div class="tool-stats">
+<div class="tool-stats top">
           <div class="stat"><div class="num" id="cc-chars">0</div><div class="lab">Characters</div></div>
           <div class="stat"><div class="num" id="cc-chars-ns">0</div><div class="lab">No spaces</div></div>
           <div class="stat"><div class="num" id="cc-words">0</div><div class="lab">Words</div></div>
@@ -151,6 +150,8 @@
           <div class="stat"><div class="num" id="cc-paragraphs">0</div><div class="lab">Paragraphs</div></div>
           <div class="stat"><div class="num" id="cc-reading">0 min</div><div class="lab">Reading time</div></div>
         </div>
+        <textarea class="tool-input" id="cc-input" placeholder="Start typing or paste your text here. Counts update as you go." aria-label="Text to count"></textarea>
+        
       </div>
         <div class="callout" style="margin-top:22px">
           <span style="color:var(--blue);flex:0 0 20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
@@ -194,19 +195,19 @@
     </div>
     <div class="faq-list">
       <details class="faq">
-        <summary>Does the character counter include spaces</summary>
+        <summary>Does the character counter include spaces?</summary>
         <div class="faq-body"><p>Yes, the main Characters figure includes spaces and line breaks. The No spaces figure next to it excludes every whitespace character, which is the number to use when a limit explicitly says characters without spaces.</p></div>
       </details>
       <details class="faq">
-        <summary>How are words counted</summary>
+        <summary>How are words counted?</summary>
         <div class="faq-body"><p>Text is split on any run of whitespace, so punctuation attached to a word does not create a separate word. This is the same rule Word and Google Docs use, which is why totals usually match exactly.</p></div>
       </details>
       <details class="faq">
-        <summary>Is there a limit on how much I can paste</summary>
+        <summary>Is there a limit on how much I can paste?</summary>
         <div class="faq-body"><p>No limit is enforced by the tool. Practical limits come from your browser, which handles very long documents of several hundred thousand characters without trouble.</p></div>
       </details>
       <details class="faq">
-        <summary>Can I use this counter for Chinese or Japanese text</summary>
+        <summary>Can I use this counter for Chinese or Japanese text?</summary>
         <div class="faq-body"><p>You can, but note that these languages do not separate words with spaces. The word count will read as one word while the character count stays accurate, so use the character figure for CJK text.</p></div>
       </details>
     </div>
