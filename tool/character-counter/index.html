@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://rsms.me/">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-<link rel="stylesheet" href="/assets/style.css?v=20261115">
+<link rel="stylesheet" href="/assets/style.css?v=20261115b">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the character counter include spaces?","acceptedAnswer":{"@type":"Answer","text":"Yes, the main Characters figure includes spaces and line breaks. The No spaces figure next to it excludes every whitespace character, which is the number to use when a limit explicitly says characters without spaces."}},{"@type":"Question","name":"How are words counted?","acceptedAnswer":{"@type":"Answer","text":"Text is split on any run of whitespace, so punctuation attached to a word does not create a separate word. This is the same rule Word and Google Docs use, which is why totals usually match exactly."}},{"@type":"Question","name":"Is there a limit on how much I can paste?","acceptedAnswer":{"@type":"Answer","text":"No limit is enforced by the tool. Practical limits come from your browser, which handles very long documents of several hundred thousand characters without trouble."}},{"@type":"Question","name":"Can I use this counter for Chinese or Japanese text?","acceptedAnswer":{"@type":"Answer","text":"You can, but note that these languages do not separate words with spaces. The word count will read as one word while the character count stays accurate, so use the character figure for CJK text."}}]}
@@ -175,16 +175,47 @@
   <div class="wrap">
     <div class="prose">
       <h2>What this counter measures</h2>
-      <p>Six numbers update on every keystroke. Characters includes spaces and line breaks, which is what most forms and social limits actually enforce. Characters without spaces is the figure publishers use when they quote a maximum length for articles and abstracts.</p>
-      <p>Words are split on whitespace, the same rule Microsoft Word and Google Docs apply, so a total here matches a total there. Hyphenated compounds such as <code>long-form</code> count as one word. Sentences are detected at full stops, question marks and exclamation marks. Paragraphs are detected at line breaks, with blank lines collapsed.</p>
-      <h2>When character counts matter more than word counts</h2>
-      <p>Word counts dominate essays and manuscripts, but character counts decide a surprising number of everyday limits. A university application may cap a personal statement at 4,000 characters. A conference abstract might ask for 2,500 characters including spaces. Product descriptions on marketplaces, meta descriptions for search results, SMS messages and database fields all measure characters rather than words.</p>
-      <p>Because a character limit punishes long words, checking the no spaces figure is a fast way to spot padding. If your character count is high but your word count is low, you are probably reaching for the thesaurus a little too often.</p>
-      <h2>Reading time, roughly</h2>
-      <p>The reading time figure assumes 225 words per minute, close to the average for adult silent reading of general prose. Technical material slows readers down and fiction tends to speed them up. Treat it as a planning estimate rather than a promise.</p>
-      <blockquote>A useful habit: paste your finished draft here, note the word count, then cut ten percent and read it again. The piece almost always gets better.</blockquote>
-      <h2>What we do not do with your text</h2>
-      <p>Nothing. The counting logic is a few lines of JavaScript that run inside this tab. There is no request to a server, no storage in your browser and no analytics tied to the content of the box. You can confirm this by disconnecting from the internet after the page loads. The counter keeps working.</p>
+      <p>A lot of work requires adhering to a precise character count. This character counter helps you count how many characters your text contains, both with and without spaces. It also shows how punctuation marks, symbols, and emojis affect your character length.</p>
+      <p><strong>Use it for:</strong></p>
+      <ul>
+        <li><strong>Social Media</strong>: Check character limits for X (Twitter), Facebook, and other platforms.</li>
+        <li><strong>Essays and Novels</strong>: Track character length while writing.</li>
+        <li><strong>SEO</strong>: Check the length of titles and meta descriptions.</li>
+        <li><strong>Everyday Writing</strong>: Count characters in emails, messages, and documents.</li>
+      </ul>
+      <p>Character Counter isn't only for English. The tool can be helpful for those writing in non-English languages where character count is important. It works with English and other languages, including Chinese, Japanese, and Korean.</p>
+      <h2>Bohuainter Character Counter: 100% Free, Fast, No Risk of Data Transmitted</h2>
+      <p>Our character counter is free and works online. No downloads, registration, or sign-up required. Your text is not saved. When you leave the page, your entered content is cleared.</p>
+      <h2>How to Use: Paste, Check, and Get Real-Time Character Length</h2>
+      <p>Paste your text into the input box or type directly. The text entry window displays character and word count in real time. No extra clicks required.</p>
+      <p>Check your character length instantly, edit your text, and stay within your target limit.</p>
+      <figure class="demo-figure">
+        <img src="/assets/img/live-count-demo.gif" alt="The Bohuainter character counter updating counts live while text is typed" width="760" height="400" loading="lazy">
+        <figcaption>Every keystroke updates the count instantly. Nothing you type leaves your browser.</figcaption>
+      </figure>
+      <h2>Common Character Limits</h2>
+      <p>Popular platforms cap posts at very different lengths. Use this table as a quick reference while you draft.</p>
+      <table>
+        <thead>
+          <tr><th>Platform</th><th>Field</th><th>Character limit</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>X (Twitter)</td><td>Post</td><td>280</td></tr>
+          <tr><td>X (Twitter)</td><td>Premium post</td><td>25,000</td></tr>
+          <tr><td>Instagram</td><td>Caption</td><td>2,200</td></tr>
+          <tr><td>Instagram</td><td>Bio</td><td>150</td></tr>
+          <tr><td>Facebook</td><td>Post</td><td>63,206</td></tr>
+          <tr><td>LinkedIn</td><td>Post</td><td>3,000</td></tr>
+          <tr><td>LinkedIn</td><td>Headline</td><td>220</td></tr>
+          <tr><td>TikTok</td><td>Caption</td><td>2,200</td></tr>
+          <tr><td>YouTube</td><td>Title</td><td>100</td></tr>
+          <tr><td>YouTube</td><td>Description</td><td>5,000</td></tr>
+          <tr><td>Pinterest</td><td>Pin description</td><td>500</td></tr>
+          <tr><td>Google Ads</td><td>Headline</td><td>30</td></tr>
+          <tr><td>Google Ads</td><td>Description</td><td>90</td></tr>
+          <tr><td>SMS</td><td>Single message</td><td>160</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
@@ -289,6 +320,6 @@
     </div>
   </div>
 </footer>
-<script src="/assets/site.js?v=20261115"></script>
+<script src="/assets/site.js?v=20261115b"></script>
 </body>
 </html>
