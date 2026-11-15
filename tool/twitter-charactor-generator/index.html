@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="/assets/style.css?v=20261115l">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the limit still 280 characters?","acceptedAnswer":{"@type":"Answer","text":"For a standard post yes. The tool also covers the other X surfaces: replies share the 280 limit, display names are capped at 50, bios at 160, direct messages at 10,000, and a thread of 28 posts gives you 7,840 units in total."}},{"@type":"Question","name":"How are emoji and Chinese characters counted?","acceptedAnswer":{"@type":"Answer","text":"They count as two units each, matching the weighted counting X applies. The Remaining figure reflects that weighting rather than the raw string length."}},{"@type":"Question","name":"Do hashtags and mentions count?","acceptedAnswer":{"@type":"Answer","text":"Yes, at one unit per character. The @ symbol itself is included in the count."}},{"@type":"Question","name":"Why does my post fit here but get cut off on X?","acceptedAnswer":{"@type":"Answer","text":"Usually a long URL that was not written with a full https:// or www. prefix, so the counter could not spot it as a link. X still shortens it to 23 units. Write the link out in full and the count lines up."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Twitter still 140 characters?","acceptedAnswer":{"@type":"Answer","text":"No. The cap moved from 140 to 280 in November 2017 for Latin scripts. The old number still shapes how much text a post holds, because Chinese, Japanese and Korean characters are charged at two units each, so a post in those scripts fits roughly 140 characters into the same 280 units."}},{"@type":"Question","name":"What is the Twitter character limit in 2026, and what was the old limit?","acceptedAnswer":{"@type":"Answer","text":"280 characters per post on a standard (free) account. 25,000 characters on Premium accounts. A single thread can hold up to 28 connected tweets, so 28 x 280 = 7,840 characters before you have to start a new thread. The old limit was 140, which held from 2006 until late 2017."}},{"@type":"Question","name":"What is the 4-1-1 rule on Twitter?","acceptedAnswer":{"@type":"Answer","text":"It is a content mix, not a character rule. For every six posts, share four pieces of useful content written by other people, one repost or personal update, and one post that promotes your own work. Andrew Davis proposed it at Tippingpoint Labs and Joe Pulizzi helped spread it. Treat it as a balance check rather than a quota."}},{"@type":"Question","name":"How do I post a tweet longer than 280 characters?","acceptedAnswer":{"@type":"Answer","text":"Three routes. Start a thread, which allows up to 28 connected posts at 280 each. Subscribe to Premium, which lifts a single post to 25,000 characters. Or move the text into an image, a screenshot or a link to a longer article. For a free account the thread is the practical option."}},{"@type":"Question","name":"Are hashtags included in Twitter character limits?","acceptedAnswer":{"@type":"Answer","text":"Yes, at one unit per visible character including the # symbol. #food is five units and #contentmarketing is seventeen. There is no free hashtag allowance, so three long tags can cost you a tenth of a standard post before the first sentence."}},{"@type":"Question","name":"Do emoji count as 1 or 2 characters?","acceptedAnswer":{"@type":"Answer","text":"Two for most single emoji, because X stores them as a UTF-16 surrogate pair. Combined emoji cost more. A flag, a skin tone variant or a family grouping can run to 4, 7 or 11 units. If a draft leans on those, check the final count inside X before publishing."}},{"@type":"Question","name":"Do spaces count as characters on Twitter?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every space is one unit, including double spaces and the indent at the start of a line. A blank line between paragraphs costs two, one for each line break. Removing stray double spaces is the quickest way to pull a post back under the cap."}},{"@type":"Question","name":"Is the Twitter character counter free?","acceptedAnswer":{"@type":"Answer","text":"Yes. No signup, no paywall and no cap on how much you paste in. Counting runs in your browser, so the text never leaves your device and nothing is stored after you close the tab."}}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Twitter Character Counter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Check your post against the 280 character limit before you publish.","url":"https://bohuainter.com/tool/twitter-charactor-generator/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
@@ -125,8 +125,8 @@
 <section class="page-hero">
   <div class="wrap">
     <span class="eyebrow"><i>★</i> Post within the limit</span>
-    <h1>Twitter Character Counter</h1>
-    <p>Know whether your post fits before you hit publish. This counter follows the way X weighs characters, so emoji and wide characters are counted properly.</p>
+    <h1>Twitter/X Character Counter</h1>
+    <p>Our free Twitter character counter automatically counts the characters, words and paragraphs in your Tweet, DM or other text. Handy for social media, essays and anywhere else a limit is hiding. Just type or paste your text below to get started.</p>
   </div>
 </section>
 
@@ -158,6 +158,7 @@
           <div class="stat"><div class="num" id="tw-remain">280</div><div class="lab">Remaining</div></div>
           <div class="stat"><div class="num" id="tw-words">0</div><div class="lab">Words</div></div>
           <div class="stat"><div class="num" id="tw-weighted">0</div><div class="lab">Raw characters</div></div>
+          <div class="stat"><div class="num" id="tw-para">0</div><div class="lab">Paragraphs</div></div>
         </div>
       </div>
         <div class="callout" style="margin-top:22px">
@@ -179,14 +180,54 @@
 <section class="section">
   <div class="wrap">
     <div class="prose">
-      <h2>How X counts characters</h2>
-      <p>Since the limit went to 280, X has weighted characters rather than counting them one for one. Latin letters, digits and most punctuation count as one unit. Characters from scripts that carry more meaning per glyph, which includes Chinese, Japanese and Korean, count as two units. Emoji count as two as well.</p>
-      <p>That is why a 140 character Japanese post and a 280 character English post hit the same ceiling. This counter applies the same weighting, so the Counted units figure is what X will enforce and the Raw characters figure is the plain length of the string.</p>
-      <h2>Do links still count as 23</h2>
-      <p>Links are wrapped in the t.co shortener and every URL counts as a fixed number of characters regardless of its real length. The current figure is 23 characters per link. This counter applies that rule for you: paste a post containing a link and the Counted units figure already charges 23 for it instead of the visible length, so you do not have to subtract anything by hand.</p>
-      <h2>Writing short without sounding clipped</h2>
-      <p>Most posts that run over the limit are not too long in content, they are too long in framing. Delete the setup clause and lead with the point. Replace and with a full stop. Drop the closing line that restates what you just said. Three edits usually reclaim forty characters.</p>
-      <blockquote>Leave about twenty characters of headroom. It makes the trimmed post easier to read and leaves space if you add a hashtag after drafting.</blockquote>
+      <h2>Twitter Character Limits for Every Surface</h2>
+      <p>The number most people mean when they say the Twitter character limit is 280. That replaced the original 140 in November 2017, when the company doubled the cap after finding that users kept running into it. The 140 figure never fully disappeared. Chinese, Japanese and Korean characters count as two units each, so 140 of them fill the same space as 280 Latin letters.</p>
+      <p>Every place you can type on X has its own ceiling, and they are not all the same number. The table below lists the ones that catch people out.</p>
+      <table class="limits-table">
+        <thead>
+          <tr><th>Surface</th><th>Limit</th><th>What to know</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Tweet / post</td><td>280</td><td>Standard free account. Every post gets its own 280.</td></tr>
+          <tr><td>Reply</td><td>280</td><td>The @handle you are replying to does not count.</td></tr>
+          <tr><td>Thread</td><td>7,840</td><td>28 connected posts at 280 each before you start a new thread.</td></tr>
+          <tr><td>Direct message</td><td>10,000</td><td>Per message. Long enough for a full pitch.</td></tr>
+          <tr><td>Profile name</td><td>50</td><td>The display name above your handle. Emoji allowed.</td></tr>
+          <tr><td>Twitter handle</td><td>15</td><td>Letters, numbers and underscores only.</td></tr>
+          <tr><td>Twitter bio</td><td>160</td><td>Same cap as an old SMS segment. Tight, so plan for it.</td></tr>
+          <tr><td>Premium post</td><td>25,000</td><td>Paid accounts only. The timeline shows the first 280 with "show more".</td></tr>
+        </tbody>
+      </table>
+      <h3>Do spaces count toward the limit</h3>
+      <p>Yes. Every space is one unit, including the double space some people leave after a full stop and the indents at the start of a line. A paragraph break costs two units, one for each line break. Trimming double spaces is the fastest way to reclaim room in a post that is just over.</p>
+      <h3>Do hashtags count toward the limit</h3>
+      <p>Yes, and there is no free hashtag allowance. A hashtag is charged one unit per visible character including the # symbol, so #food is five units and #contentmarketing is seventeen. Three mid-length hashtags can eat a tenth of a standard post before you have written a sentence.</p>
+      <h3>What the Premium limit adds</h3>
+      <p>A Premium account raises the ceiling on a single post from 280 to 25,000. The post still shows the first couple of sentences in the timeline with a "show more" link, so the extra room is suited to essays, announcements and anything that would otherwise become a long thread. Replies and quote posts on Premium can also run past 280.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="prose">
+      <h2>How Twitter Counts Characters</h2>
+      <p>X does not count characters the way a plain text editor does. A handful of rules differ, and each one changes what a draft actually costs. These rules catch people out because the visible length of a post and the number X charges can be far apart.</p>
+      <table>
+        <thead>
+          <tr><th>What you type</th><th>What X charges</th><th>Why</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>A link</td><td>23 units</td><td>Every URL is rewritten to a t.co short link. A 12 character link and a 200 character link both cost 23.</td></tr>
+          <tr><td>An emoji</td><td>2 units</td><td>Most single emoji are stored as a UTF-16 surrogate pair. Combined emoji such as flags, skin tone variants and family groupings can run to 4, 7 or 11.</td></tr>
+          <tr><td>Chinese, Japanese, Korean</td><td>2 units</td><td>These scripts carry roughly twice the meaning per glyph, which is why the Japanese version of the site spent years on a 140 cap.</td></tr>
+          <tr><td>Arabic, Hebrew</td><td>1 unit</td><td>Right to left scripts count per character, like Latin text.</td></tr>
+          <tr><td>A line break</td><td>1 unit</td><td>A blank line between paragraphs costs two.</td></tr>
+          <tr><td>@mentions and #hashtags</td><td>1 per character</td><td>The @ and # symbols count. There is no free space for either.</td></tr>
+        </tbody>
+      </table>
+      <p>This counter applies all of those rules while you type. <b>Counted units</b> is the figure X will enforce. <b>Raw characters</b> is the plain length of the string, which is useful when a post is mostly links and you want to see how far the two numbers drift apart. If they disagree sharply, a link was probably written without its https:// or www. prefix and the counter could not spot it.</p>
+      <p>One thing to keep in mind about combined emoji. A flag, a family or a thumbs up with a skin tone is built from several code points joined together, so the real cost is higher than the flat 2 units this counter charges. Chaining four or five of them in one post can push a draft over the limit without the number moving much. Check the final draft inside X before a post that leans on them.</p>
     </div>
   </div>
 </section>
@@ -199,20 +240,36 @@
     </div>
     <div class="faq-list">
       <details class="faq">
-        <summary>Is the limit still 280 characters?</summary>
-        <div class="faq-body"><p>For a standard post yes. The tool also covers the other X surfaces: replies share the 280 limit, display names are capped at 50, bios at 160, direct messages at 10,000, and a thread of 28 posts gives you 7,840 units in total.</p></div>
+        <summary>Is Twitter still 140 characters?</summary>
+        <div class="faq-body"><p>No. The cap moved from 140 to 280 in November 2017 for Latin scripts. The old number still shapes how much text a post holds, because Chinese, Japanese and Korean characters are charged at two units each, so a post in those scripts fits roughly 140 characters into the same 280 units.</p></div>
       </details>
       <details class="faq">
-        <summary>How are emoji and Chinese characters counted?</summary>
-        <div class="faq-body"><p>They count as two units each, matching the weighted counting X applies. The Remaining figure reflects that weighting rather than the raw string length.</p></div>
+        <summary>What is the Twitter character limit in 2026, and what was the old limit?</summary>
+        <div class="faq-body"><p>280 characters per post on a standard (free) account. 25,000 characters on Premium accounts. A single thread can hold up to 28 connected tweets, so 28 x 280 = 7,840 characters before you have to start a new thread. The old limit was 140, which held from 2006 until late 2017.</p></div>
       </details>
       <details class="faq">
-        <summary>Do hashtags and mentions count?</summary>
-        <div class="faq-body"><p>Yes, at one unit per character. The @ symbol itself is included in the count.</p></div>
+        <summary>What is the 4-1-1 rule on Twitter?</summary>
+        <div class="faq-body"><p>It is a content mix, not a character rule. For every six posts, share four pieces of useful content written by other people, one repost or personal update, and one post that promotes your own work. Andrew Davis proposed it at Tippingpoint Labs and Joe Pulizzi helped spread it. Treat it as a balance check rather than a quota.</p></div>
       </details>
       <details class="faq">
-        <summary>Why does my post fit here but get cut off on X?</summary>
-        <div class="faq-body"><p>Usually a long URL that was not written with a full https:// or www. prefix, so the counter could not spot it as a link. X still shortens it to 23 units. Write the link out in full and the count lines up.</p></div>
+        <summary>How do I post a tweet longer than 280 characters?</summary>
+        <div class="faq-body"><p>Three routes. Start a thread, which allows up to 28 connected posts at 280 each. Subscribe to Premium, which lifts a single post to 25,000 characters. Or move the text into an image, a screenshot or a link to a longer article. For a free account the thread is the practical option.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Are hashtags included in Twitter character limits?</summary>
+        <div class="faq-body"><p>Yes, at one unit per visible character including the # symbol. #food is five units and #contentmarketing is seventeen. There is no free hashtag allowance, so three long tags can cost you a tenth of a standard post before the first sentence.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Do emoji count as 1 or 2 characters?</summary>
+        <div class="faq-body"><p>Two for most single emoji, because X stores them as a UTF-16 surrogate pair. Combined emoji cost more. A flag, a skin tone variant or a family grouping can run to 4, 7 or 11 units. If a draft leans on those, check the final count inside X before publishing.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Do spaces count as characters on Twitter?</summary>
+        <div class="faq-body"><p>Yes. Every space is one unit, including double spaces and the indent at the start of a line. A blank line between paragraphs costs two, one for each line break. Removing stray double spaces is the quickest way to pull a post back under the cap.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Is the Twitter character counter free?</summary>
+        <div class="faq-body"><p>Yes. No signup, no paywall and no cap on how much you paste in. Counting runs in your browser, so the text never leaves your device and nothing is stored after you close the tab.</p></div>
       </details>
     </div>
   </div>
@@ -291,6 +348,6 @@
     </div>
   </div>
 </footer>
-<script src="/assets/site.js?v=20261115j"></script>
+<script src="/assets/site.js?v=20261115k"></script>
 </body>
 </html>
