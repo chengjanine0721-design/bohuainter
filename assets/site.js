@@ -293,6 +293,9 @@
         switch (mode.dataset.case) {
           case "upper": r = v.toUpperCase(); break;
           case "lower": r = v.toLowerCase(); break;
+          case "firstbig":
+            r = v.replace(/(^|\s|["'(\[])(\S)/g, function (m, p, c) { return p + c.toUpperCase(); });
+            break;
           case "title":
             r = v.toLowerCase().replace(/(^|\s|["'(\[])([a-z])/g, function (m, p, c) { return p + c.toUpperCase(); });
             break;
