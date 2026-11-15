@@ -642,6 +642,28 @@ textarea.tool-input:focus { background: #fff; }
 .section-tight.tight-top { padding-top: 20px; }
 .section.snug-top { padding-top: 36px; }
 
+/* image + text split block in prose */
+.split-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 36px;
+  align-items: center;
+  margin: 0 0 28px;
+}
+.split-feature-img { margin: 0; }
+.split-feature-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+.split-feature-body h2 { margin-top: 0; }
+@media (max-width: 880px) {
+  .split-feature { grid-template-columns: 1fr; gap: 20px; }
+}
+
 /* live demo figure */
 .demo-figure { margin: 26px 0; }
 .demo-figure img {
