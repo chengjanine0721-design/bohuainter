@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Twitter Character Counter | Free Online Tool | Bohuainter</title>
-<meta name="description" content="Check your post against the 280 character limit before you publish.">
+<title>Twitter Character Counter: Check X Tweet, Bio &amp; DM Limits</title>
+<meta name="description" content="Count characters accurately for X (Twitter) posts, bios, and DMs. Automatically calculates weighted lengths for links (23 chars), emojis, and spaces. No signup required.">
 <link rel="canonical" href="https://bohuainter.com/tool/twitter-charactor-generator/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Twitter Character Counter | Free Online Tool | Bohuainter">
-<meta property="og:description" content="Check your post against the 280 character limit before you publish.">
+<meta property="og:title" content="Twitter Character Counter: Check X Tweet, Bio &amp; DM Limits">
+<meta property="og:description" content="Count characters accurately for X (Twitter) posts, bios, and DMs. Automatically calculates weighted lengths for links (23 chars), emojis, and spaces. No signup required.">
 <meta property="og:url" content="https://bohuainter.com/tool/twitter-charactor-generator/">
 <meta property="og:site_name" content="Bohuainter">
 <meta name="twitter:card" content="summary_large_image">
@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="/assets/style.css?v=20261115l">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the limit still 280 characters?","acceptedAnswer":{"@type":"Answer","text":"For a standard post yes. The tool also covers the other X surfaces: replies share the 280 limit, display names are capped at 50, bios at 160, direct messages at 10,000, and a thread of 28 posts gives you 7,840 units in total."}},{"@type":"Question","name":"How are emoji and Chinese characters counted?","acceptedAnswer":{"@type":"Answer","text":"They count as two units each, matching the weighted counting X applies. The Remaining figure reflects that weighting rather than the raw string length."}},{"@type":"Question","name":"Do hashtags and mentions count?","acceptedAnswer":{"@type":"Answer","text":"Yes, at one unit per character. The @ symbol itself is included in the count."}},{"@type":"Question","name":"Why does my post fit here but get cut off on X?","acceptedAnswer":{"@type":"Answer","text":"Usually a long URL. X replaces every link with a fixed 23 unit placeholder, which can differ from the visible length of the URL you typed."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the limit still 280 characters?","acceptedAnswer":{"@type":"Answer","text":"For a standard post yes. The tool also covers the other X surfaces: replies share the 280 limit, display names are capped at 50, bios at 160, direct messages at 10,000, and a thread of 28 posts gives you 7,840 units in total."}},{"@type":"Question","name":"How are emoji and Chinese characters counted?","acceptedAnswer":{"@type":"Answer","text":"They count as two units each, matching the weighted counting X applies. The Remaining figure reflects that weighting rather than the raw string length."}},{"@type":"Question","name":"Do hashtags and mentions count?","acceptedAnswer":{"@type":"Answer","text":"Yes, at one unit per character. The @ symbol itself is included in the count."}},{"@type":"Question","name":"Why does my post fit here but get cut off on X?","acceptedAnswer":{"@type":"Answer","text":"Usually a long URL that was not written with a full https:// or www. prefix, so the counter could not spot it as a link. X still shortens it to 23 units. Write the link out in full and the count lines up."}}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Twitter Character Counter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Check your post against the 280 character limit before you publish.","url":"https://bohuainter.com/tool/twitter-charactor-generator/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
@@ -183,7 +183,7 @@
       <p>Since the limit went to 280, X has weighted characters rather than counting them one for one. Latin letters, digits and most punctuation count as one unit. Characters from scripts that carry more meaning per glyph, which includes Chinese, Japanese and Korean, count as two units. Emoji count as two as well.</p>
       <p>That is why a 140 character Japanese post and a 280 character English post hit the same ceiling. This counter applies the same weighting, so the Counted units figure is what X will enforce and the Raw characters figure is the plain length of the string.</p>
       <h2>Do links still count as 23</h2>
-      <p>Links are wrapped in the t.co shortener and every URL counts as a fixed number of characters regardless of its real length. The current figure is 23 characters per link. This tool cannot see inside a URL the way the editor does, so if your post contains a long link, subtract its length and add 23 for an accurate estimate.</p>
+      <p>Links are wrapped in the t.co shortener and every URL counts as a fixed number of characters regardless of its real length. The current figure is 23 characters per link. This counter applies that rule for you: paste a post containing a link and the Counted units figure already charges 23 for it instead of the visible length, so you do not have to subtract anything by hand.</p>
       <h2>Writing short without sounding clipped</h2>
       <p>Most posts that run over the limit are not too long in content, they are too long in framing. Delete the setup clause and lead with the point. Replace and with a full stop. Drop the closing line that restates what you just said. Three edits usually reclaim forty characters.</p>
       <blockquote>Leave about twenty characters of headroom. It makes the trimmed post easier to read and leaves space if you add a hashtag after drafting.</blockquote>
@@ -212,7 +212,7 @@
       </details>
       <details class="faq">
         <summary>Why does my post fit here but get cut off on X?</summary>
-        <div class="faq-body"><p>Usually a long URL. X replaces every link with a fixed 23 unit placeholder, which can differ from the visible length of the URL you typed.</p></div>
+        <div class="faq-body"><p>Usually a long URL that was not written with a full https:// or www. prefix, so the counter could not spot it as a link. X still shortens it to 23 units. Write the link out in full and the count lines up.</p></div>
       </details>
     </div>
   </div>
@@ -291,6 +291,6 @@
     </div>
   </div>
 </footer>
-<script src="/assets/site.js?v=20261115i"></script>
+<script src="/assets/site.js?v=20261115j"></script>
 </body>
 </html>
