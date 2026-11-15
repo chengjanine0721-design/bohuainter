@@ -790,7 +790,7 @@ details.faq .faq-body p { margin-bottom: 10px; }
 }
 .footer-top {
   display: grid;
-  grid-template-columns: 1.6fr repeat(2, 1fr);
+  grid-template-columns: 1.6fr 1.9fr 1fr;
   gap: 32px;
   padding-bottom: 34px;
 }
@@ -804,6 +804,8 @@ details.faq .faq-body p { margin-bottom: 10px; }
   color: var(--gray-400);
 }
 .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.footer-col-tools ul { display: block; columns: 2; column-gap: 28px; }
+.footer-col-tools li { break-inside: avoid; margin: 0 0 10px; }
 .footer-col a {
   font-size: 14.5px;
   color: var(--ink-2);
@@ -907,7 +909,7 @@ details.faq .faq-body p { margin-bottom: 10px; }
 @media (max-width: 980px) {
   .tool-layout { grid-template-columns: 1fr; }
   .side-card { position: static; }
-  .footer-top { grid-template-columns: 1fr 1fr; }
+  .footer-top { grid-template-columns: 1.9fr 1fr; }
   .footer-brand { grid-column: 1 / -1; }
 }
 
