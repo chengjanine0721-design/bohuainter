@@ -790,13 +790,13 @@ details.faq .faq-body p { margin-bottom: 10px; }
   padding-bottom: 34px;
 }
 .footer-brand p { margin-top: 14px; color: var(--gray-500); font-size: 14px; line-height: 1.7; max-width: 300px; }
-.footer-col h4 {
+.footer-col-title {
+  margin: 0 0 14px;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--gray-400);
-  margin-bottom: 14px;
 }
 .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
 .footer-col a {
@@ -862,7 +862,7 @@ details.faq .faq-body p { margin-bottom: 10px; }
   position: sticky;
   top: 88px;
 }
-.side-card h4 { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 14px; }
+.side-card-title { margin: 0 0 14px; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); }
 .side-card ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
 .side-card a {
   display: block;
