@@ -637,6 +637,11 @@ textarea.tool-input:focus { background: #fff; }
 .tbl-logo { display: inline-flex; width: 18px; height: 18px; margin-right: 9px; vertical-align: -3px; }
 .tbl-logo svg { width: 18px; height: 18px; display: block; }
 
+/* tighter rhythm on character-counter page */
+.page-hero.hero-split { padding-bottom: 22px; }
+.section-tight.tight-top { padding-top: 20px; }
+.section.snug-top { padding-top: 36px; }
+
 /* live demo figure */
 .demo-figure { margin: 26px 0; }
 .demo-figure img {
