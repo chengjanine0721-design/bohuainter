@@ -137,6 +137,7 @@
       <div class="tool-panel">
         <div class="tool-toolbar">
           <span class="chip active" id="cc-live">Live count</span>
+          <label class="limit-box" for="cc-limit"><span>Set Character Limit</span><input class="limit-input" id="cc-limit" type="number" min="0" step="1" value="280" aria-label="Character limit"></label>
           <span class="spacer"></span>
           <button class="link-btn" type="button" data-cc-action="sample">Sample text</button>
           <button class="link-btn" type="button" data-cc-action="copy">Copy text</button>
@@ -149,6 +150,7 @@
           <div class="stat"><div class="num" id="cc-sentences">0</div><div class="lab">Sentences</div></div>
           <div class="stat"><div class="num" id="cc-paragraphs">0</div><div class="lab">Paragraphs</div></div>
           <div class="stat"><div class="num" id="cc-reading">0 min</div><div class="lab">Reading time</div></div>
+          <div class="stat"><div class="num" id="cc-remaining">280</div><div class="lab">Remaining</div></div>
         </div>
         <textarea class="tool-input" id="cc-input" placeholder="Start typing or paste your text here. Counts update as you go." aria-label="Text to count"></textarea>
         
