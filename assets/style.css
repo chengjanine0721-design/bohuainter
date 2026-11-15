@@ -433,6 +433,7 @@ img, svg { display: block; max-width: 100%; }
   background: #fcfdff;
 }
 .tool-toolbar .spacer { margin-left: auto; }
+.toolbar-break { flex-basis: 100%; height: 0; }
 .chip {
   display: inline-flex;
   align-items: center;
