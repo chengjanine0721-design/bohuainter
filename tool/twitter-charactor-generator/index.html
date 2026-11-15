@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="/assets/style.css?v=20261115l">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the limit still 280 characters?","acceptedAnswer":{"@type":"Answer","text":"For most accounts yes. The tool also offers a 25,000 unit mode for accounts with a longer post limit, so you can check long form posts the same way."}},{"@type":"Question","name":"How are emoji and Chinese characters counted?","acceptedAnswer":{"@type":"Answer","text":"They count as two units each, matching the weighted counting X applies. The Remaining figure reflects that weighting rather than the raw string length."}},{"@type":"Question","name":"Do hashtags and mentions count?","acceptedAnswer":{"@type":"Answer","text":"Yes, at one unit per character. The @ symbol itself is included in the count."}},{"@type":"Question","name":"Why does my post fit here but get cut off on X?","acceptedAnswer":{"@type":"Answer","text":"Usually a long URL. X replaces every link with a fixed 23 unit placeholder, which can differ from the visible length of the URL you typed."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the limit still 280 characters?","acceptedAnswer":{"@type":"Answer","text":"For a standard post yes. The tool also covers the other X surfaces: replies share the 280 limit, display names are capped at 50, bios at 160, direct messages at 10,000, and a thread of 28 posts gives you 7,840 units in total."}},{"@type":"Question","name":"How are emoji and Chinese characters counted?","acceptedAnswer":{"@type":"Answer","text":"They count as two units each, matching the weighted counting X applies. The Remaining figure reflects that weighting rather than the raw string length."}},{"@type":"Question","name":"Do hashtags and mentions count?","acceptedAnswer":{"@type":"Answer","text":"Yes, at one unit per character. The @ symbol itself is included in the count."}},{"@type":"Question","name":"Why does my post fit here but get cut off on X?","acceptedAnswer":{"@type":"Answer","text":"Usually a long URL. X replaces every link with a fixed 23 unit placeholder, which can differ from the visible length of the URL you typed."}}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Twitter Character Counter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Check your post against the 280 character limit before you publish.","url":"https://bohuainter.com/tool/twitter-charactor-generator/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
@@ -136,8 +136,12 @@
       <div>
       <div class="tool-panel">
         <div class="tool-toolbar">
-          <button class="chip active" type="button" data-limit="280">Standard post 280</button>
-          <button class="chip" type="button" data-limit="25000">Premium 25,000</button>
+          <button class="chip active" type="button" data-limit="280">Tweet 280</button>
+          <button class="chip" type="button" data-limit="280">Reply 280</button>
+          <button class="chip" type="button" data-limit="50">Display name 50</button>
+          <button class="chip" type="button" data-limit="160">Bio 160</button>
+          <button class="chip" type="button" data-limit="10000">DM 10,000</button>
+          <button class="chip" type="button" data-limit="7840">Thread (28 x 280) 7,840</button>
           <span class="spacer"></span>
           <button class="link-btn" type="button" id="tw-sample" data-sample="Short sentences travel further. Count the characters before you post, not after.">Sample</button>
         </div>
@@ -196,7 +200,7 @@
     <div class="faq-list">
       <details class="faq">
         <summary>Is the limit still 280 characters?</summary>
-        <div class="faq-body"><p>For most accounts yes. The tool also offers a 25,000 unit mode for accounts with a longer post limit, so you can check long form posts the same way.</p></div>
+        <div class="faq-body"><p>For a standard post yes. The tool also covers the other X surfaces: replies share the 280 limit, display names are capped at 50, bios at 160, direct messages at 10,000, and a thread of 28 posts gives you 7,840 units in total.</p></div>
       </details>
       <details class="faq">
         <summary>How are emoji and Chinese characters counted?</summary>
