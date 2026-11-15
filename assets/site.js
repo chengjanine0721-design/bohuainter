@@ -435,9 +435,23 @@
       }
       return n;
     }
+    /* X wraps every link in t.co and charges a flat 23 units regardless of length */
+    var URL_RE = /(https?:\/\/|www\.)[^\s]+/gi;
+    function weightedWithLinks(str) {
+      var total = 0;
+      var last = 0;
+      var m;
+      URL_RE.lastIndex = 0;
+      while ((m = URL_RE.exec(str)) !== null) {
+        total += weightedLength(str.slice(last, m.index)) + 23;
+        last = m.index + m[0].length;
+      }
+      total += weightedLength(str.slice(last));
+      return total;
+    }
     var calcTw = function () {
       var v = tw.value;
-      var used = weightedLength(v);
+      var used = weightedWithLinks(v);
       var remain = limit - used;
       var pct = Math.min(100, (used / limit) * 100);
       twOut.chars.textContent = fmt(used);
