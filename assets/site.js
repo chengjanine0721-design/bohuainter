@@ -334,6 +334,12 @@
               return c === c.toLowerCase() ? c.toUpperCase() : c.toLowerCase();
             });
             break;
+          case "snake":
+            r = v.toLowerCase().trim()
+              .replace(/['"\u2018\u2019\u201C\u201D]/g, "")
+              .replace(/[^a-z0-9]+/g, "_")
+              .replace(/^_+|_+$/g, "");
+            break;
           case "camel":
             r = v.toLowerCase().replace(/[^a-z0-9]+(.)/g, function (m, c) { return c.toUpperCase(); })
               .replace(/^[A-Z]/, function (c) { return c.toLowerCase(); });
@@ -371,6 +377,20 @@
         caseInput.value = "";
         caseOut.value = "";
         if (caseCount) caseCount.textContent = "0 characters · 0 words";
+      });
+    });
+    document.querySelectorAll("[data-case-download]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var text = caseOut.value || "";
+        var blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement("a");
+        a.href = url;
+        a.download = "converted-text.txt";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
       });
     });
     var sample = document.getElementById("case-sample");
