@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://rsms.me/">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-<link rel="stylesheet" href="/assets/style.css?v=20261115g">
+<link rel="stylesheet" href="/assets/style.css?v=20261115h">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the character counter include spaces?","acceptedAnswer":{"@type":"Answer","text":"Yes, the main Characters figure includes spaces and line breaks. The No spaces figure next to it excludes every whitespace character, which is the number to use when a limit explicitly says characters without spaces."}},{"@type":"Question","name":"How are words counted?","acceptedAnswer":{"@type":"Answer","text":"Text is split on any run of whitespace, so punctuation attached to a word does not create a separate word. This is the same rule Word and Google Docs use, which is why totals usually match exactly."}},{"@type":"Question","name":"Is there a limit on how much I can paste?","acceptedAnswer":{"@type":"Answer","text":"No limit is enforced by the tool. Practical limits come from your browser, which handles very long documents of several hundred thousand characters without trouble."}},{"@type":"Question","name":"Can I use this counter for Chinese or Japanese text?","acceptedAnswer":{"@type":"Answer","text":"You can, but note that these languages do not separate words with spaces. The word count will read as one word while the character count stays accurate, so use the character figure for CJK text."}}]}
@@ -119,10 +119,10 @@
     </nav>
   </div>
 </header>
-<div class="wrap"><nav class="crumbs crumbs-bar" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/tool/">Tools</a><span class="sep">/</span><span aria-current="page">Character Counter</span></nav></div>
 <main id="main">
 
 <section class="page-hero hero-split">
+  <div class="wrap hero-crumb"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/tool/">Tools</a><span class="sep">/</span><span aria-current="page">Character Counter</span></nav></div>
   <div class="wrap hero-split-grid">
     <div class="hero-copy">
       <span class="eyebrow"><i>★</i> Count every character</span>
@@ -154,11 +154,11 @@
           <div class="stat"><div class="num" id="cc-chars-ns">0</div><div class="lab">No spaces</div></div>
           <div class="stat"><div class="num" id="cc-emoji">0</div><div class="lab">With emoji &amp; symbols</div></div>
           <div class="stat"><div class="num" id="cc-noemoji">0</div><div class="lab">No emoji or symbols</div></div>
+          <div class="stat"><div class="num" id="cc-remaining">280</div><div class="lab">Remaining</div></div>
           <div class="stat"><div class="num" id="cc-words">0</div><div class="lab">Words</div></div>
           <div class="stat"><div class="num" id="cc-sentences">0</div><div class="lab">Sentences</div></div>
           <div class="stat"><div class="num" id="cc-paragraphs">0</div><div class="lab">Paragraphs</div></div>
           <div class="stat"><div class="num" id="cc-reading">0 min</div><div class="lab">Reading time</div></div>
-          <div class="stat"><div class="num" id="cc-remaining">280</div><div class="lab">Remaining</div></div>
         </div>
         <textarea class="tool-input" id="cc-input" placeholder="Start typing or paste your text here. Counts update as you go." aria-label="Text to count"></textarea>
         
