@@ -151,6 +151,7 @@
             <span class="toolbar-break" aria-hidden="true"></span>
             <button class="chip" type="button" data-case="alternating">Alternating Case</button>
             <button class="chip" type="button" data-case="slug">URL Slug</button>
+            <button class="chip" type="button" data-case="snake">Snake Case</button>
             <button class="chip" type="button" data-case="inverse">Inverse Case</button>
             <button class="chip" type="button" data-case="camel">Camel Case</button>
             <button class="chip" type="button" data-case="pascal">Pascal Case</button>
@@ -160,7 +161,8 @@
           <span style="font-size:12.5px;font-weight:650;color:var(--gray-500)">Result</span>
           <span class="spacer"></span>
           <span id="case-count" style="font-size:12.5px;color:var(--gray-400)">0 characters · 0 words</span>
-          <button class="link-btn" type="button" data-case-copy="1">Copy result</button>
+          <button class="link-btn" type="button" data-case-copy="1">Copy</button>
+          <button class="link-btn" type="button" data-case-download="1">Download</button>
           <button class="link-btn" type="button" data-case-clear="1">Clear</button>
         </div>
         <textarea class="tool-input" id="case-output" readonly aria-label="Converted text" style="background:#fcfdff;min-height:180px"></textarea>
@@ -184,7 +186,7 @@
 <section class="section">
   <div class="wrap">
     <div class="prose">
-      <h2>Case Styles Explained: 10 Modes With Examples</h2>
+      <h2>Case Styles Explained: 11 Modes With Examples</h2>
       <p>Ten modes cover almost every case fix you will run into, from shouting spreadsheet exports to clean code variable names. Each one runs the moment you click it, on whatever text is in the box above.</p>
 
       <p><strong>Basic Text Transformations</strong></p>
@@ -219,31 +221,49 @@
         </thead>
         <tbody>
           <tr><td>URL Slug</td><td>Generates SEO friendly URLs in lowercase with hyphens.</td><td><code>AI Growth Tips 2025</code> → <code>ai-growth-tips-2025</code></td></tr>
+          <tr><td>Snake Case</td><td>Joins words with underscores in lowercase, the usual style for Python and database fields.</td><td><code>user profile</code> → <code>user_profile</code></td></tr>
           <tr><td>Camel Case</td><td>Removes spaces and capitalizes subsequent words.</td><td><code>user profile</code> → <code>userProfile</code></td></tr>
           <tr><td>Pascal Case</td><td>Similar to Camel Case but capitalizes the first word too.</td><td><code>camel case</code> → <code>CamelCase</code></td></tr>
         </tbody>
       </table>
 
       <h2>How to Use the Case Converter</h2>
-      <p>Three steps, and no account anywhere in the flow.</p>
       <ol>
-        <li>Paste or type your text into the box at the top of this page. The Sample button loads a test line if you want to see the modes in action first.</li>
-        <li>Click the mode you need. The result panel updates on every keystroke as well, so you can switch between modes without retyping anything.</li>
-        <li>Press Copy result and paste it where it belongs. Clear empties both boxes when you are finished.</li>
+        <li><strong>Enter your text:</strong> Paste or type your text into the input box.</li>
+        <li><strong>Choose a conversion mode:</strong> Select from 11 case formats, including UPPERCASE, lowercase, Title Case, and Sentence Case.</li>
+        <li><strong>Get instant results:</strong> The output updates live as you type. Your text stays in your browser and is never uploaded.</li>
+        <li><strong>Copy or download:</strong> Click Copy to save the converted text to your clipboard, or Download to save it as a .txt file.</li>
       </ol>
-      <p>The same single click handles a headline or a full chapter, because the conversion runs locally in your browser rather than through a queue on a server.</p>
 
-      <h2>Why Use Bohuainter Case Converter: No Signup, Unlimited Use</h2>
-      <p>No account, no email address, no daily quota and no watermark on the output. The converter is a short script that runs inside the tab, so the text you paste never travels to a server and nothing is stored once the page is closed.</p>
-      <p>Having ten modes in one panel also means less hopping between tools. A headline fix, a URL slug and a variable rename take place in the same box, with the same Copy button.</p>
-
-      <h2>Why We Created This Tool: Built for 3 Common Use Cases</h2>
-      <p>Case errors show up in predictable places. These are the three that prompted this tool.</p>
+      <h2>Why Use Bohuainter Case Converter? No Signup, Unlimited Use</h2>
+      <p>Tired of cluttered, ad heavy case converters with complicated interfaces? Bohuainter Case Converter makes it easy to change text case for coding, writing, SEO, and everyday tasks.</p>
       <ul>
-        <li><strong>Text that arrives in the wrong case.</strong> Spreadsheet exports that shout in caps, copy pasted out of a design file, OCR output from a scanned page and captions typed with caps lock on. Retyping is the slow fix and the one that adds new typos.</li>
-        <li><strong>Headlines, titles and metadata.</strong> Title case for headings, sentence case for body copy, and URL Slug when the same headline has to become a clean permalink.</li>
-        <li><strong>Code and developer handoff.</strong> Camel Case and Pascal Case keep variables, components and file names consistent without a manual pass through every line.</li>
+        <li><strong>Instant Conversion:</strong> Convert text as you type or click, with no page reloads.</li>
+        <li><strong>Multiple Case Formats:</strong> Choose from 11 conversion modes, including Sentence Case, lowercase, UPPERCASE, Capitalized Case, aLtErNaTiNg cAsE, Title Case, Inverse Case, camelCase, PascalCase, snake_case, and URL slug.</li>
+        <li><strong>Clean Interface:</strong> Focus on your text with a simple editing area and one click Copy to Clipboard.</li>
+        <li><strong>Character and Word Count:</strong> Check character and word counts while editing your text.</li>
+        <li><strong>Free and Unlimited:</strong> Use the tool without signing up or worrying about usage limits.</li>
       </ul>
+
+      <h2>Why We Created This Tool: 3 Common Use Cases</h2>
+      <p>There are many reasons to convert text between different letter cases. Here are three common ways our case converter can make your work easier.</p>
+
+      <h3>1. For Developers: Format Code Quickly</h3>
+      <p>Developers often need to switch between camelCase, PascalCase, snake_case, kebab-case, and other naming conventions when writing or editing code. Instead of changing each word manually, use our case converter to convert text instantly and keep your code consistent.</p>
+      <p>Our uppercase converter and other case conversion modes make it easy to convert caps, change lowercase text to uppercase, or switch between different programming formats. No more searching for a separate uppercase generator or manually retyping your code.</p>
+
+      <h3>2. For SEO Marketers: Format Titles and Image Alt Text</h3>
+      <p>SEO professionals often need to capitalize the first letter of each word in page titles, headings, and image alt text. Consistent capitalization helps make content look clean and professional.</p>
+      <p>Use our capitalize letter generator to convert text into Title Case in seconds. Whether you are formatting an SEO title, writing a heading, or preparing image alt text, you can capitalize words consistently without editing them one by one.</p>
+
+      <h3>3. For Everyday Writing: Fix Text Without Retyping</h3>
+      <p>Have you ever finished typing a sentence and realized that part of it needs to be ALL UPPERCASE? There is no need to delete and retype anything.</p>
+      <p>Simply paste your text, select UPPERCASE, and let the uppercase generator do the work. You can change to capital letters instantly, convert text to all caps, or convert lowercase to uppercase with just one click.</p>
+      <p>You can also switch from Sentence Case to Upper Case, convert text to lowercase, or use other formats whenever needed.</p>
+
+      <h2>Convert Text Between 11 Case Formats</h2>
+      <p>Our free case converter makes it easy to convert text into different letter cases. Whether you need an uppercase converter, a capitalize letter generator, or a quick way to convert caps, you can preview your results instantly and copy them with one click.</p>
+      <p>From changing text to capital letters to converting lowercase text into uppercase, everything happens in seconds. No signup, no complicated steps, and no unnecessary hassle.</p>
 
     </div>
   </div>
@@ -345,6 +365,6 @@
     </div>
   </div>
 </footer>
-<script src="/assets/site.js?v=20261115h"></script>
+<script src="/assets/site.js?v=20261115i"></script>
 </body>
 </html>
