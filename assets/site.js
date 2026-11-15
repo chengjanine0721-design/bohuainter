@@ -72,6 +72,8 @@
       lines: document.getElementById("cc-lines"),
       reading: document.getElementById("cc-reading")
     };
+    var ccLimit = document.getElementById("cc-limit");
+    var ccRemain = document.getElementById("cc-remaining");
     var render = function () {
       var t = cc.value;
       ccOut.chars.textContent = fmt(t.length);
@@ -79,10 +81,22 @@
       ccOut.words.textContent = fmt(countWords(t));
       ccOut.sentences.textContent = fmt(countSentences(t));
       ccOut.paragraphs.textContent = fmt(countParagraphs(t));
-      ccOut.lines.textContent = fmt(t ? t.split(/\n/).length : 0);
+      if (ccOut.lines) ccOut.lines.textContent = fmt(t ? t.split(/\n/).length : 0);
       ccOut.reading.textContent = readTime(countWords(t));
+      if (ccRemain && ccLimit) {
+        var lim = parseInt(ccLimit.value, 10);
+        if (isNaN(lim) || lim < 0) {
+          ccRemain.textContent = "\u221E";
+          ccRemain.classList.remove("neg");
+        } else {
+          var left = lim - t.length;
+          ccRemain.textContent = fmt(left);
+          ccRemain.classList.toggle("neg", left < 0);
+        }
+      }
     };
     cc.addEventListener("input", render);
+    if (ccLimit) ccLimit.addEventListener("input", render);
     render();
 
     document.querySelectorAll("[data-cc-action]").forEach(function (b) {
@@ -229,7 +243,7 @@
       ewOut.sentences.textContent = fmt(sentences);
       ewOut.paragraphs.textContent = fmt(countParagraphs(t));
       ewOut.avg.textContent = sentences > 0 ? (words / sentences).toFixed(1) : "0";
-      ewOut.reading.textContent = readTime(words);
+      if (ewOut.reading) ewOut.reading.textContent = readTime(words);
       ewOut.pages.textContent = (words / 275).toFixed(1);
       ewOut.progress.textContent = target > 0 ? Math.round(pct) + "%" : "--";
       ewOut.remain.textContent = target > 0 ? fmt(Math.max(0, target - words)) : "--";
