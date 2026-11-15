@@ -415,7 +415,8 @@
       meter: document.getElementById("tw-meter"),
       ring: document.getElementById("tw-ring"),
       status: document.getElementById("tw-status"),
-      weighted: document.getElementById("tw-weighted")
+      weighted: document.getElementById("tw-weighted"),
+      para: document.getElementById("tw-para")
     };
     var limit = 280;
     document.querySelectorAll("[data-limit]").forEach(function (b) {
@@ -457,6 +458,7 @@
       twOut.chars.textContent = fmt(used);
       twOut.words.textContent = fmt(countWords(v));
       twOut.weighted.textContent = fmt(v.length);
+      if (twOut.para) twOut.para.textContent = fmt(countParagraphs(v));
       twOut.remain.textContent = fmt(Math.abs(remain));
       twOut.remain.style.color = remain < 0 ? "#dc2626" : "inherit";
       twOut.meter.style.width = pct + "%";
