@@ -11,3 +11,7 @@
 
 # Canonical host, no trailing slash variants
 /index.html  /  301
+
+# Old misspelled essay URL (renamed 2026-11-17)
+/tool/eassy-word-counter/  /tool/essay-word-counter/  301
+/tool/eassy-word-counter  /tool/essay-word-counter/  301
