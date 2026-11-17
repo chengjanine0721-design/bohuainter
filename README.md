@@ -87,4 +87,4 @@ Then visit http://localhost:8000
 
 ## Tool slugs
 
-Slugs follow the original spec exactly, including the spellings `eassy-word-counter` and `twitter-charactor-generator`. Changing them breaks live URLs and requires redirects.
+Slugs follow the original spec exactly, including the spellings `essay-word-counter` and `twitter-charactor-generator`. Changing them breaks live URLs and requires redirects.
