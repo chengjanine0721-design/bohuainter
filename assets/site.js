@@ -543,6 +543,116 @@
     calcMeta();
   }
 
+  /* ==========================================================
+     Tool 9 — image alt text generator
+     ========================================================== */
+  var altInput = document.getElementById("alt-input");
+  if (altInput) {
+    var altOut = document.getElementById("alt-out");
+    var altNameOut = document.getElementById("alt-name-out");
+    var altPre = document.getElementById("alt-copy-pre");
+    var altCopyAll = document.getElementById("alt-copy-all");
+
+    function altTitleCase(v) {
+      var clean = v.replace(/\s+/g, " ").trim();
+      if (!clean) return "";
+      return clean.split(" ").map(function (word) {
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+      }).join(" ");
+    }
+
+    function altSlug(v) {
+      return v.trim()
+        .toLowerCase()
+        .replace(/[^\p{L}\p{N}]+/gu, "-")
+        .replace(/^-+|-+$/g, "")
+        .replace(/-{2,}/g, "-");
+    }
+
+    function altBlock(alt, name) {
+      return "Image name: " + name + "\nImage alt: " + alt;
+    }
+
+    function setAltValue(el, value) {
+      el.textContent = value;
+      el.classList.toggle("is-empty", !value);
+    }
+
+    function flashCopied(btn) {
+      var original = btn.dataset.originalLabel || btn.textContent;
+      btn.dataset.originalLabel = original;
+      btn.textContent = "Copied";
+      clearTimeout(btn._altTimer);
+      btn._altTimer = setTimeout(function () {
+        btn.textContent = original;
+      }, 1400);
+    }
+
+    function copyAltText(text, btn) {
+      function fallback() {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.top = "-1000px";
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand("copy"); flashCopied(btn); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function () {
+          flashCopied(btn);
+        }, fallback);
+      } else {
+        fallback();
+      }
+    }
+
+    var renderAlt = function () {
+      var raw = altInput.value;
+      var alt = altTitleCase(raw);
+      var name = altSlug(raw);
+      setAltValue(altOut, alt);
+      setAltValue(altNameOut, name);
+      altPre.textContent = altBlock(alt, name);
+      altCopyAll.disabled = !raw.trim();
+    };
+
+    altInput.addEventListener("input", renderAlt);
+    renderAlt();
+
+    document.querySelectorAll("[data-alt-copy]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var value = btn.dataset.altCopy === "alt" ? altOut.textContent : altNameOut.textContent;
+        if (value) copyAltText(value, btn);
+      });
+    });
+
+    altCopyAll.addEventListener("click", function () {
+      if (!altInput.value.trim()) return;
+      copyAltText(altBlock(altOut.textContent, altNameOut.textContent), altCopyAll);
+    });
+
+    var altSample = document.getElementById("alt-sample");
+    if (altSample) {
+      altSample.addEventListener("click", function () {
+        altInput.value = "blue ceramic coffee mug on a wooden table";
+        renderAlt();
+        altInput.focus();
+      });
+    }
+
+    var altClear = document.getElementById("alt-clear");
+    if (altClear) {
+      altClear.addEventListener("click", function () {
+        altInput.value = "";
+        renderAlt();
+        altInput.focus();
+      });
+    }
+  }
+
   /* ---------- footer year ---------- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();
