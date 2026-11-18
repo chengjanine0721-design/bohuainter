@@ -81,6 +81,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bohuainter.com/tool/alt-text-generator/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bohuainter.com/blog/how-do-you-get-word-count-on-pages/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
