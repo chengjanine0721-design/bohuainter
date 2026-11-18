@@ -46,7 +46,7 @@ Two public URLs do not match their folder name because the spec fixes both the U
 
 ## Pages
 
-Eight tools, all client side:
+Nine tools, all client side:
 
 - Character Counter
 - Words to Pages Calculator
@@ -56,6 +56,7 @@ Eight tools, all client side:
 - Lower Case Generator
 - Twitter Character Counter
 - Google Meta Counter
+- Image Alt Text Generator
 
 Six blog guides covering word counts in Pages, Google Docs, Word and Excel, novel length, and title tag length.
 
