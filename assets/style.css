@@ -1035,6 +1035,26 @@ details.faq .faq-body p { margin-bottom: 10px; }
 
 /* ---- on-this-page TOC + inline more-tools strip ---- */
 h2[id] { scroll-margin-top: 90px; }
+.tool-layout > :only-child { grid-column: 1 / -1; }
+.toc-inline {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: #fcfdff;
+  padding: 20px 22px 16px;
+  margin: 0 0 38px;
+}
+.toc-inline .side-card-title { margin-bottom: 8px; }
+.toc-inline .toc-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.toc-inline a {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray-600);
+  padding: 7px 10px;
+  border-radius: 9px;
+  text-decoration: none;
+}
+.toc-inline a:hover { background: #eef4ff; color: var(--blue); }
 .toc-list a { color: var(--gray-600); }
 .toc-list a:hover { background: #eef4ff; color: var(--blue); }
 .more-tools {
