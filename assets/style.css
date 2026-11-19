@@ -1032,3 +1032,36 @@ details.faq .faq-body p { margin-bottom: 10px; }
   .alt-copy-bar { flex-direction: column; align-items: stretch; }
   .alt-copy-bar .btn { width: 100%; }
 }
+
+/* ---- on-this-page TOC + inline more-tools strip ---- */
+h2[id] { scroll-margin-top: 90px; }
+.toc-list a { color: var(--gray-600); }
+.toc-list a:hover { background: #eef4ff; color: var(--blue); }
+.more-tools {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: #fcfdff;
+  padding: 18px 20px 20px;
+  margin: 0 0 38px;
+}
+.more-tools .side-card-title { margin-bottom: 4px; }
+.more-tools-list {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.more-tools-list a {
+  display: inline-block;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--gray-600);
+  background: #fff;
+  text-decoration: none;
+}
+.more-tools-list a:hover { border-color: var(--blue); color: var(--blue); background: #f5f9ff; }
