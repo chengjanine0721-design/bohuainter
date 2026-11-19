@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chinese Word Counter – Free Chinese Character Count Tool</title>
+<meta name="description" content="Free Chinese word counter with instant word count for Chinese text. Count hanzi, English words, punctuation and sentences in mixed text. A Chinese character count tool for essays, posts and translations.">
+<link rel="canonical" href="https://bohuainter.com/tool/chinese-word-counter/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chinese Word Counter – Free Chinese Character Count Tool">
+<meta property="og:description" content="Free Chinese word counter with instant word count for Chinese text. Count hanzi, English words, punctuation and sentences in mixed text. A Chinese character count tool for essays, posts and translations.">
+<meta property="og:url" content="https://bohuainter.com/tool/chinese-word-counter/">
+<meta property="og:site_name" content="Bohuainter">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="/assets/style.css?v=20261115m">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many words are in Chinese text?","acceptedAnswer":{"@type":"Answer","text":"Chinese has no spaces between words, so a word count is an estimate. Most research puts the average Chinese word at 1.5 to 2 characters, so 500 Chinese characters is roughly 250 to 330 words. This Chinese word counter uses the same convention as Microsoft Word: each hanzi counts as one word, and each English word counts as one."}},{"@type":"Question","name":"Is a Chinese word count the same as a character count?","acceptedAnswer":{"@type":"Answer","text":"No. The Chinese character count is the number of hanzi in the text, while the Chinese word count groups characters into words. For schoolwork and most requirements in China, the character count is what is actually checked, which is why both numbers are shown here."}},{"@type":"Question","name":"How does this Chinese character counter handle mixed Chinese and English text?","acceptedAnswer":{"@type":"Answer","text":"It reports the two parts separately. Chinese characters are counted one by one, English words are counted as whitespace separated tokens, and the word count figure is the sum of both, which matches how Word reports 字数 for bilingual documents."}},{"@type":"Question","name":"Does the count include punctuation?","acceptedAnswer":{"@type":"Answer","text":"Punctuation is counted in its own box rather than being added to the hanzi total, so you always see the pure Chinese character count separately from full stop and comma marks. The characters figure excludes spaces."}},{"@type":"Question","name":"Is the word count the same as Microsoft Word?","acceptedAnswer":{"@type":"Answer","text":"Yes for the main figures. Word counts each Chinese character as one word and each English word as one word, and this Chinese word counter follows the same rule, so the number you see here matches what a teacher or editor sees in Word."}},{"@type":"Question","name":"Is this Chinese character count tool free?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is free with no signup and no limits, and all counting runs inside your browser. Your text is never uploaded or stored."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Chinese Word Counter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Free Chinese word counter with instant word count for Chinese text. Count hanzi, English words, punctuation and sentences in mixed text.","url":"https://bohuainter.com/tool/chinese-word-counter/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-mark">B</span>
+      <span class="brand-text"><b>bohua</b><span>inter</span></span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          Blog
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown" style="width:320px">
+          <div class="dropdown-head">Writing guides</div>
+          <a class="dropdown-item" href="/blog/how-do-you-get-word-count-on-pages/"><span><span class="dd-title">Tips to Get Word Count In Pages</span><span class="dd-desc">Find and pin the counter in Apple Pages</span></span></a>
+          <a class="dropdown-item" href="/blog/how-long-should-your-pages-title-tag-be/"><span><span class="dd-title">Guide to Seo Title Description Length</span><span class="dd-desc">Pixel limits for titles and meta descriptions</span></span></a>
+          <a class="dropdown-item" href="/blog/how-to-find-word-count-on-google-docs/"><span><span class="dd-title">Guide to Find Word Count On Google Docs</span><span class="dd-desc">Where Docs hides the word count panel</span></span></a>
+          <div class="dropdown-foot"><a href="/blog/">Read the blog <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          Tools
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown dropdown-tools">
+          <div class="dropdown-head">Free writing tools</div>
+          <a class="dropdown-item" href="/tool/character-counter/">
+            <span class="dd-icon">Aa</span>
+            <span>
+              <span class="dd-title">Character Counter</span>
+              <span class="dd-desc">Count characters, words, sentences and paragraphs as you type.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/words-to-page-calculator/">
+            <span class="dd-icon">¶</span>
+            <span>
+              <span class="dd-title">Words to Pages</span>
+              <span class="dd-desc">Convert words to pages, single or double spaced, for essays and reports.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/character-to-words-calculator/">
+            <span class="dd-icon">↔</span>
+            <span>
+              <span class="dd-title">Characters to Words</span>
+              <span class="dd-desc">Estimate how many words a given number of characters turns into.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/essay-word-counter/">
+            <span class="dd-icon">✎</span>
+            <span>
+              <span class="dd-title">Essay Word Counter</span>
+              <span class="dd-desc">Track essay length against a target with pages, reading time and averages.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/upper-case-generator/">
+            <span class="dd-icon">AB</span>
+            <span>
+              <span class="dd-title">Upper Case</span>
+              <span class="dd-desc">Convert any text to UPPER CASE, title case or sentence case instantly.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/lower-case-generator/">
+            <span class="dd-icon">ab</span>
+            <span>
+              <span class="dd-title">Lower Case</span>
+              <span class="dd-desc">Convert any text to lower case, title case or sentence case instantly.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/twitter-charactor-generator/">
+            <span class="dd-icon">𝕏</span>
+            <span>
+              <span class="dd-title">Twitter Counter</span>
+              <span class="dd-desc">Check your post against the 280 character limit before you publish.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/google-meta-counter/">
+            <span class="dd-icon">G</span>
+            <span>
+              <span class="dd-title">Google Meta Counter</span>
+              <span class="dd-desc">Write SEO titles and descriptions that fit Google's display width.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/chinese-word-counter/">
+            <span class="dd-icon">中</span>
+            <span>
+              <span class="dd-title">Chinese Word Counter</span>
+              <span class="dd-desc">Count hanzi, words and punctuation in Chinese and mixed text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/alt-text-generator/">
+            <span class="dd-icon">Alt</span>
+            <span>
+              <span class="dd-title">Image Alt Text Generator</span>
+              <span class="dd-desc">Build Title Case alt text and a lowercase image name from one description.</span>
+            </span>
+          </a>
+          <div class="dropdown-foot"><a href="/tool/">See all tools <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          More
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown" style="width:260px">
+          <div class="dropdown-head">Bohuainter</div>
+          <a class="dropdown-item" href="/about-us/"><span class="dd-icon">i</span><span><span class="dd-title">About Us</span><span class="dd-desc">Why this site exists</span></span></a>
+          <a class="dropdown-item" href="/contact-us/"><span class="dd-icon">@</span><span><span class="dd-title">Contact Us</span><span class="dd-desc">Questions and feedback</span></span></a>
+          <a class="dropdown-item" href="/privacy/"><span class="dd-icon">✓</span><span><span class="dd-title">Privacy</span><span class="dd-desc">What we do with your text</span></span></a>
+          <a class="dropdown-item" href="/terms/"><span class="dd-icon">§</span><span><span class="dd-title">Terms</span><span class="dd-desc">The rules of the road</span></span></a>
+          <div class="dropdown-foot"><a href="/blog/">Read the blog <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="wrap"><nav class="crumbs crumbs-bar" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/tool/">Tools</a><span class="sep">/</span><span aria-current="page">Chinese Word Counter</span></nav></div>
+<main id="main">
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow"><i>★</i> Hanzi, words and punctuation, counted live</span>
+    <h1>Chinese Word Counter</h1>
+    <p>Paste Chinese or mixed Chinese and English text and get a full word count Chinese writers and translators actually need: hanzi count, word count, characters without spaces, punctuation, sentences and reading time, all updated as you type.</p>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="tool-layout">
+      <div>
+      <div class="tool-panel">
+        <div class="tool-toolbar">
+          <span class="chip active">Chinese or mixed text</span>
+          <span class="spacer"></span>
+          <button type="button" class="btn btn-ghost" id="cwc-sample" style="height:34px;padding:0 14px;font-size:13px">Try sample</button>
+          <button type="button" class="btn btn-ghost" id="cwc-clear" style="height:34px;padding:0 14px;font-size:13px">Clear</button>
+        </div>
+        <textarea class="tool-input" id="cwc-input" placeholder="在此粘贴中文或中英混合文本。Paste Chinese or mixed text here and every count updates instantly." aria-label="Chinese text" style="min-height:320px"></textarea>
+        <div class="tool-stats">
+          <div class="stat"><div class="num" id="cwc-hanzi">0</div><div class="lab">Chinese characters</div></div>
+          <div class="stat"><div class="num" id="cwc-words">0</div><div class="lab">Word count</div></div>
+          <div class="stat"><div class="num" id="cwc-chars">0</div><div class="lab">Characters (no spaces)</div></div>
+          <div class="stat"><div class="num" id="cwc-enwords">0</div><div class="lab">English words</div></div>
+          <div class="stat"><div class="num" id="cwc-punct">0</div><div class="lab">Punctuation marks</div></div>
+          <div class="stat"><div class="num" id="cwc-sentences">0</div><div class="lab">Sentences</div></div>
+          <div class="stat"><div class="num" id="cwc-paragraphs">0</div><div class="lab">Paragraphs</div></div>
+          <div class="stat"><div class="num" id="cwc-reading">0 min</div><div class="lab">Reading time</div></div>
+        </div>
+      </div>
+        <div class="callout" style="margin-top:22px">
+          <span style="color:var(--blue);flex:0 0 20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span><b>Word style counting.</b> Each hanzi counts as one word and each English word counts as one, the same rule Microsoft Word uses for 字数, so your numbers match what editors check.</span>
+        </div>
+      </div>
+    <aside class="side-card">
+      <p class="side-card-title">More tools</p>
+      <ul>
+        <li><a href="/tool/character-counter/">Character Counter</a></li><li><a href="/tool/words-to-page-calculator/">Words to Pages Calculator</a></li><li><a href="/tool/character-to-words-calculator/">Character to Words Calculator</a></li><li><a href="/tool/essay-word-counter/">Essay Word Counter</a></li><li><a href="/tool/upper-case-generator/">Upper Case Generator</a></li><li><a href="/tool/lower-case-generator/">Lower Case Generator</a></li><li><a href="/tool/twitter-charactor-generator/">Twitter Character Counter</a></li><li><a href="/tool/google-meta-counter/">Google Meta Counter</a></li>
+      </ul>
+      <div class="dropdown-foot" style="margin-top:10px"><a href="/tool/">Browse all tools <span aria-hidden="true">→</span></a></div>
+    </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="prose">
+      <h2>What is a Chinese word counter?</h2>
+      <p>A Chinese word counter does a job English counters cannot: it reads text with no spaces between words and still gives you a number you can act on. Paste a paragraph above and this Chinese word counter reports eight figures at once, from the pure hanzi count to sentences and reading time, and every figure updates on each keystroke. Nothing is uploaded, because all counting runs inside your browser.</p>
+      <p>The headline number uses the convention your editor already trusts. Microsoft Word counts each Chinese character as one word and each English word as one word, and this tool follows the same rule. When someone asks for a word count Chinese standards apply to, that is the figure they expect to see.</p>
+
+      <h2>Chinese characters vs words: why the two numbers differ</h2>
+      <p>Chinese is written without spaces, so a word count in Chinese is always an estimate built by grouping characters. A single character such as 人 is a word on its own, while two or three characters combine into units like 电脑 or 电脑游戏. Linguistic research puts the average Chinese word at roughly 1.5 to 2 characters, so 500 hanzi usually works out to somewhere between 250 and 330 words. That gap is exactly why a Chinese character word count report shows both numbers instead of pretending one number answers every question.</p>
+      <p>Which number should you care about? For schoolwork, publishing and most official requirements in China, the answer is the character count, usually written as 字数. For translation quotes, the industry bills by the thousand characters. For bilingual documents, the Chinese word count that mixes hanzi plus English words is the closest match to what Word displays.</p>
+
+      <h2>How to use this Chinese character count tool</h2>
+      <p>It takes a few seconds:</p>
+      <ol>
+        <li><b>Paste or type</b> your Chinese, English or mixed text into the box. Counts update live as you write.</li>
+        <li><b>Read the Chinese characters figure</b> for the hanzi total, the number most Chinese requirements are written against.</li>
+        <li><b>Check the word count figure</b> when a brief is written in words rather than 字数, for example a 300 word abstract for an English journal.</li>
+        <li><b>Use punctuation, sentence and paragraph counts</b> to sanity check structure before you submit or publish.</li>
+      </ol>
+      <p>The sample button loads a short mixed language paragraph so you can see how each box reacts before pasting your own text.</p>
+
+      <h2>Common Chinese character limits</h2>
+      <p>Chinese writing requirements are almost always stated in characters. Here are the ones people check most often:</p>
+      <table class="limits-table">
+        <thead>
+          <tr><th>Context</th><th>Typical character limit</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Weibo post</td><td>2,000 characters</td></tr>
+          <tr><td>WeChat official account article</td><td>about 20,000 characters</td></tr>
+          <tr><td>Gaokao essay</td><td>at least 800 characters</td></tr>
+          <tr><td>Primary school composition</td><td>300 to 400 characters</td></tr>
+          <tr><td>Secondary school composition</td><td>600 to 800 characters</td></tr>
+          <tr><td>Translation quote unit</td><td>per 1,000 characters</td></tr>
+        </tbody>
+      </table>
+      <p>If your requirement is stated in words rather than characters, divide the character count by 1.7 for a quick estimate, then confirm with the word count box above.</p>
+
+      <h2>Counting mixed Chinese and English text</h2>
+      <p>Modern Chinese text rarely stays pure. Product names, citations and technical terms arrive in English, and a good Chinese character counter has to keep the two streams honest. This tool counts hanzi one by one, counts English words as whitespace separated tokens, and keeps the breakdown visible: English words sit in their own box, punctuation from both scripts sits in another, and the main word count is simply the sum of hanzi and English words. Numbers count as English words, and hyphenated terms such as state-of-the-art count as one.</p>
+      <blockquote>One hanzi is one word, one English word is one word. That single rule makes your Chinese word count match Word, and Word is the number people check.</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Questions</span>
+      <h2>Chinese Word Counter FAQ</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq">
+        <summary>How many words are in Chinese text?</summary>
+        <div class="faq-body"><p>Chinese has no spaces between words, so a word count is an estimate. Most research puts the average Chinese word at 1.5 to 2 characters, so 500 Chinese characters is roughly 250 to 330 words. This Chinese word counter uses the same convention as Microsoft Word: each hanzi counts as one word, and each English word counts as one.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Is a Chinese word count the same as a character count?</summary>
+        <div class="faq-body"><p>No. The Chinese character count is the number of hanzi in the text, while the Chinese word count groups characters into words. For schoolwork and most requirements in China, the character count is what is actually checked, which is why both numbers are shown here.</p></div>
+      </details>
+      <details class="faq">
+        <summary>How does this Chinese character counter handle mixed Chinese and English text?</summary>
+        <div class="faq-body"><p>It reports the two parts separately. Chinese characters are counted one by one, English words are counted as whitespace separated tokens, and the word count figure is the sum of both, which matches how Word reports 字数 for bilingual documents.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Does the count include punctuation?</summary>
+        <div class="faq-body"><p>Punctuation is counted in its own box rather than being added to the hanzi total, so you always see the pure Chinese character count separately from full stop and comma marks. The characters figure excludes spaces.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Is the word count the same as Microsoft Word?</summary>
+        <div class="faq-body"><p>Yes for the main figures. Word counts each Chinese character as one word and each English word as one word, and this Chinese word counter follows the same rule, so the number you see here matches what a teacher or editor sees in Word.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Is this Chinese character count tool free?</summary>
+        <div class="faq-body"><p>Yes. It is free with no signup and no limits, and all counting runs inside your browser. Your text is never uploaded or stored.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 style="font-size:clamp(22px,3vw,30px);margin-bottom:24px">Related tools</h2>
+    <div class="grid grid-3">
+      <a class="card" href="/tool/character-counter/">
+        <span class="card-icon"><img src="/assets/img/logos/character-counter-logo.png" alt="Character Counter logo" width="64" height="64" loading="lazy" decoding="async"></span>
+        <h3>Character Counter</h3>
+        <p>Count characters, words, sentences and paragraphs as you type.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/essay-word-counter/">
+        <span class="card-icon"><img src="/assets/img/logos/essay-word-counter-logo.png" alt="Essay Word Counter logo" width="64" height="64" loading="lazy" decoding="async"></span>
+        <h3>Essay Word Counter</h3>
+        <p>Track essay length against a target with pages, reading time and averages.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/character-to-words-calculator/">
+        <span class="card-icon"><img src="/assets/img/logos/character-to-words-calculator-logo.png" alt="Character to Words Calculator logo" width="64" height="64" loading="lazy" decoding="async"></span>
+        <h3>Character to Words Calculator</h3>
+        <p>Estimate how many words a given number of characters turns into.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/">
+        <span class="card-icon"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#155EEF"/><path d="M15 24h18m-7-7 7 7-7 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+        <h3>See more tools</h3>
+        <p>Browse every free counting and text tool on one page.</p>
+        <span class="card-more">See all tools <span aria-hidden="true">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <span class="brand-mark">B</span>
+          <span class="brand-text"><b>bohua</b><span>inter</span></span>
+        </a>
+        <p>Free word and character counting tools built for people who write. Everything runs in your browser, so your drafts stay yours.</p>
+      </div>
+      <div class="footer-col footer-col-tools">
+        <p class="footer-col-title"><a href="/tool/">Tools</a></p>
+        <ul>
+          <li><a href="/tool/character-counter/">Character Counter</a></li>
+          <li><a href="/tool/words-to-page-calculator/">Words to Pages</a></li>
+          <li><a href="/tool/character-to-words-calculator/">Characters to Words</a></li>
+          <li><a href="/tool/essay-word-counter/">Essay Word Counter</a></li>
+          <li><a href="/tool/twitter-charactor-generator/">Twitter Counter</a></li>
+          <li><a href="/tool/google-meta-counter/">Google Meta Counter</a></li>
+          <li><a href="/tool/alt-text-generator/">Image Alt Text Generator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Company</p>
+        <ul>
+          <li><a href="/about-us/">About Us</a></li>
+          <li><a href="/contact-us/">Contact Us</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/terms/">Terms</a></li>
+          <li><!--email_off--><a href="mailto:contact@bohuainter.com">contact@bohuainter.com</a><!--/email_off--></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-wordmark" aria-hidden="true">bohuainter</div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Bohuainter. All rights reserved.</span>
+      <span>
+        <a href="/privacy/">Privacy</a> ·
+        <a href="/terms/">Terms</a> ·
+        <a href="/contact-us/">Contact</a>
+      </span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js?v=20261119a"></script>
+</body>
+</html>
