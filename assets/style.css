@@ -1054,6 +1054,14 @@ h2[id] { scroll-margin-top: 90px; }
   text-decoration: none;
 }
 .toc-inline a:hover { background: #eef4ff; color: var(--blue); }
+.fig-toc-row { display: flex; gap: 26px; align-items: flex-start; margin: 26px 0; }
+.fig-toc-row .demo-figure { flex: 1 1 auto; margin: 0; min-width: 0; }
+.fig-toc-row .toc-side { flex: 0 0 280px; margin: 0; padding: 16px 18px 12px; }
+.fig-toc-row .toc-side a { font-size: 13.5px; padding: 6px 8px; }
+@media (max-width: 900px) {
+  .fig-toc-row { flex-direction: column; gap: 18px; }
+  .fig-toc-row .toc-side { flex: auto; width: 100%; order: -1; }
+}
 .toc-list a { color: var(--gray-600); }
 .toc-list a:hover { background: #eef4ff; color: var(--blue); }
 .more-tools {
