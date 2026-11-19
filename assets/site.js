@@ -653,6 +653,68 @@
     }
   }
 
+  /* ==========================================================
+     Tool 10 — chinese word counter
+     ========================================================== */
+  var cw = document.getElementById("cwc-input");
+  if (cw) {
+    var HANZI_RE = /[\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF]/g;
+    var CJK_PUNCT_RE = /[，。！？；：、“”‘’（）《》〈〉【】〔〕「」『』～·—…•﹐﹒﹔﹕﹖﹗＄％＼｜]/g;
+    var LAT_PUNCT_RE = /[,.!?;:"'()[\]{}<>\/\\|@#$%^&*~`+=\-_]/g;
+    var cwOut = {
+      hanzi: document.getElementById("cwc-hanzi"),
+      words: document.getElementById("cwc-words"),
+      chars: document.getElementById("cwc-chars"),
+      enwords: document.getElementById("cwc-enwords"),
+      punct: document.getElementById("cwc-punct"),
+      sentences: document.getElementById("cwc-sentences"),
+      paragraphs: document.getElementById("cwc-paragraphs"),
+      reading: document.getElementById("cwc-reading")
+    };
+    var calcCw = function () {
+      var t = cw.value;
+      var hanzi = (t.match(HANZI_RE) || []).length;
+      var enWords = (t.match(/[A-Za-z0-9]+(?:['’-][A-Za-z0-9]+)*/g) || []).length;
+      var wordCount = hanzi + enWords;
+      var charsNoSpace = t.replace(/\s/g, "").length;
+      var punct = (t.match(CJK_PUNCT_RE) || []).length + (t.match(LAT_PUNCT_RE) || []).length;
+      var sentences = t.split(/[。！？]+|[.!?]+(?:\s|$)/).filter(function (s) {
+        return s.trim().length > 0;
+      }).length;
+      var paragraphs = t.split(/\n\s*\n|\n/).filter(function (s) {
+        return s.trim().length > 0;
+      }).length;
+      cwOut.hanzi.textContent = fmt(hanzi);
+      cwOut.words.textContent = fmt(wordCount);
+      cwOut.chars.textContent = fmt(charsNoSpace);
+      cwOut.enwords.textContent = fmt(enWords);
+      cwOut.punct.textContent = fmt(punct);
+      cwOut.sentences.textContent = fmt(sentences);
+      cwOut.paragraphs.textContent = fmt(paragraphs);
+      if (cwOut.reading) {
+        cwOut.reading.textContent = (hanzi + enWords) > 0 ? Math.max(1, Math.round((hanzi + enWords) / 300)) + " min" : "0 min";
+      }
+    };
+    cw.addEventListener("input", calcCw);
+    var cwcClear = document.getElementById("cwc-clear");
+    if (cwcClear) {
+      cwcClear.addEventListener("click", function () {
+        cw.value = "";
+        calcCw();
+        cw.focus();
+      });
+    }
+    var cwcSample = document.getElementById("cwc-sample");
+    if (cwcSample) {
+      cwcSample.addEventListener("click", function () {
+        cw.value = "中文文本没有空格，所以统计字数和统计词数是两件事。一个汉字算一个字，两个或多个字再组成一个词，例如电脑和人工智能。Mixed English words are counted separately.";
+        calcCw();
+        cw.focus();
+      });
+    }
+    calcCw();
+  }
+
   /* ---------- footer year ---------- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();
