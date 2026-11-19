@@ -35,7 +35,19 @@
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
     <nav class="nav" id="primary-nav" aria-label="Primary">
-      <a class="nav-link" href="/" >Home</a>
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          Blog
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown" style="width:320px">
+          <div class="dropdown-head">Writing guides</div>
+          <a class="dropdown-item" href="/blog/how-do-you-get-word-count-on-pages/"><span class="dd-icon">P</span><span><span class="dd-title">Tips to Get Word Count In Pages</span><span class="dd-desc">Find and pin the counter in Apple Pages</span></span></a>
+          <a class="dropdown-item" href="/blog/how-long-should-your-pages-title-tag-be/"><span class="dd-icon">S</span><span><span class="dd-title">Guide to Seo Title Description Length</span><span class="dd-desc">Pixel limits for titles and meta descriptions</span></span></a>
+          <a class="dropdown-item" href="/blog/how-to-find-word-count-on-google-docs/"><span class="dd-icon">D</span><span><span class="dd-title">Guide to Find Word Count On Google Docs</span><span class="dd-desc">Where Docs hides the word count panel</span></span></a>
+          <div class="dropdown-foot"><a href="/blog/">Read the blog <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
       <div class="nav-item">
         <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
           Tools
