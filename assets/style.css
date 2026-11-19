@@ -1035,7 +1035,6 @@ details.faq .faq-body p { margin-bottom: 10px; }
 
 /* ---- on-this-page TOC + inline more-tools strip ---- */
 h2[id] { scroll-margin-top: 90px; }
-.tool-layout > :only-child { grid-column: 1 / -1; }
 .toc-inline {
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
