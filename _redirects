@@ -15,3 +15,7 @@
 # Old misspelled essay URL (renamed 2026-11-17)
 /tool/eassy-word-counter/  /tool/essay-word-counter/  301
 /tool/eassy-word-counter  /tool/essay-word-counter/  301
+
+# Old Microsoft Word post URL (replaced by new article 2026-11-20)
+/blog/how-to-check-word-count-on-microsoft-word/  /blog/how-to-check-word-count-in-microsoft-word/  301
+/blog/how-to-check-word-count-on-microsoft-word  /blog/how-to-check-word-count-in-microsoft-word/  301
