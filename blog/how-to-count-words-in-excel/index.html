@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://rsms.me/">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-<link rel="stylesheet" href="/assets/style.css?v=20261119b">
+<link rel="stylesheet" href="/assets/style.css?v=20261120a">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -155,26 +155,27 @@
 
 <section class="section">
   <div class="wrap">
+    <div class="post-layout">
     <div class="prose">
 
       <p>Excel has no word count feature, no ribbon button and no formula function with that name. What it does have is enough string handling to count words with one line of arithmetic, and that calculation is more flexible than a button would be.</p>
-      <h2>The formula</h2>
+      <h2 id="the-formula">The formula</h2>
       <p>For text in cell A1, this is the word count</p>
       <p><code>=LEN(TRIM(A1))-LEN(SUBSTITUTE(TRIM(A1)," ",""))+1</code></p>
       <p>It works by measuring the length of the text, then measuring the length again with every space removed. The difference is the number of spaces, and the number of words is one more than the number of gaps between them. TRIM collapses runs of multiple spaces and strips leading and trailing spaces, so double spacing does not inflate the result.</p>
-      <h2>Handling empty cells</h2>
+      <h2 id="handling-empty-cells">Handling empty cells</h2>
       <p>An empty cell returns one, which is wrong. Wrap it</p>
       <p><code>=IF(LEN(TRIM(A1))=0,0,LEN(TRIM(A1))-LEN(SUBSTITUTE(TRIM(A1)," ",""))+1)</code></p>
       <p>Now a blank cell returns zero and your column total stays honest.</p>
-      <h2>Counting a whole column</h2>
+      <h2 id="counting-a-whole-column">Counting a whole column</h2>
       <p>Put the single cell formula in B1, fill it down the column, then total it</p>
       <p><code>=SUM(B1:B200)</code></p>
       <p>If you would rather not add a helper column, Excel 365 and Excel 2021 support array evaluation, so this works in one cell</p>
       <p><code>=SUMPRODUCT(LEN(TRIM(A1:A200))-LEN(SUBSTITUTE(TRIM(A1:A200)," ",""))+1)</code></p>
-      <h2>The comma problem</h2>
+      <h2 id="the-comma-problem">The comma problem</h2>
       <p>Every formula above treats spaces as the only word separator. Text copied out of a PDF or a website often separates words with non breaking spaces, which look identical and are a different character. Those will merge two words into one.</p>
       <p>Two fixes. Clean the text first with Find and Replace, pasting a non breaking space into the find box. Or use Excel's own cleanup by running the text through <code>=SUBSTITUTE(A1,CHAR(160)," ")</code> before counting.</p>
-      <h2>Why not just use Word</h2>
+      <h2 id="why-not-just-use-word">Why not just use Word</h2>
       <p>Because the text is already in a spreadsheet with the rest of your data. Product descriptions in a catalogue, translations in a review queue and survey answers in a column all need their length checked in place, next to the things they relate to. Copying five hundred rows into a word processor is not a workflow.</p>
       <blockquote>A spreadsheet formula that handles edge cases beats a button that only handles the easy case. Spend two minutes getting the formula right and it will work on every file you open for years.</blockquote>
 
@@ -183,6 +184,17 @@
         <span style="color:var(--blue);flex:0 0 20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
         <span><b>Count it in one click.</b> Paste your draft into the <a href="/tool/character-counter/">character counter</a> to see words, characters, sentences and reading time at the same time.</span>
       </div>
+    </div>
+    <aside class="post-toc side-card">
+      <p class="side-card-title">On this page</p>
+      <ul>
+        <li><a href="#the-formula">The formula</a></li>
+        <li><a href="#handling-empty-cells">Handling empty cells</a></li>
+        <li><a href="#counting-a-whole-column">Counting a whole column</a></li>
+        <li><a href="#the-comma-problem">The comma problem</a></li>
+        <li><a href="#why-not-just-use-word">Why not just use Word</a></li>
+      </ul>
+    </aside>
     </div>
   </div>
 </section>
