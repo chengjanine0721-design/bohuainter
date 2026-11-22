@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Number Counter: Free Online Tap Counter and Tap Calculator</title>
+<meta name="description" content="A free online number counter. Tap or press space to count, set a step for grouped counting and a target for a progress bar. Works on phones.">
+<link rel="canonical" href="https://bohuainter.com/tool/number-counter/">
+<link rel="icon" type="image/png" href="/favicon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Number Counter: Free Online Tap Counter and Tap Calculator">
+<meta property="og:description" content="A free online number counter. Tap or press space to count, set a step for grouped counting and a target for a progress bar. Works on phones.">
+<meta property="og:url" content="https://bohuainter.com/tool/number-counter/">
+<meta property="og:site_name" content="Bohuainter">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="/assets/style.css?v=20261122a">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I use the tap counter?","acceptedAnswer":{"@type":"Answer","text":"Tap the large box or press the space bar. Every tap adds the step value to the total. The step field sets how much one tap is worth, so a step of 5 counts in fives and a step of 1 counts single items."}},{"@type":"Question","name":"Does it work with a touchscreen?","acceptedAnswer":{"@type":"Answer","text":"Yes. The tap area responds to taps and clicks the same way, and it is sized so a thumb can hit it without looking. That makes it usable as a touch counter on a phone during a set or a stock take."}},{"@type":"Question","name":"What is the difference between taps and total value?","acceptedAnswer":{"@type":"Answer","text":"Taps counts how many times you pressed. Total value is taps multiplied by the step. With a step of 1 the two numbers match, which is the normal case for counting people or items."}},{"@type":"Question","name":"Can I count down instead of up?","acceptedAnswer":{"@type":"Answer","text":"Yes. Press the minus button to subtract one step, or type a starting value into the total by using the minus button after setting a step. Resetting returns everything to zero without reloading the page."}},{"@type":"Question","name":"Is there a limit to how high the counter goes?","acceptedAnswer":{"@type":"Answer","text":"No practical limit. The counter uses ordinary numbers, so it will keep counting past a million long before anything slows down. The target field only draws the progress bar, it does not stop the count."}},{"@type":"Question","name":"Does the counter keep its value if I close the tab?","acceptedAnswer":{"@type":"Answer","text":"No. Nothing is saved to storage, which is the same privacy rule the rest of the site follows. Keep the tab open during a session and note the total down when you finish."}},{"@type":"Question","name":"What is a tap calculator?","acceptedAnswer":{"@type":"Answer","text":"A tap calculator turns taps into a quantity. Set a price, a weight or a score as the step and the total value becomes the running sum, so fifty taps at a step of 2 read as 100 without any mental arithmetic."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Number Counter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"A free online number counter. Tap or press space to count, set a step for grouped counting and a target for a progress bar. Works on phones.","url":"https://bohuainter.com/tool/number-counter/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-mark"><img src="/favicon-180.png" alt="Bohuainter logo" width="30" height="30"></span>
+      <span class="brand-text"><b>bohua</b><span>inter</span></span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          Blog
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown" style="width:320px">
+          <div class="dropdown-head">Writing guides</div>
+          <a class="dropdown-item" href="/blog/how-do-you-get-word-count-on-pages/"><span><span class="dd-title">Tips to Get Word Count In Pages</span><span class="dd-desc">Find and pin the counter in Apple Pages</span></span></a>
+          <a class="dropdown-item" href="/blog/how-long-should-your-pages-title-tag-be/"><span><span class="dd-title">Guide to Seo Title Description Length</span><span class="dd-desc">Pixel limits for titles and meta descriptions</span></span></a>
+          <a class="dropdown-item" href="/blog/how-to-find-word-count-on-google-docs/"><span><span class="dd-title">Guide to Find Word Count On Google Docs</span><span class="dd-desc">Where Docs hides the word count panel</span></span></a>
+          <a class="dropdown-item" href="/blog/how-to-check-word-count-in-microsoft-word/"><span><span class="dd-title">How to Count Words in Microsoft Word</span><span class="dd-desc">Desktop, web and mobile routes that work</span></span></a>
+          <div class="dropdown-foot"><a href="/blog/">Read the blog <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          Tools
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown dropdown-tools">
+          <div class="dropdown-head">Free writing tools</div>
+          <a class="dropdown-item" href="/tool/character-counter/">
+            <span class="dd-icon">Aa</span>
+            <span>
+              <span class="dd-title">Character Counter</span>
+              <span class="dd-desc">Count characters, words, sentences and paragraphs as you type.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/words-to-page-calculator/">
+            <span class="dd-icon">¶</span>
+            <span>
+              <span class="dd-title">Words to Pages</span>
+              <span class="dd-desc">Convert words to pages, single or double spaced, for essays and reports.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/character-to-words-calculator/">
+            <span class="dd-icon">↔</span>
+            <span>
+              <span class="dd-title">Characters to Words</span>
+              <span class="dd-desc">Estimate how many words a given number of characters turns into.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/essay-word-counter/">
+            <span class="dd-icon">✎</span>
+            <span>
+              <span class="dd-title">Essay Word Counter</span>
+              <span class="dd-desc">Track essay length against a target with pages, reading time and averages.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/upper-case-generator/">
+            <span class="dd-icon">AB</span>
+            <span>
+              <span class="dd-title">Upper Case</span>
+              <span class="dd-desc">Convert any text to UPPER CASE, title case or sentence case instantly.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/lower-case-generator/">
+            <span class="dd-icon">ab</span>
+            <span>
+              <span class="dd-title">Lower Case</span>
+              <span class="dd-desc">Convert any text to lower case, title case or sentence case instantly.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/twitter-charactor-generator/">
+            <span class="dd-icon">𝕏</span>
+            <span>
+              <span class="dd-title">Twitter Counter</span>
+              <span class="dd-desc">Check your post against the 280 character limit before you publish.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/instagram-character-counter/">
+            <span class="dd-icon">IG</span>
+            <span>
+              <span class="dd-title">Instagram Counter</span>
+              <span class="dd-desc">Check captions, bios and comments against every Instagram limit.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/linkedin-character-counter/">
+            <span class="dd-icon">in</span>
+            <span>
+              <span class="dd-title">LinkedIn Counter</span>
+              <span class="dd-desc">Measure posts, headlines and About sections against LinkedIn limits.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/google-meta-counter/">
+            <span class="dd-icon">G</span>
+            <span>
+              <span class="dd-title">Google Meta Counter</span>
+              <span class="dd-desc">Write SEO titles and descriptions that fit Google's display width.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/website-word-counter/">
+            <span class="dd-icon">ww</span>
+            <span>
+              <span class="dd-title">Website Word Counter</span>
+              <span class="dd-desc">Paste a page and count words, unique terms and keyword density.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/link-counter/">
+            <span class="dd-icon">URL</span>
+            <span>
+              <span class="dd-title">Link Counter</span>
+              <span class="dd-desc">Count links in a list and check every URL against practical length limits.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/chinese-word-counter/">
+            <span class="dd-icon">中</span>
+            <span>
+              <span class="dd-title">Chinese Word Counter</span>
+              <span class="dd-desc">Count hanzi, words and punctuation in Chinese and mixed text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/number-counter/">
+            <span class="dd-icon">#</span>
+            <span>
+              <span class="dd-title">Number Counter</span>
+              <span class="dd-desc">Tap or click to count up, with steps, targets and a tally log.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/haiku-checker/">
+            <span class="dd-icon">5-7-5</span>
+            <span>
+              <span class="dd-title">Haiku Checker</span>
+              <span class="dd-desc">Count syllables line by line and check a poem against 5-7-5.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/alt-text-generator/">
+            <span class="dd-icon">Alt</span>
+            <span>
+              <span class="dd-title">Image Alt Text Generator</span>
+              <span class="dd-desc">Build Title Case alt text and a lowercase image name from one description.</span>
+            </span>
+          </a>
+          <div class="dropdown-foot"><a href="/tool/">See all tools <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          More
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown" style="width:260px">
+          <div class="dropdown-head">Bohuainter</div>
+          <a class="dropdown-item" href="/about-us/"><span class="dd-icon">i</span><span><span class="dd-title">About Us</span><span class="dd-desc">Why this site exists</span></span></a>
+          <a class="dropdown-item" href="/contact-us/"><span class="dd-icon">@</span><span><span class="dd-title">Contact Us</span><span class="dd-desc">Questions and feedback</span></span></a>
+          <a class="dropdown-item" href="/privacy/"><span class="dd-icon">✓</span><span><span class="dd-title">Privacy</span><span class="dd-desc">What we do with your text</span></span></a>
+          <a class="dropdown-item" href="/terms/"><span class="dd-icon">§</span><span><span class="dd-title">Terms</span><span class="dd-desc">The rules of the road</span></span></a>
+          <div class="dropdown-foot"><a href="/blog/">Read the blog <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="wrap"><nav class="crumbs crumbs-bar" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/tool/">Tools</a><span class="sep">/</span><span aria-current="page">Number Counter</span></nav></div>
+<main id="main">
+
+<section class="page-hero hero-split">
+  <div class="wrap hero-split-grid">
+    <div class="hero-copy">
+      <span class="eyebrow"><i>★</i> One tap, one number</span>
+      <h1>Number Counter</h1>
+      <p>A counter built for counting while your hands are busy. Tap the big box or press Space, set a step for grouped counts, and watch a progress bar fill toward your target.</p>
+    </div>
+    <figure class="hero-demo">
+      <img src="/assets/img/number-demo.gif" alt="Number Counter counting taps up to a target of twelve" width="760" height="400" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="tool-layout">
+      <div>
+      <div class="tool-panel">
+        <div class="tool-toolbar">
+          <span class="chip active">Tap to count</span>
+          <span class="spacer"></span>
+          <div class="field" style="flex-direction:row;align-items:center;gap:8px">
+            <label for="nc-step" style="white-space:nowrap">Step</label>
+            <input type="number" id="nc-step" value="1" min="1" step="1" style="height:34px;width:76px;min-width:0">
+          </div>
+          <div class="field" style="flex-direction:row;align-items:center;gap:8px">
+            <label for="nc-target" style="white-space:nowrap">Target</label>
+            <input type="number" id="nc-target" value="12" min="0" step="1" style="height:34px;width:88px;min-width:0">
+          </div>
+          <button type="button" class="btn btn-ghost" id="nc-minus" style="height:34px;padding:0 14px;font-size:13px">Minus</button>
+          <button type="button" class="btn btn-ghost" id="nc-clear" style="height:34px;padding:0 14px;font-size:13px">Reset</button>
+        </div>
+        <button type="button" class="tap-pad" id="nc-tap">
+          <span class="tap-num" id="nc-value">0</span>
+          <span class="tap-hint">Tap here, or press Space, to add one step</span>
+        </button>
+        <div style="padding:16px 24px;border-top:1px solid var(--line-soft)">
+          <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:650;color:var(--gray-600);margin-bottom:8px">
+            <span id="nc-progress">0%</span>
+            <span><span id="nc-remain">12</span> to go</span>
+          </div>
+          <div class="meter"><i id="nc-meter" style="width:0%"></i></div>
+        </div>
+        <div class="tool-stats">
+          <div class="stat"><div class="num" id="nc-taps">0</div><div class="lab">Taps</div></div>
+          <div class="stat"><div class="num" id="nc-sum">0</div><div class="lab">Total value</div></div>
+          <div class="stat"><div class="num" id="nc-step-out">1</div><div class="lab">Step</div></div>
+          <div class="stat"><div class="num" id="nc-target-out">12</div><div class="lab">Target</div></div>
+          <div class="stat"><div class="num" id="nc-left">12</div><div class="lab">Remaining</div></div>
+          <div class="stat"><div class="num" id="nc-percent">0%</div><div class="lab">Progress</div></div>
+        </div>
+      </div>
+        <div class="callout" style="margin-top:22px">
+          <span style="color:var(--blue);flex:0 0 20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span><b>Nothing is saved.</b> The count lives in the page only, so a refresh starts from zero and no tally is stored anywhere.</span>
+        </div>
+      </div>
+    <aside class="side-card">
+      <p class="side-card-title">More tools</p>
+      <ul>
+        <li><a href="/tool/character-counter/">Character Counter</a></li><li><a href="/tool/words-to-page-calculator/">Words to Pages Calculator</a></li><li><a href="/tool/character-to-words-calculator/">Character to Words Calculator</a></li><li><a href="/tool/essay-word-counter/">Essay Word Counter</a></li><li><a href="/tool/upper-case-generator/">Upper Case Generator</a></li><li><a href="/tool/lower-case-generator/">Lower Case Generator</a></li><li><a href="/tool/twitter-charactor-generator/">Twitter Character Counter</a></li><li><a href="/tool/instagram-character-counter/">Instagram Character Counter</a></li><li><a href="/tool/linkedin-character-counter/">LinkedIn Character Counter</a></li><li><a href="/tool/google-meta-counter/">Google Meta Counter</a></li><li><a href="/tool/website-word-counter/">Website Word Counter</a></li><li><a href="/tool/link-counter/">Link Counter and URL Length Checker</a></li><li><a href="/tool/chinese-word-counter/">Chinese Word Counter</a></li><li><a href="/tool/haiku-checker/">Haiku Checker</a></li><li><a href="/tool/alt-text-generator/">Image Alt Text Generator</a></li>
+      </ul>
+      <div class="dropdown-foot" style="margin-top:10px"><a href="/tool/">Browse all tools <span aria-hidden="true">→</span></a></div>
+    </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="prose">
+      <h2>What is a number counter?</h2>
+      <p>A number counter is a single big button that adds one to a total, with no keyboard, no spreadsheet and no menu in the way. Tap it and the number goes up. Tap it fifty times and you have fifty. The step field turns it into a tap calculator, so each press can add two, five or ten when you are counting in groups rather than single items.</p>
+      <p>That simplicity is the point. Counting reps, cars, people, boxes or laps goes wrong when the counting method needs attention of its own. A counter you can operate with a thumb while looking at something else is the one that stays accurate.</p>
+
+      <h2>How to use the tap counter</h2>
+      <p>It takes a few seconds:</p>
+      <ol>
+        <li><b>Set the step.</b> One for single items, five for grouped counts, ten for a scoreboard.</li>
+        <li><b>Set a target</b> if you are counting toward a number, for example 12 reps or 200 boxes.</li>
+        <li><b>Tap the big box</b> or press the space bar. The total, the progress bar and the remaining figure update together.</li>
+        <li><b>Press Reset</b> when the set or the batch is done. The counter returns to zero and the step is kept.</li>
+      </ol>
+      <p>The space bar works because most counting happens at a desk, and one thumb on a key is faster than reaching for a mouse. On a phone, tap the box with the thumb of the hand already holding it.</p>
+
+      <h2>Taps, values and the tap calculator</h2>
+      <p>Two numbers are worth keeping apart. Taps counts presses. Total value is what those presses are worth. Said another way, how many taps a job took is the first figure and what those taps add up to is the second. With a step of 1 they are identical, and that covers most counting. With a step of 5 they diverge, and the divergence is useful: forty taps of a five count as 200, which is how you count crates, notes in a bundle or points in a game without losing your place.</p>
+      <p>The progress bar reads against the target rather than against an arbitrary maximum, so a count toward 12 reps fills at the twelfth tap and a count toward 200 fills only at the end. If the target is zero or empty, the bar stays empty and the counter simply counts.</p>
+
+      <h2>Counting methods that suit a tap counter</h2>
+      <table class="limits-table">
+        <thead>
+          <tr><th>Task</th><th>Settings that work</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Rep counting in a gym set</td><td>8 to 12 taps</td></tr>
+          <tr><td>Inventory or stock take</td><td>one tap per item, step 1</td></tr>
+          <tr><td>People through a door</td><td>one tap per person, step 1</td></tr>
+          <tr><td>Laps in a pool or a track</td><td>one tap per lap</td></tr>
+          <tr><td>Cars in a car park count</td><td>one tap per car, step 1</td></tr>
+          <tr><td>Production line batch</td><td>step 1, target per batch</td></tr>
+          <tr><td>Score in a party game</td><td>step 1, 5 or 10</td></tr>
+        </tbody>
+      </table>
+      <p>The pattern behind the table is simple. If items are identical and you count one at a time, step 1. If items arrive in bundles, set the bundle size as the step. If the number has a hard destination, set the target so the bar tells you when to stop.</p>
+
+      <h2>Touch counter or online tap counter</h2>
+      <p>The same page serves both. On a laptop it is an online tap counter with a space bar shortcut. On a phone it is a touch counter with a thumb sized target and no zoom needed. There is nothing to install, and once the page has loaded the count keeps working even if the connection drops, which matters in a basement stockroom or a gym with poor signal.</p>
+      <p>Because nothing is stored, a refresh clears the count. That is deliberate: no local storage, no cookies, no record of what anyone was counting. If you need a permanent tally, note the total in a spreadsheet between sessions.</p>
+
+      <h2>When a tap tracker beats a spreadsheet</h2>
+      <p>A spreadsheet is better for records. A tap tracker is better for the moment of counting. Use it when your hands are busy, when the count happens in the middle of another task, or when a phone is the only device available. Copy the final number into the record afterwards and the tracker has done its job.</p>
+      <p>The most common failure in manual counting is not a missed item. It is a lost place. Adding an audio-free, single-gesture counter removes that failure, because the number on screen is always the last thing you touched.</p>
+      <blockquote>One tap, one item, one number on screen. The best counting tool is the one that never asks you to remember where you were.</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Questions</span>
+      <h2>Number Counter FAQ</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq">
+        <summary>How do I use the tap counter?</summary>
+        <div class="faq-body"><p>Tap the large box or press the space bar. Every tap adds the step value to the total. The step field sets how much one tap is worth, so a step of 5 counts in fives and a step of 1 counts single items.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Does it work with a touchscreen?</summary>
+        <div class="faq-body"><p>Yes. The tap area responds to taps and clicks the same way, and it is sized so a thumb can hit it without looking. That makes it usable as a touch counter on a phone during a set or a stock take.</p></div>
+      </details>
+      <details class="faq">
+        <summary>What is the difference between taps and total value?</summary>
+        <div class="faq-body"><p>Taps counts how many times you pressed. Total value is taps multiplied by the step. With a step of 1 the two numbers match, which is the normal case for counting people or items.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Can I count down instead of up?</summary>
+        <div class="faq-body"><p>Yes. Press the minus button to subtract one step, or type a starting value into the total by using the minus button after setting a step. Resetting returns everything to zero without reloading the page.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Is there a limit to how high the counter goes?</summary>
+        <div class="faq-body"><p>No practical limit. The counter uses ordinary numbers, so it will keep counting past a million long before anything slows down. The target field only draws the progress bar, it does not stop the count.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Does the counter keep its value if I close the tab?</summary>
+        <div class="faq-body"><p>No. Nothing is saved to storage, which is the same privacy rule the rest of the site follows. Keep the tab open during a session and note the total down when you finish.</p></div>
+      </details>
+      <details class="faq">
+        <summary>What is a tap calculator?</summary>
+        <div class="faq-body"><p>A tap calculator turns taps into a quantity. Set a price, a weight or a score as the step and the total value becomes the running sum, so fifty taps at a step of 2 read as 100 without any mental arithmetic.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 style="font-size:clamp(22px,3vw,30px);margin-bottom:24px">Related tools</h2>
+    <div class="grid grid-3">
+      <a class="card" href="/tool/haiku-checker/">
+        <span class="card-icon"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#155EEF"/><text x="24" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#fff" font-family="Inter, sans-serif">5-7-5</text></svg></span>
+        <h3>Haiku Checker</h3>
+        <p>Count syllables line by line and check a poem against 5-7-5.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/character-counter/">
+        <span class="card-icon"><img src="/assets/img/logos/character-counter-logo.png" alt="Character Counter logo" width="64" height="64" loading="lazy" decoding="async"></span>
+        <h3>Character Counter</h3>
+        <p>Count characters, words, sentences and paragraphs as you type.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/link-counter/">
+        <span class="card-icon"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#155EEF"/><text x="24" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#fff" font-family="Inter, sans-serif">URL</text></svg></span>
+        <h3>Link Counter and URL Length Checker</h3>
+        <p>Count links in a list and check every URL against practical length limits.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/">
+        <span class="card-icon"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#155EEF"/><path d="M15 24h18m-7-7 7 7-7 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+        <h3>See more tools</h3>
+        <p>Browse every free counting and text tool on one page.</p>
+        <span class="card-more">See all tools <span aria-hidden="true">→</span></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <span class="brand-mark"><img src="/favicon-180.png" alt="Bohuainter logo" width="30" height="30"></span>
+          <span class="brand-text"><b>bohua</b><span>inter</span></span>
+        </a>
+        <p>Free word and character counting tools built for people who write. Everything runs in your browser, so your drafts stay yours.</p>
+      </div>
+      <div class="footer-col footer-col-tools">
+        <p class="footer-col-title"><a href="/tool/">Tools</a></p>
+        <ul>
+          <li><a href="/tool/character-counter/">Character Counter</a></li>
+          <li><a href="/tool/words-to-page-calculator/">Words to Pages</a></li>
+          <li><a href="/tool/character-to-words-calculator/">Characters to Words</a></li>
+          <li><a href="/tool/essay-word-counter/">Essay Word Counter</a></li>
+          <li><a href="/tool/upper-case-generator/">Upper Case</a></li>
+          <li><a href="/tool/lower-case-generator/">Lower Case</a></li>
+          <li><a href="/tool/twitter-charactor-generator/">Twitter Counter</a></li>
+          <li><a href="/tool/instagram-character-counter/">Instagram Counter</a></li>
+          <li><a href="/tool/linkedin-character-counter/">LinkedIn Counter</a></li>
+          <li><a href="/tool/google-meta-counter/">Google Meta Counter</a></li>
+          <li><a href="/tool/website-word-counter/">Website Word Counter</a></li>
+          <li><a href="/tool/link-counter/">Link Counter</a></li>
+          <li><a href="/tool/chinese-word-counter/">Chinese Word Counter</a></li>
+          <li><a href="/tool/number-counter/">Number Counter</a></li>
+          <li><a href="/tool/haiku-checker/">Haiku Checker</a></li>
+          <li><a href="/tool/alt-text-generator/">Image Alt Text</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Company</p>
+        <ul>
+          <li><a href="/about-us/">About Us</a></li>
+          <li><a href="/contact-us/">Contact Us</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/terms/">Terms</a></li>
+          <li><!--email_off--><a href="mailto:contact@bohuainter.com">contact@bohuainter.com</a><!--/email_off--></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-wordmark" aria-hidden="true">bohuainter</div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Bohuainter. All rights reserved.</span>
+      <span>
+        <a href="/privacy/">Privacy</a> ·
+        <a href="/terms/">Terms</a> ·
+        <a href="/contact-us/">Contact</a>
+      </span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js?v=20261122a"></script>
+</body>
+</html>
