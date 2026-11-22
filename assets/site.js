@@ -715,6 +715,519 @@
     calcCw();
   }
 
+  /* ==========================================================
+     Tool 11 — instagram character counter
+     ========================================================== */
+  var ig = document.getElementById("ic-input");
+  if (ig) {
+    var igLimit = 2200;
+    var igOut = {
+      field: document.getElementById("ic-field"),
+      chars: document.getElementById("ic-chars"),
+      nospace: document.getElementById("ic-nospace"),
+      words: document.getElementById("ic-words"),
+      hashtags: document.getElementById("ic-hashtags"),
+      mentions: document.getElementById("ic-mentions"),
+      lines: document.getElementById("ic-lines"),
+      used: document.getElementById("ic-used"),
+      total: document.getElementById("ic-total"),
+      left: document.getElementById("ic-left"),
+      meter: document.getElementById("ic-meter")
+    };
+    var HASHTAG_RE = /#[\p{L}\p{N}_]+/gu;
+    var MENTION_RE = /@[\p{L}\p{N}._]+/gu;
+
+    function igTagCount(text, re, fallback) {
+      try {
+        return (text.match(re) || []).length;
+      } catch (e) {
+        return (text.match(fallback) || []).length;
+      }
+    }
+
+    function applyLimit(used, limit, outUsed, outTotal, outLeft, meter) {
+      outUsed.textContent = fmt(used);
+      outTotal.textContent = fmt(limit);
+      outLeft.textContent = fmt(limit - used);
+      var pct = limit > 0 ? Math.min(100, (used / limit) * 100) : 0;
+      meter.style.width = pct + "%";
+      meter.classList.toggle("is-over", used > limit);
+    }
+
+    var calcIg = function () {
+      var t = ig.value;
+      var chars = countGraphemes(t);
+      var words = countWords(t);
+      igOut.chars.textContent = fmt(chars);
+      igOut.nospace.textContent = fmt(countChars(t, false));
+      igOut.words.textContent = fmt(words);
+      igOut.hashtags.textContent = fmt(igTagCount(t, HASHTAG_RE, /#[A-Za-z0-9_]+/g));
+      igOut.mentions.textContent = fmt(igTagCount(t, MENTION_RE, /@[A-Za-z0-9._]+/g));
+      igOut.lines.textContent = fmt(t ? t.split("\n").length : 0);
+      applyLimit(chars, igLimit, igOut.used, igOut.total, igOut.left, igOut.meter);
+    };
+    ig.addEventListener("input", calcIg);
+
+    document.querySelectorAll("[data-ic-limit]").forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        document.querySelectorAll("[data-ic-limit]").forEach(function (c) {
+          c.classList.toggle("active", c === chip);
+        });
+        igLimit = parseInt(chip.dataset.icLimit, 10) || 2200;
+        igOut.field.textContent = chip.dataset.icField || "Caption";
+        calcIg();
+      });
+    });
+
+    var icSample = document.getElementById("ic-sample");
+    if (icSample) {
+      icSample.addEventListener("click", function () {
+        ig.value = "One small change that saved our launch week.\n\nWe shipped the pricing page on a Tuesday instead of a Friday, and support tickets fell by half.\n\n#launchweek @ourteam";
+        calcIg();
+        ig.focus();
+      });
+    }
+    var icClear = document.getElementById("ic-clear");
+    if (icClear) {
+      icClear.addEventListener("click", function () {
+        ig.value = "";
+        calcIg();
+        ig.focus();
+      });
+    }
+    calcIg();
+  }
+
+  /* ==========================================================
+     Tool 12 — linkedin character counter
+     ========================================================== */
+  var li = document.getElementById("li-input");
+  if (li) {
+    var liLimit = 3000;
+    var liOut = {
+      field: document.getElementById("li-field"),
+      chars: document.getElementById("li-chars"),
+      nospace: document.getElementById("li-nospace"),
+      words: document.getElementById("li-words"),
+      lines: document.getElementById("li-lines"),
+      hook: document.getElementById("li-hook"),
+      reading: document.getElementById("li-reading"),
+      used: document.getElementById("li-used"),
+      total: document.getElementById("li-total"),
+      left: document.getElementById("li-left"),
+      meter: document.getElementById("li-meter")
+    };
+
+    var calcLi = function () {
+      var t = li.value;
+      var chars = countGraphemes(t);
+      var words = countWords(t);
+      var hook = t.split("\n")[0];
+      liOut.chars.textContent = fmt(chars);
+      liOut.nospace.textContent = fmt(countChars(t, false));
+      liOut.words.textContent = fmt(words);
+      liOut.lines.textContent = fmt(t ? t.split("\n").length : 0);
+      liOut.hook.textContent = fmt(t ? hook.length : 0);
+      liOut.reading.textContent = readTime(words, 220);
+      applyLimit(chars, liLimit, liOut.used, liOut.total, liOut.left, liOut.meter);
+    };
+    li.addEventListener("input", calcLi);
+
+    document.querySelectorAll("[data-li-limit]").forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        document.querySelectorAll("[data-li-limit]").forEach(function (c) {
+          c.classList.toggle("active", c === chip);
+        });
+        liLimit = parseInt(chip.dataset.liLimit, 10) || 3000;
+        liOut.field.textContent = chip.dataset.liField || "Post";
+        calcLi();
+      });
+    });
+
+    var liSample = document.getElementById("li-sample");
+    if (liSample) {
+      liSample.addEventListener("click", function () {
+        li.value = "We cut our onboarding from nine screens to three and activation rose 22 percent.\n\nHere is what we removed. The company size field nobody used, the role picker that duplicated the job title, and the tour that ran before the first real task.\n\nWhat would you cut first?";
+        calcLi();
+        li.focus();
+      });
+    }
+    var liClear = document.getElementById("li-clear");
+    if (liClear) {
+      liClear.addEventListener("click", function () {
+        li.value = "";
+        calcLi();
+        li.focus();
+      });
+    }
+    calcLi();
+  }
+
+  /* ==========================================================
+     Tool 13 — website word counter
+     ========================================================== */
+  var ww = document.getElementById("ww-input");
+  if (ww) {
+    var WW_STOP = "the a an and or of to in for on at with is are was were be been it this that as by from you your we our its not but if then than so can will just into out up".split(" ");
+    var wwOut = {
+      words: document.getElementById("ww-words"),
+      unique: document.getElementById("ww-unique"),
+      chars: document.getElementById("ww-chars"),
+      paras: document.getElementById("ww-paras"),
+      reading: document.getElementById("ww-reading"),
+      hits: document.getElementById("ww-hits"),
+      top: document.getElementById("ww-top"),
+      term: document.getElementById("ww-term")
+    };
+
+    function wwClean(raw) {
+      var t = raw;
+      if (/<\/?[a-z][\s\S]*>/i.test(t)) {
+        t = t.replace(/<(script|style|noscript)[\s\S]*?<\/\1>/gi, " ");
+        t = t.replace(/<!--[\s\S]*?-->/g, " ");
+        t = t.replace(/<[^>]+>/g, " ");
+        t = t.replace(/&nbsp;/gi, " ")
+             .replace(/&amp;/gi, "&")
+             .replace(/&lt;/gi, "<")
+             .replace(/&gt;/gi, ">")
+             .replace(/&quot;/gi, '"')
+             .replace(/&#39;/g, "'");
+      }
+      return t;
+    }
+
+    function wwToken(w) {
+      try {
+        return w.toLowerCase().replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, "");
+      } catch (e) {
+        return w.toLowerCase().replace(/^[^a-z0-9]+|[^a-z0-9]+$/g, "");
+      }
+    }
+
+    var calcWw = function () {
+      var text = wwClean(ww.value);
+      var words = splitWords(text);
+      var freq = {};
+      var uniqueSet = {};
+      words.forEach(function (raw) {
+        var k = wwToken(raw);
+        if (!k) return;
+        uniqueSet[k] = true;
+        if (k.length > 2 && WW_STOP.indexOf(k) === -1) freq[k] = (freq[k] || 0) + 1;
+      });
+      wwOut.words.textContent = fmt(words.length);
+      wwOut.unique.textContent = fmt(Object.keys(uniqueSet).length);
+      wwOut.chars.textContent = fmt(countChars(text, true));
+      wwOut.paras.textContent = fmt(text.split(/\n\s*\n/).filter(function (p) {
+        return p.trim().length > 0;
+      }).length);
+      wwOut.reading.textContent = readTime(words.length, 230);
+
+      var term = (wwOut.term && wwOut.term.value || "").trim().toLowerCase();
+      if (!term) {
+        wwOut.hits.textContent = "0";
+      } else {
+        var hay = text.toLowerCase();
+        var hits = 0;
+        var idx = hay.indexOf(term);
+        while (idx !== -1) {
+          hits++;
+          idx = hay.indexOf(term, idx + term.length);
+        }
+        wwOut.hits.textContent = fmt(hits);
+      }
+
+      var top = Object.keys(freq).sort(function (a, b) {
+        return freq[b] - freq[a] || a.localeCompare(b);
+      }).slice(0, 8);
+      wwOut.top.innerHTML = top.length
+        ? top.map(function (w) {
+            return '<span class="chip" style="cursor:default">' + w + " " + freq[w] + "</span>";
+          }).join("")
+        : '<span style="font-size:13px;color:var(--gray-400)">Paste a page to see its most repeated words.</span>';
+    };
+
+    ww.addEventListener("input", calcWw);
+    if (wwOut.term) wwOut.term.addEventListener("input", calcWw);
+    var wwSample = document.getElementById("ww-sample");
+    if (wwSample) {
+      wwSample.addEventListener("click", function () {
+        ww.value = "<h1>Shipping a static site in a weekend</h1>\n\nA static site is a folder of files. Every page is a file, every asset is a file, and the host serves them as they are. That simplicity is why a static site loads fast and costs almost nothing to run.\n\nThe trade off is that anything dynamic has to happen somewhere else. Forms need a service. Search needs an index. Comments need a third party or a build step that rebuilds the pages when someone posts.";
+        calcWw();
+        ww.focus();
+      });
+    }
+    var wwClear = document.getElementById("ww-clear");
+    if (wwClear) {
+      wwClear.addEventListener("click", function () {
+        ww.value = "";
+        calcWw();
+        ww.focus();
+      });
+    }
+    calcWw();
+  }
+
+  /* ==========================================================
+     Tool 14 — number counter (tap counter)
+     ========================================================== */
+  var ncTap = document.getElementById("nc-tap");
+  if (ncTap) {
+    var nc = { taps: 0, total: 0 };
+    var ncStepEl = document.getElementById("nc-step");
+    var ncTargetEl = document.getElementById("nc-target");
+    var ncOut = {
+      value: document.getElementById("nc-value"),
+      taps: document.getElementById("nc-taps"),
+      sum: document.getElementById("nc-sum"),
+      step: document.getElementById("nc-step-out"),
+      target: document.getElementById("nc-target-out"),
+      left: document.getElementById("nc-left"),
+      percent: document.getElementById("nc-percent"),
+      progress: document.getElementById("nc-progress"),
+      remain: document.getElementById("nc-remain"),
+      meter: document.getElementById("nc-meter")
+    };
+
+    function ncStep() {
+      var v = parseInt(ncStepEl.value, 10);
+      return isNaN(v) || v < 1 ? 1 : v;
+    }
+    function ncTarget() {
+      var v = parseInt(ncTargetEl.value, 10);
+      return isNaN(v) || v < 0 ? 0 : v;
+    }
+
+    var calcNc = function () {
+      var step = ncStep();
+      var target = ncTarget();
+      var pct = target > 0 ? Math.min(100, (nc.total / target) * 100) : 0;
+      ncOut.value.textContent = fmt(nc.total);
+      ncOut.taps.textContent = fmt(nc.taps);
+      ncOut.sum.textContent = fmt(nc.total);
+      ncOut.step.textContent = fmt(step);
+      ncOut.target.textContent = target ? fmt(target) : "none";
+      ncOut.left.textContent = target ? fmt(Math.max(0, target - nc.total)) : "-";
+      ncOut.percent.textContent = Math.round(pct) + "%";
+      ncOut.progress.textContent = Math.round(pct) + "%";
+      ncOut.remain.textContent = target ? Math.max(0, target - nc.total) : 0;
+      ncOut.meter.style.width = pct + "%";
+    };
+
+    ncTap.addEventListener("click", function () {
+      nc.taps += 1;
+      nc.total += ncStep();
+      calcNc();
+    });
+    var ncMinus = document.getElementById("nc-minus");
+    if (ncMinus) {
+      ncMinus.addEventListener("click", function () {
+        nc.total = Math.max(0, nc.total - ncStep());
+        nc.taps += 1;
+        calcNc();
+      });
+    }
+    var ncClear = document.getElementById("nc-clear");
+    if (ncClear) {
+      ncClear.addEventListener("click", function () {
+        nc.taps = 0;
+        nc.total = 0;
+        calcNc();
+      });
+    }
+    [ncStepEl, ncTargetEl].forEach(function (el) {
+      el.addEventListener("input", calcNc);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.code !== "Space" && e.key !== " ") return;
+      var tag = (document.activeElement && document.activeElement.tagName) || "";
+      if (tag === "INPUT" || tag === "TEXTAREA") return;
+      e.preventDefault();
+      nc.taps += 1;
+      nc.total += ncStep();
+      calcNc();
+    });
+    calcNc();
+  }
+
+  /* ==========================================================
+     Tool 15 — haiku checker
+     ========================================================== */
+  var hkL1 = document.getElementById("hk-l1");
+  if (hkL1) {
+    var hkLines = [
+      { input: hkL1, target: 5, badge: document.getElementById("hk-s1") },
+      { input: document.getElementById("hk-l2"), target: 7, badge: document.getElementById("hk-s2") },
+      { input: document.getElementById("hk-l3"), target: 5, badge: document.getElementById("hk-s3") }
+    ];
+    var hkOut = {
+      total: document.getElementById("hk-total"),
+      words: document.getElementById("hk-words"),
+      lines: document.getElementById("hk-lines"),
+      longest: document.getElementById("hk-longest"),
+      form: document.getElementById("hk-form"),
+      verdict: document.getElementById("hk-verdict")
+    };
+
+    function hkSyllWord(word) {
+      var w = word.toLowerCase().replace(/[^a-z]/g, "");
+      if (!w) return 0;
+      if (w.length <= 3) return 1;
+      w = w.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, "");
+      w = w.replace(/^y/, "");
+      var m = w.match(/[aeiouy]{1,2}/g);
+      return m ? m.length : 1;
+    }
+
+    function hkSyllLine(text) {
+      var words = splitWords(text);
+      if (!words.length) return 0;
+      var n = 0;
+      for (var i = 0; i < words.length; i++) n += hkSyllWord(words[i]);
+      return n;
+    }
+
+    var calcHk = function () {
+      var total = 0;
+      var words = 0;
+      var filled = 0;
+      var longest = 0;
+      var ok = true;
+      hkLines.forEach(function (row) {
+        var n = hkSyllLine(row.input.value);
+        total += n;
+        words += countWords(row.input.value);
+        if (row.input.value.trim()) filled++;
+        longest = Math.max(longest, n);
+        row.badge.textContent = n + " / " + row.target;
+        row.badge.classList.toggle("ok", n === row.target);
+        row.badge.classList.toggle("over", n > row.target);
+        if (n !== row.target) ok = false;
+      });
+      hkOut.total.textContent = fmt(total);
+      hkOut.words.textContent = fmt(words);
+      hkOut.lines.textContent = fmt(filled);
+      hkOut.longest.textContent = fmt(longest);
+      hkOut.form.textContent = ok && filled === 3 ? "5-7-5" : "Off";
+      if (filled < 3) {
+        hkOut.verdict.textContent = "Add three lines to check the form.";
+        hkOut.verdict.style.color = "var(--gray-500)";
+      } else if (ok) {
+        hkOut.verdict.textContent = "5-7-5 holds. This poem is in haiku form.";
+        hkOut.verdict.style.color = "#047857";
+      } else {
+        hkOut.verdict.textContent = "Not 5-7-5 yet. " + total + " syllables across three lines, 17 needed.";
+        hkOut.verdict.style.color = "#b45309";
+      }
+    };
+
+    hkLines.forEach(function (row) {
+      row.input.addEventListener("input", calcHk);
+    });
+
+    var HK_FIVE = ["a morning glory", "beside the still pond", "the old wooden gate", "one crow on the wire"];
+    var HK_SEVEN = ["and the white petals open", "the morning glory climbs on", "a river under the bridge"];
+
+    var hkSample = document.getElementById("hk-sample");
+    if (hkSample) {
+      hkSample.addEventListener("click", function () {
+        hkLines[0].input.value = HK_FIVE[0];
+        hkLines[1].input.value = HK_SEVEN[0];
+        hkLines[2].input.value = HK_FIVE[1];
+        calcHk();
+      });
+    }
+    var hkMake = document.getElementById("hk-make");
+    if (hkMake) {
+      hkMake.addEventListener("click", function () {
+        hkLines[0].input.value = HK_FIVE[Math.floor(Math.random() * HK_FIVE.length)];
+        hkLines[1].input.value = HK_SEVEN[Math.floor(Math.random() * HK_SEVEN.length)];
+        hkLines[2].input.value = HK_FIVE[Math.floor(Math.random() * HK_FIVE.length)];
+        calcHk();
+      });
+    }
+    var hkClear = document.getElementById("hk-clear");
+    if (hkClear) {
+      hkClear.addEventListener("click", function () {
+        hkLines.forEach(function (row) { row.input.value = ""; });
+        calcHk();
+      });
+    }
+    calcHk();
+  }
+
+  /* ==========================================================
+     Tool 16 — link counter and URL length checker
+     ========================================================== */
+  var lk = document.getElementById("lk-input");
+  if (lk) {
+    var lkOut = {
+      count: document.getElementById("lk-count"),
+      unique: document.getElementById("lk-unique"),
+      domains: document.getElementById("lk-domains"),
+      over: document.getElementById("lk-over"),
+      longest: document.getElementById("lk-longest"),
+      average: document.getElementById("lk-average"),
+      list: document.getElementById("lk-list")
+    };
+
+    function lkDomain(url) {
+      var m = url.match(/^[a-z][a-z0-9+.-]*:\/\/([^\/?#:]+)/i);
+      if (m) return m[1].toLowerCase().replace(/^www\./, "");
+      m = url.match(/^([a-z0-9-]+(?:\.[a-z0-9-]+)+)/i);
+      return m ? m[1].toLowerCase().replace(/^www\./, "") : "";
+    }
+
+    var calcLk = function () {
+      var urls = lk.value.split(/\n+/).map(function (s) {
+        return s.trim();
+      }).filter(Boolean);
+      var seen = {};
+      var domains = {};
+      var over = 0;
+      var longest = 0;
+      var sum = 0;
+      urls.forEach(function (u) {
+        seen[u] = true;
+        var dom = lkDomain(u);
+        if (dom) domains[dom] = true;
+        if (u.length > 75) over++;
+        longest = Math.max(longest, u.length);
+        sum += u.length;
+      });
+      lkOut.count.textContent = fmt(urls.length);
+      lkOut.unique.textContent = fmt(Object.keys(seen).length);
+      lkOut.domains.textContent = fmt(Object.keys(domains).length);
+      lkOut.over.textContent = fmt(over);
+      lkOut.longest.textContent = fmt(longest);
+      lkOut.average.textContent = urls.length ? fmt(Math.round(sum / urls.length)) : "0";
+      lkOut.list.innerHTML = urls.slice(0, 8).map(function (u) {
+        var cls = u.length > 75 ? "lk-row over" : "lk-row";
+        return '<div class="' + cls + '"><span class="lk-url">' + u.replace(/&/g, "&amp;").replace(/</g, "&lt;") +
+               '</span><span class="lk-len">' + u.length + "</span></div>";
+      }).join("");
+    };
+
+    lk.addEventListener("input", calcLk);
+    var lkSample = document.getElementById("lk-sample");
+    if (lkSample) {
+      lkSample.addEventListener("click", function () {
+        lk.value = "https://bohuainter.com/tool/character-counter/\nhttps://bohuainter.com/tool/number-counter/\nhttps://example.com/a/very/long/path/that/keeps/going/and/going/until/it/is/cut/off/in/a/search/result\nhttps://bohuainter.com/tool/character-counter/";
+        calcLk();
+        lk.focus();
+      });
+    }
+    var lkClear = document.getElementById("lk-clear");
+    if (lkClear) {
+      lkClear.addEventListener("click", function () {
+        lk.value = "";
+        calcLk();
+        lk.focus();
+      });
+    }
+    calcLk();
+  }
+
   /* ---------- footer year ---------- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();
