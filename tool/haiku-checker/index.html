@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haiku Checker: Syllable Counter for 5-7-5 Poems</title>
+<meta name="description" content="Check a haiku line by line against 5-7-5. Free syllable counter with a verdict, total syllables and a haiku maker that always lands in form.">
+<link rel="canonical" href="https://bohuainter.com/tool/haiku-checker/">
+<link rel="icon" type="image/png" href="/favicon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Haiku Checker: Syllable Counter for 5-7-5 Poems">
+<meta property="og:description" content="Check a haiku line by line against 5-7-5. Free syllable counter with a verdict, total syllables and a haiku maker that always lands in form.">
+<meta property="og:url" content="https://bohuainter.com/tool/haiku-checker/">
+<meta property="og:site_name" content="Bohuainter">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="/assets/style.css?v=20261122a">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many syllables are in a haiku?","acceptedAnswer":{"@type":"Answer","text":"Seventeen, split across three lines as 5, 7 and 5. In Japanese those units are on rather than English syllables, and the two do not line up exactly, which is why a strict 5-7-5 count in English is a convention rather than a law."}},{"@type":"Question","name":"How do I check whether my poem is a haiku?","acceptedAnswer":{"@type":"Answer","text":"Paste each line into the boxes above. The badge next to every line shows its syllable count against the target, and the verdict line reports whether all three match. If they do, the poem is in haiku form."}},{"@type":"Question","name":"How does this haiku syllable counter work?","acceptedAnswer":{"@type":"Answer","text":"It groups vowel sounds inside each word, drops a silent final e, and treats a final ed or es the way English speakers usually do. Common words land correctly, and unusual proper nouns are the cases worth checking by ear."}},{"@type":"Question","name":"Can this tool write a haiku for me?","acceptedAnswer":{"@type":"Answer","text":"Yes. The make one button assembles a haiku from a small word bank, with every line verified at 5, 7 and 5 syllables. Use it as a starting point, then replace the words with your own image and keep the counts."}},{"@type":"Question","name":"What is the difference between a haiku and a senryu?","acceptedAnswer":{"@type":"Answer","text":"Both use 5-7-5. A haiku refers to a season and to nature. A senryu uses the same shape for human behaviour, often with a wry or ironic turn. If your poem is about people rather than weather, it is a senryu."}},{"@type":"Question","name":"Does a haiku need a seasonal word?","acceptedAnswer":{"@type":"Answer","text":"In the Japanese tradition, yes. A kigo, a word that signals the season, anchors the poem in time. English language haiku often keep this loosely, with a specific image doing the work that a kigo does in Japanese."}},{"@type":"Question","name":"Is a 5-7-5 poem always a haiku?","acceptedAnswer":{"@type":"Answer","text":"No. Syllable count is the shape, not the content. A 5-7-5 poem about a spreadsheet is closer to a senryu or a short poem. The form is necessary and not sufficient."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Haiku Checker","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Check a haiku line by line against 5-7-5. Free syllable counter with a verdict, total syllables and a haiku maker that always lands in form.","url":"https://bohuainter.com/tool/haiku-checker/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-mark"><img src="/favicon-180.png" alt="Bohuainter logo" width="30" height="30"></span>
+      <span class="brand-text"><b>bohua</b><span>inter</span></span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          Blog
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown" style="width:320px">
+          <div class="dropdown-head">Writing guides</div>
+          <a class="dropdown-item" href="/blog/how-do-you-get-word-count-on-pages/"><span><span class="dd-title">Tips to Get Word Count In Pages</span><span class="dd-desc">Find and pin the counter in Apple Pages</span></span></a>
+          <a class="dropdown-item" href="/blog/how-long-should-your-pages-title-tag-be/"><span><span class="dd-title">Guide to Seo Title Description Length</span><span class="dd-desc">Pixel limits for titles and meta descriptions</span></span></a>
+          <a class="dropdown-item" href="/blog/how-to-find-word-count-on-google-docs/"><span><span class="dd-title">Guide to Find Word Count On Google Docs</span><span class="dd-desc">Where Docs hides the word count panel</span></span></a>
+          <a class="dropdown-item" href="/blog/how-to-check-word-count-in-microsoft-word/"><span><span class="dd-title">How to Count Words in Microsoft Word</span><span class="dd-desc">Desktop, web and mobile routes that work</span></span></a>
+          <div class="dropdown-foot"><a href="/blog/">Read the blog <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          Tools
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown dropdown-tools">
+          <div class="dropdown-head">Free writing tools</div>
+          <a class="dropdown-item" href="/tool/character-counter/">
+            <span class="dd-icon">Aa</span>
+            <span>
+              <span class="dd-title">Character Counter</span>
+              <span class="dd-desc">Count characters, words, sentences and paragraphs as you type.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/words-to-page-calculator/">
+            <span class="dd-icon">¶</span>
+            <span>
+              <span class="dd-title">Words to Pages</span>
+              <span class="dd-desc">Convert words to pages, single or double spaced, for essays and reports.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/character-to-words-calculator/">
+            <span class="dd-icon">↔</span>
+            <span>
+              <span class="dd-title">Characters to Words</span>
+              <span class="dd-desc">Estimate how many words a given number of characters turns into.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/essay-word-counter/">
+            <span class="dd-icon">✎</span>
+            <span>
+              <span class="dd-title">Essay Word Counter</span>
+              <span class="dd-desc">Track essay length against a target with pages, reading time and averages.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/upper-case-generator/">
+            <span class="dd-icon">AB</span>
+            <span>
+              <span class="dd-title">Upper Case</span>
+              <span class="dd-desc">Convert any text to UPPER CASE, title case or sentence case instantly.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/lower-case-generator/">
+            <span class="dd-icon">ab</span>
+            <span>
+              <span class="dd-title">Lower Case</span>
+              <span class="dd-desc">Convert any text to lower case, title case or sentence case instantly.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/twitter-charactor-generator/">
+            <span class="dd-icon">𝕏</span>
+            <span>
+              <span class="dd-title">Twitter Counter</span>
+              <span class="dd-desc">Check your post against the 280 character limit before you publish.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/instagram-character-counter/">
+            <span class="dd-icon">IG</span>
+            <span>
+              <span class="dd-title">Instagram Counter</span>
+              <span class="dd-desc">Check captions, bios and comments against every Instagram limit.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/linkedin-character-counter/">
+            <span class="dd-icon">in</span>
+            <span>
+              <span class="dd-title">LinkedIn Counter</span>
+              <span class="dd-desc">Measure posts, headlines and About sections against LinkedIn limits.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/google-meta-counter/">
+            <span class="dd-icon">G</span>
+            <span>
+              <span class="dd-title">Google Meta Counter</span>
+              <span class="dd-desc">Write SEO titles and descriptions that fit Google's display width.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/website-word-counter/">
+            <span class="dd-icon">ww</span>
+            <span>
+              <span class="dd-title">Website Word Counter</span>
+              <span class="dd-desc">Paste a page and count words, unique terms and keyword density.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/link-counter/">
+            <span class="dd-icon">URL</span>
+            <span>
+              <span class="dd-title">Link Counter</span>
+              <span class="dd-desc">Count links in a list and check every URL against practical length limits.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/chinese-word-counter/">
+            <span class="dd-icon">中</span>
+            <span>
+              <span class="dd-title">Chinese Word Counter</span>
+              <span class="dd-desc">Count hanzi, words and punctuation in Chinese and mixed text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/number-counter/">
+            <span class="dd-icon">#</span>
+            <span>
+              <span class="dd-title">Number Counter</span>
+              <span class="dd-desc">Tap or click to count up, with steps, targets and a tally log.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/haiku-checker/">
+            <span class="dd-icon">5-7-5</span>
+            <span>
+              <span class="dd-title">Haiku Checker</span>
+              <span class="dd-desc">Count syllables line by line and check a poem against 5-7-5.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/alt-text-generator/">
+            <span class="dd-icon">Alt</span>
+            <span>
+              <span class="dd-title">Image Alt Text Generator</span>
+              <span class="dd-desc">Build Title Case alt text and a lowercase image name from one description.</span>
+            </span>
+          </a>
+          <div class="dropdown-foot"><a href="/tool/">See all tools <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          More
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown" style="width:260px">
+          <div class="dropdown-head">Bohuainter</div>
+          <a class="dropdown-item" href="/about-us/"><span class="dd-icon">i</span><span><span class="dd-title">About Us</span><span class="dd-desc">Why this site exists</span></span></a>
+          <a class="dropdown-item" href="/contact-us/"><span class="dd-icon">@</span><span><span class="dd-title">Contact Us</span><span class="dd-desc">Questions and feedback</span></span></a>
+          <a class="dropdown-item" href="/privacy/"><span class="dd-icon">✓</span><span><span class="dd-title">Privacy</span><span class="dd-desc">What we do with your text</span></span></a>
+          <a class="dropdown-item" href="/terms/"><span class="dd-icon">§</span><span><span class="dd-title">Terms</span><span class="dd-desc">The rules of the road</span></span></a>
+          <div class="dropdown-foot"><a href="/blog/">Read the blog <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="wrap"><nav class="crumbs crumbs-bar" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/tool/">Tools</a><span class="sep">/</span><span aria-current="page">Haiku Checker</span></nav></div>
+<main id="main">
+
+<section class="page-hero hero-split">
+  <div class="wrap hero-split-grid">
+    <div class="hero-copy">
+      <span class="eyebrow"><i>★</i> 5-7-5, line by line</span>
+      <h1>Haiku Checker</h1>
+      <p>Most haiku are one syllable off. Type each line and the counter shows its syllable count against 5, 7 and 5, then tells you whether the poem holds the form.</p>
+    </div>
+    <figure class="hero-demo">
+      <img src="/assets/img/haiku-demo.gif" alt="Haiku Checker counting syllables on three lines of a haiku" width="760" height="400" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="tool-layout">
+      <div>
+      <div class="tool-panel">
+        <div class="tool-toolbar">
+          <span class="chip active">5-7-5 checker</span>
+          <span class="spacer"></span>
+          <button type="button" class="btn btn-ghost" id="hk-sample" style="height:34px;padding:0 14px;font-size:13px">Try a haiku</button>
+          <button type="button" class="btn btn-ghost" id="hk-make" style="height:34px;padding:0 14px;font-size:13px">Make one for me</button>
+          <button type="button" class="btn btn-ghost" id="hk-clear" style="height:34px;padding:0 14px;font-size:13px">Clear</button>
+        </div>
+        <div style="padding:18px 20px;display:flex;flex-direction:column;gap:10px">
+          <div class="hk-line">
+            <span class="hk-target">5</span>
+            <input class="tool-line" id="hk-l1" type="text" placeholder="First line, five syllables" aria-label="First line">
+            <span class="hk-badge" id="hk-s1">0 / 5</span>
+          </div>
+          <div class="hk-line">
+            <span class="hk-target">7</span>
+            <input class="tool-line" id="hk-l2" type="text" placeholder="Second line, seven syllables" aria-label="Second line">
+            <span class="hk-badge" id="hk-s2">0 / 7</span>
+          </div>
+          <div class="hk-line">
+            <span class="hk-target">5</span>
+            <input class="tool-line" id="hk-l3" type="text" placeholder="Third line, five syllables" aria-label="Third line">
+            <span class="hk-badge" id="hk-s3">0 / 5</span>
+          </div>
+          <p id="hk-verdict" style="margin:4px 0 0;font-size:13.5px;font-weight:650;color:var(--gray-500)">Add three lines to check the form.</p>
+        </div>
+        <div class="tool-stats">
+          <div class="stat"><div class="num" id="hk-total">0</div><div class="lab">Syllables</div></div>
+          <div class="stat"><div class="num" id="hk-words">0</div><div class="lab">Words</div></div>
+          <div class="stat"><div class="num" id="hk-lines">0</div><div class="lab">Lines</div></div>
+          <div class="stat"><div class="num" id="hk-longest">0</div><div class="lab">Longest line</div></div>
+          <div class="stat"><div class="num" id="hk-form">Off</div><div class="lab">Form</div></div>
+        </div>
+      </div>
+        <div class="callout" style="margin-top:22px">
+          <span style="color:var(--blue);flex:0 0 20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span><b>Counted in your browser.</b> No poem is uploaded, so a draft stays between you and the page until you choose to share it.</span>
+        </div>
+      </div>
+    <aside class="side-card">
+      <p class="side-card-title">More tools</p>
+      <ul>
+        <li><a href="/tool/character-counter/">Character Counter</a></li><li><a href="/tool/words-to-page-calculator/">Words to Pages Calculator</a></li><li><a href="/tool/character-to-words-calculator/">Character to Words Calculator</a></li><li><a href="/tool/essay-word-counter/">Essay Word Counter</a></li><li><a href="/tool/upper-case-generator/">Upper Case Generator</a></li><li><a href="/tool/lower-case-generator/">Lower Case Generator</a></li><li><a href="/tool/twitter-charactor-generator/">Twitter Character Counter</a></li><li><a href="/tool/instagram-character-counter/">Instagram Character Counter</a></li><li><a href="/tool/linkedin-character-counter/">LinkedIn Character Counter</a></li><li><a href="/tool/google-meta-counter/">Google Meta Counter</a></li><li><a href="/tool/website-word-counter/">Website Word Counter</a></li><li><a href="/tool/link-counter/">Link Counter and URL Length Checker</a></li><li><a href="/tool/chinese-word-counter/">Chinese Word Counter</a></li><li><a href="/tool/number-counter/">Number Counter</a></li><li><a href="/tool/alt-text-generator/">Image Alt Text Generator</a></li>
+      </ul>
+      <div class="dropdown-foot" style="margin-top:10px"><a href="/tool/">Browse all tools <span aria-hidden="true">→</span></a></div>
+    </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="prose">
+      <h2>What makes a haiku a haiku</h2>
+      <p>A haiku is a short poem in three lines with a 5-7-5 syllable pattern, seventeen syllables in total. It usually names a season, holds one clear image and stops before explaining itself. The shape is easy to describe and surprisingly hard to hit by ear, which is why a haiku checker is more useful than it sounds: most drafts are one syllable off, and the syllable that is wrong is rarely the one you suspect.</p>
+      <p>In Japanese the seventeen units are on, a sound length that does not map one to one onto English syllables. A strict 5-7-5 count in English is therefore a convention, widely used in classrooms and competitions, rather than a translation of the original rule. This checker measures English syllables, which is the convention most writers are judged against.</p>
+
+      <h2>How the haiku checker works</h2>
+      <p>Type each line into its box. The badge on the right shows the syllable count against the target for that line, so a first line of six syllables reads 6 / 5 in amber while a correct one reads 5 / 5 in green. The verdict line reports the whole poem once all three boxes have text, and the form field switches to 5-7-5 when the pattern holds.</p>
+      <p>The count comes from grouping vowels inside each word, dropping a silent final e and treating endings such as ed and es the way English speakers usually pronounce them. That handles the common vocabulary of poetry well. Proper nouns and unusual words are the places where any automatic counter, including this one, can disagree with your ear, so read those lines aloud.</p>
+
+      <h2>How to count syllables in a haiku line</h2>
+      <p>Say the line out loud and count the beats where the jaw drops. That physical test beats any rule. Then check the number against the badge. When the two disagree, the word is usually a compound or a word with a swallowed vowel, such as every, which most speakers say in two beats and some counters read as three.</p>
+      <p>Two habits shorten the work. Prefer short concrete words, because a haiku built from one and two syllable words is easy to count and easier to hear. And cut articles where the line allows it, since a and the cost a syllable each and rarely carry an image.</p>
+
+      <h2>Haiku form at a glance</h2>
+      <table class="limits-table">
+        <thead>
+          <tr><th>Form</th><th>Syllables</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Haiku, line 1</td><td>5 syllables</td></tr>
+          <tr><td>Haiku, line 2</td><td>7 syllables</td></tr>
+          <tr><td>Haiku, line 3</td><td>5 syllables</td></tr>
+          <tr><td>Whole haiku</td><td>17 syllables</td></tr>
+          <tr><td>Senryu</td><td>5-7-5, human nature instead of seasons</td></tr>
+          <tr><td>Tanka</td><td>5-7-5-7-7</td></tr>
+          <tr><td>Haiku in Japanese</td><td>17 on, not 17 English syllables</td></tr>
+          <tr><td>Line length for print</td><td>about 10 to 14 words in total</td></tr>
+        </tbody>
+      </table>
+      <p>If you are writing for a class, follow the pattern your teacher asked for. If you are writing for a journal, read what the journal publishes, because many editors now accept haiku that break 5-7-5 while keeping the image and the seasonal turn.</p>
+
+      <h2>Using the haiku maker as a starting point</h2>
+      <p>The make one button assembles a complete 5-7-5 poem from a small word bank. Every line is verified before it appears, so the result is always in form. Treat it as scaffolding: keep the shape, replace the images with something you actually saw, and the poem becomes yours. A generated line about a pond is worth less than your own line about the particular puddle outside your door.</p>
+      <p>The same button is useful when you are stuck on the middle line. Haiku fail most often at line two, where the poem has to turn. A seven syllable line that introduces a second image, rather than restating the first, is what the middle line is for.</p>
+
+      <h2>Is this a haiku? Three common mistakes</h2>
+      <p>The first is counting words instead of syllables, which produces a poem that looks short and scans long. The second is explaining the image in the last line instead of letting it land, which turns seventeen syllables into a sentence with a moral attached. The third is ignoring the season, which is optional in modern English haiku but still the fastest way to signal that you know the tradition.</p>
+      <p>None of those mistakes is fatal. A haiku that is one syllable off but holds a real image will be remembered longer than a technically perfect poem about nothing. Fix the count last, after the image is right.</p>
+      <h2>Haiku questions in short</h2>
+      <ul>
+        <li><b>How many syllables in a haiku</b> comes to 17 in total, split 5, 7 and 5 across the three lines.</li>
+        <li><b>Haiku creator</b> and haiku writer both point at the make one button, which builds a poem already in form.</li>
+        <li><b>Haiku counter</b> is another name for this checker. Paste three lines and the badges show each line count.</li>
+      </ul>
+      <blockquote>Seventeen syllables is not the poem. It is the frame that makes the image small enough to see.</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Questions</span>
+      <h2>Haiku Checker FAQ</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq">
+        <summary>How many syllables are in a haiku?</summary>
+        <div class="faq-body"><p>Seventeen, split across three lines as 5, 7 and 5. In Japanese those units are on rather than English syllables, and the two do not line up exactly, which is why a strict 5-7-5 count in English is a convention rather than a law.</p></div>
+      </details>
+      <details class="faq">
+        <summary>How do I check whether my poem is a haiku?</summary>
+        <div class="faq-body"><p>Paste each line into the boxes above. The badge next to every line shows its syllable count against the target, and the verdict line reports whether all three match. If they do, the poem is in haiku form.</p></div>
+      </details>
+      <details class="faq">
+        <summary>How does this haiku syllable counter work?</summary>
+        <div class="faq-body"><p>It groups vowel sounds inside each word, drops a silent final e, and treats a final ed or es the way English speakers usually do. Common words land correctly, and unusual proper nouns are the cases worth checking by ear.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Can this tool write a haiku for me?</summary>
+        <div class="faq-body"><p>Yes. The make one button assembles a haiku from a small word bank, with every line verified at 5, 7 and 5 syllables. Use it as a starting point, then replace the words with your own image and keep the counts.</p></div>
+      </details>
+      <details class="faq">
+        <summary>What is the difference between a haiku and a senryu?</summary>
+        <div class="faq-body"><p>Both use 5-7-5. A haiku refers to a season and to nature. A senryu uses the same shape for human behaviour, often with a wry or ironic turn. If your poem is about people rather than weather, it is a senryu.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Does a haiku need a seasonal word?</summary>
+        <div class="faq-body"><p>In the Japanese tradition, yes. A kigo, a word that signals the season, anchors the poem in time. English language haiku often keep this loosely, with a specific image doing the work that a kigo does in Japanese.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Is a 5-7-5 poem always a haiku?</summary>
+        <div class="faq-body"><p>No. Syllable count is the shape, not the content. A 5-7-5 poem about a spreadsheet is closer to a senryu or a short poem. The form is necessary and not sufficient.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 style="font-size:clamp(22px,3vw,30px);margin-bottom:24px">Related tools</h2>
+    <div class="grid grid-3">
+      <a class="card" href="/tool/number-counter/">
+        <span class="card-icon"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#155EEF"/><text x="24" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#fff" font-family="Inter, sans-serif">#</text></svg></span>
+        <h3>Number Counter</h3>
+        <p>Tap or click to count up, with steps, targets and a tally log.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/character-counter/">
+        <span class="card-icon"><img src="/assets/img/logos/character-counter-logo.png" alt="Character Counter logo" width="64" height="64" loading="lazy" decoding="async"></span>
+        <h3>Character Counter</h3>
+        <p>Count characters, words, sentences and paragraphs as you type.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/link-counter/">
+        <span class="card-icon"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#155EEF"/><text x="24" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#fff" font-family="Inter, sans-serif">URL</text></svg></span>
+        <h3>Link Counter and URL Length Checker</h3>
+        <p>Count links in a list and check every URL against practical length limits.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/">
+        <span class="card-icon"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#155EEF"/><path d="M15 24h18m-7-7 7 7-7 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+        <h3>See more tools</h3>
+        <p>Browse every free counting and text tool on one page.</p>
+        <span class="card-more">See all tools <span aria-hidden="true">→</span></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <span class="brand-mark"><img src="/favicon-180.png" alt="Bohuainter logo" width="30" height="30"></span>
+          <span class="brand-text"><b>bohua</b><span>inter</span></span>
+        </a>
+        <p>Free word and character counting tools built for people who write. Everything runs in your browser, so your drafts stay yours.</p>
+      </div>
+      <div class="footer-col footer-col-tools">
+        <p class="footer-col-title"><a href="/tool/">Tools</a></p>
+        <ul>
+          <li><a href="/tool/character-counter/">Character Counter</a></li>
+          <li><a href="/tool/words-to-page-calculator/">Words to Pages</a></li>
+          <li><a href="/tool/character-to-words-calculator/">Characters to Words</a></li>
+          <li><a href="/tool/essay-word-counter/">Essay Word Counter</a></li>
+          <li><a href="/tool/upper-case-generator/">Upper Case</a></li>
+          <li><a href="/tool/lower-case-generator/">Lower Case</a></li>
+          <li><a href="/tool/twitter-charactor-generator/">Twitter Counter</a></li>
+          <li><a href="/tool/instagram-character-counter/">Instagram Counter</a></li>
+          <li><a href="/tool/linkedin-character-counter/">LinkedIn Counter</a></li>
+          <li><a href="/tool/google-meta-counter/">Google Meta Counter</a></li>
+          <li><a href="/tool/website-word-counter/">Website Word Counter</a></li>
+          <li><a href="/tool/link-counter/">Link Counter</a></li>
+          <li><a href="/tool/chinese-word-counter/">Chinese Word Counter</a></li>
+          <li><a href="/tool/number-counter/">Number Counter</a></li>
+          <li><a href="/tool/haiku-checker/">Haiku Checker</a></li>
+          <li><a href="/tool/alt-text-generator/">Image Alt Text</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Company</p>
+        <ul>
+          <li><a href="/about-us/">About Us</a></li>
+          <li><a href="/contact-us/">Contact Us</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/terms/">Terms</a></li>
+          <li><!--email_off--><a href="mailto:contact@bohuainter.com">contact@bohuainter.com</a><!--/email_off--></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-wordmark" aria-hidden="true">bohuainter</div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Bohuainter. All rights reserved.</span>
+      <span>
+        <a href="/privacy/">Privacy</a> ·
+        <a href="/terms/">Terms</a> ·
+        <a href="/contact-us/">Contact</a>
+      </span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js?v=20261122a"></script>
+</body>
+</html>
