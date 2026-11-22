@@ -1233,3 +1233,37 @@
     el.textContent = new Date().getFullYear();
   });
 })();
+
+/* ---------- blog index: search + topic filter ---------- */
+(function () {
+  "use strict";
+  var search = document.getElementById("blog-search");
+  var grid = document.getElementById("blog-grid");
+  if (!search || !grid) return;
+  var pills = Array.prototype.slice.call(document.querySelectorAll(".bf-pill"));
+  var empty = document.getElementById("blog-empty");
+  var cat = "all";
+
+  var apply = function () {
+    var q = search.value.trim().toLowerCase();
+    var shown = 0;
+    Array.prototype.slice.call(grid.querySelectorAll(".bcard")).forEach(function (card) {
+      var okCat = cat === "all" || card.getAttribute("data-cat") === cat;
+      var okQ = !q || card.textContent.toLowerCase().indexOf(q) > -1;
+      var show = okCat && okQ;
+      card.hidden = !show;
+      if (show) shown++;
+    });
+    if (empty) empty.hidden = shown > 0;
+  };
+
+  pills.forEach(function (p) {
+    p.addEventListener("click", function () {
+      pills.forEach(function (x) { x.classList.remove("is-active"); });
+      p.classList.add("is-active");
+      cat = p.getAttribute("data-cat") || "all";
+      apply();
+    });
+  });
+  search.addEventListener("input", apply);
+})();
