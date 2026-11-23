@@ -73,6 +73,24 @@
   function fmt(n) {
     return (n || 0).toLocaleString("en-US");
   }
+  function syllWord(word) {
+    var w = word.toLowerCase().replace(/[^a-z]/g, "");
+    if (!w) return 0;
+    if (w.length <= 3) return 1;
+    w = w.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, "");
+    w = w.replace(/^y/, "");
+    var m = w.match(/[aeiouy]{1,2}/g);
+    return m ? m.length : 1;
+  }
+  /* shared limit bar renderer (used by the Instagram and LinkedIn counters) */
+  function applyLimit(used, limit, outUsed, outTotal, outLeft, meter) {
+    outUsed.textContent = fmt(used);
+    outTotal.textContent = fmt(limit);
+    outLeft.textContent = fmt(limit - used);
+    var pct = limit > 0 ? Math.min(100, (used / limit) * 100) : 0;
+    meter.style.width = pct + "%";
+    meter.classList.toggle("is-over", used > limit);
+  }
 
   /* ---------- shared live stats ---------- */
   window.Bohua = { countWords: countWords, countChars: countChars, fmt: fmt };
@@ -745,15 +763,6 @@
       }
     }
 
-    function applyLimit(used, limit, outUsed, outTotal, outLeft, meter) {
-      outUsed.textContent = fmt(used);
-      outTotal.textContent = fmt(limit);
-      outLeft.textContent = fmt(limit - used);
-      var pct = limit > 0 ? Math.min(100, (used / limit) * 100) : 0;
-      meter.style.width = pct + "%";
-      meter.classList.toggle("is-over", used > limit);
-    }
-
     var calcIg = function () {
       var t = ig.value;
       var chars = countGraphemes(t);
@@ -1226,6 +1235,684 @@
       });
     }
     calcLk();
+  }
+
+  /* ==========================================================
+     Tool 17 — word frequency counter
+     ========================================================== */
+  var wf = document.getElementById("wf-input");
+  if (wf) {
+    var wfOut = {
+      words: document.getElementById("wf-words"),
+      unique: document.getElementById("wf-unique"),
+      chars: document.getElementById("wf-chars"),
+      sents: document.getElementById("wf-sents"),
+      longest: document.getElementById("wf-longest"),
+      avg: document.getElementById("wf-avg"),
+      top: document.getElementById("wf-top")
+    };
+    var wfNorm = function (w) {
+      return w.toLowerCase().replace(/[^a-z0-9'-]/g, "");
+    };
+    var calcWf = function () {
+      var words = splitWords(wf.value).map(wfNorm).filter(Boolean);
+      var freq = {};
+      var longest = 0;
+      var sum = 0;
+      words.forEach(function (w) {
+        freq[w] = (freq[w] || 0) + 1;
+        if (w.length > longest) longest = w.length;
+        sum += w.length;
+      });
+      wfOut.words.textContent = fmt(words.length);
+      wfOut.unique.textContent = fmt(Object.keys(freq).length);
+      wfOut.chars.textContent = fmt(wf.value.length);
+      wfOut.sents.textContent = fmt(countSentences(wf.value));
+      wfOut.longest.textContent = fmt(longest);
+      wfOut.avg.textContent = words.length ? (sum / words.length).toFixed(1) : "0";
+      var top = Object.keys(freq).sort(function (a, b) {
+        return freq[b] - freq[a] || a.localeCompare(b);
+      }).slice(0, 8);
+      wfOut.top.innerHTML = top.length
+        ? top.map(function (w) {
+            return '<span class="chip" style="cursor:default">' + w + " " + freq[w] + "</span>";
+          }).join("")
+        : '<span style="font-size:13px;color:var(--gray-400)">Paste a text to see its most frequent words.</span>';
+    };
+    wf.addEventListener("input", calcWf);
+    var wfSample = document.getElementById("wf-sample");
+    if (wfSample) {
+      wfSample.addEventListener("click", function () {
+        wf.value = "The old bridge crosses the river at the edge of town. Every morning the same birds cross the bridge, and every evening the same lights come on. The bridge does not care what crosses it. It only knows the river below and the weight above.";
+        calcWf();
+        wf.focus();
+      });
+    }
+    var wfClear = document.getElementById("wf-clear");
+    if (wfClear) {
+      wfClear.addEventListener("click", function () {
+        wf.value = "";
+        calcWf();
+        wf.focus();
+      });
+    }
+    calcWf();
+  }
+
+  /* ==========================================================
+     Tool 18 — sentence counter
+     ========================================================== */
+  var sc = document.getElementById("sc-input");
+  if (sc) {
+    var scOut = {
+      sents: document.getElementById("sc-sents"),
+      words: document.getElementById("sc-words"),
+      chars: document.getElementById("sc-chars"),
+      avg: document.getElementById("sc-avg"),
+      longest: document.getElementById("sc-longest"),
+      read: document.getElementById("sc-read")
+    };
+    var calcSc = function () {
+      var t = sc.value;
+      var parts = t.split(/[.!?]+(?:\s|$)/).filter(function (s) {
+        return s.trim().length > 0;
+      });
+      var words = countWords(t);
+      var longest = 0;
+      parts.forEach(function (s) {
+        longest = Math.max(longest, countWords(s));
+      });
+      scOut.sents.textContent = fmt(parts.length);
+      scOut.words.textContent = fmt(words);
+      scOut.chars.textContent = fmt(t.length);
+      scOut.avg.textContent = parts.length ? (words / parts.length).toFixed(1) : "0";
+      scOut.longest.textContent = fmt(longest);
+      scOut.read.textContent = readTime(words);
+    };
+    sc.addEventListener("input", calcSc);
+    var scSample = document.getElementById("sc-sample");
+    if (scSample) {
+      scSample.addEventListener("click", function () {
+        sc.value = "Morning fog kept the valley quiet. By ten the sun had burned it off, and the trail was dry again. We walked to the ridge, ate quickly, and started down before the wind picked up. Nobody said much on the way back.";
+        calcSc();
+        sc.focus();
+      });
+    }
+    var scClear = document.getElementById("sc-clear");
+    if (scClear) {
+      scClear.addEventListener("click", function () {
+        sc.value = "";
+        calcSc();
+        sc.focus();
+      });
+    }
+    calcSc();
+  }
+
+  /* ==========================================================
+     Tool 19 — paragraph counter
+     ========================================================== */
+  var pc = document.getElementById("pc-input");
+  if (pc) {
+    var pcOut = {
+      paras: document.getElementById("pc-paras"),
+      words: document.getElementById("pc-words"),
+      sents: document.getElementById("pc-sents"),
+      chars: document.getElementById("pc-chars"),
+      avg: document.getElementById("pc-avg"),
+      longest: document.getElementById("pc-longest")
+    };
+    var calcPc = function () {
+      var t = pc.value;
+      var parts = t.split(/\n\s*\n|\n/).filter(function (s) {
+        return s.trim().length > 0;
+      });
+      var longest = 0;
+      parts.forEach(function (s) {
+        longest = Math.max(longest, countWords(s));
+      });
+      pcOut.paras.textContent = fmt(parts.length);
+      pcOut.words.textContent = fmt(countWords(t));
+      pcOut.sents.textContent = fmt(countSentences(t));
+      pcOut.chars.textContent = fmt(t.length);
+      pcOut.avg.textContent = parts.length ? (countWords(t) / parts.length).toFixed(1) : "0";
+      pcOut.longest.textContent = fmt(longest);
+    };
+    pc.addEventListener("input", calcPc);
+    var pcSample = document.getElementById("pc-sample");
+    if (pcSample) {
+      pcSample.addEventListener("click", function () {
+        pc.value = "The kitchen was the heart of the house.\n\nNobody cooked much, but everyone ended up there with a cup of something, talking over the day. The table had three different chairs from three different sets, and nobody could remember where the fourth had gone.\n\nWhen the house was sold, the table went to the youngest, chairs and all.";
+        calcPc();
+        pc.focus();
+      });
+    }
+    var pcClear = document.getElementById("pc-clear");
+    if (pcClear) {
+      pcClear.addEventListener("click", function () {
+        pc.value = "";
+        calcPc();
+        pc.focus();
+      });
+    }
+    calcPc();
+  }
+
+  /* ==========================================================
+     Tool 20 — line counter
+     ========================================================== */
+  var lc = document.getElementById("lc-input");
+  if (lc) {
+    var lcOut = {
+      lines: document.getElementById("lc-lines"),
+      filled: document.getElementById("lc-filled"),
+      empty: document.getElementById("lc-empty"),
+      words: document.getElementById("lc-words"),
+      chars: document.getElementById("lc-chars"),
+      longest: document.getElementById("lc-longest")
+    };
+    var calcLc = function () {
+      var t = lc.value;
+      var lines = t.length ? t.split("\n") : [];
+      var filled = lines.filter(function (s) {
+        return s.trim().length > 0;
+      }).length;
+      var longest = 0;
+      lines.forEach(function (s) {
+        longest = Math.max(longest, s.length);
+      });
+      lcOut.lines.textContent = fmt(lines.length);
+      lcOut.filled.textContent = fmt(filled);
+      lcOut.empty.textContent = fmt(lines.length - filled);
+      lcOut.words.textContent = fmt(countWords(t));
+      lcOut.chars.textContent = fmt(t.length);
+      lcOut.longest.textContent = fmt(longest);
+    };
+    lc.addEventListener("input", calcLc);
+    var lcSample = document.getElementById("lc-sample");
+    if (lcSample) {
+      lcSample.addEventListener("click", function () {
+        lc.value = "app/\n  main.py\n  helpers.py\n  settings.py\ntests/\n  test_main.py\nREADME.md\nLICENSE";
+        calcLc();
+        lc.focus();
+      });
+    }
+    var lcClear = document.getElementById("lc-clear");
+    if (lcClear) {
+      lcClear.addEventListener("click", function () {
+        lc.value = "";
+        calcLc();
+        lc.focus();
+      });
+    }
+    calcLc();
+  }
+
+  /* ==========================================================
+     Tool 21 — syllable counter
+     ========================================================== */
+  var sy = document.getElementById("sy-input");
+  if (sy) {
+    var syOut = {
+      syll: document.getElementById("sy-syll"),
+      words: document.getElementById("sy-words"),
+      chars: document.getElementById("sy-chars"),
+      avg: document.getElementById("sy-avg"),
+      one: document.getElementById("sy-one"),
+      longest: document.getElementById("sy-longest")
+    };
+    var calcSy = function () {
+      var words = splitWords(sy.value);
+      var total = 0;
+      var one = 0;
+      var most = 0;
+      words.forEach(function (w) {
+        var n = syllWord(w);
+        total += n;
+        if (n === 1) one++;
+        most = Math.max(most, n);
+      });
+      syOut.syll.textContent = fmt(total);
+      syOut.words.textContent = fmt(words.length);
+      syOut.chars.textContent = fmt(sy.value.length);
+      syOut.avg.textContent = words.length ? (total / words.length).toFixed(1) : "0";
+      syOut.one.textContent = fmt(one);
+      syOut.longest.textContent = fmt(most);
+    };
+    sy.addEventListener("input", calcSy);
+    var sySample = document.getElementById("sy-sample");
+    if (sySample) {
+      sySample.addEventListener("click", function () {
+        sy.value = "The quiet harbor waited under a gray morning sky. Fishing boats rocked gently beside the stone pier, and gulls argued over scraps near the market stalls.";
+        calcSy();
+        sy.focus();
+      });
+    }
+    var syClear = document.getElementById("sy-clear");
+    if (syClear) {
+      syClear.addEventListener("click", function () {
+        sy.value = "";
+        calcSy();
+        sy.focus();
+      });
+    }
+    calcSy();
+  }
+
+  /* ==========================================================
+     Tool 22 — hashtag counter
+     ========================================================== */
+  var hg = document.getElementById("hg-input");
+  if (hg) {
+    var hgOut = {
+      count: document.getElementById("hg-count"),
+      unique: document.getElementById("hg-unique"),
+      dups: document.getElementById("hg-dups"),
+      chars: document.getElementById("hg-chars"),
+      words: document.getElementById("hg-words"),
+      longest: document.getElementById("hg-longest"),
+      top: document.getElementById("hg-top")
+    };
+    var calcHg = function () {
+      var t = hg.value;
+      var matches = t.match(/#[A-Za-z0-9_]+/g) || [];
+      var seen = {};
+      var longest = 0;
+      matches.forEach(function (m) {
+        seen[m.toLowerCase()] = true;
+        longest = Math.max(longest, m.length - 1);
+      });
+      hgOut.count.textContent = fmt(matches.length);
+      hgOut.unique.textContent = fmt(Object.keys(seen).length);
+      hgOut.dups.textContent = fmt(matches.length - Object.keys(seen).length);
+      hgOut.chars.textContent = fmt(t.length);
+      hgOut.words.textContent = fmt(countWords(t));
+      hgOut.longest.textContent = fmt(longest);
+      hgOut.top.innerHTML = matches.length
+        ? matches.slice(0, 12).map(function (m) {
+            return '<span class="chip" style="cursor:default">' + m + "</span>";
+          }).join("")
+        : '<span style="font-size:13px;color:var(--gray-400)">Paste a caption to see every hashtag pulled out of it.</span>';
+    };
+    hg.addEventListener("input", calcHg);
+    var hgSample = document.getElementById("hg-sample");
+    if (hgSample) {
+      hgSample.addEventListener("click", function () {
+        hg.value = "Morning run by the water before the city wakes up. Same route, new playlist, better mood.\n\n#morningrun #running #5k #citylife #morningrun #fitness #waterfront #sunrise #morningrun";
+        calcHg();
+        hg.focus();
+      });
+    }
+    var hgClear = document.getElementById("hg-clear");
+    if (hgClear) {
+      hgClear.addEventListener("click", function () {
+        hg.value = "";
+        calcHg();
+        hg.focus();
+      });
+    }
+    calcHg();
+  }
+
+  /* ==========================================================
+     Tool 23 — comma counter
+     ========================================================== */
+  var cm = document.getElementById("cm-input");
+  if (cm) {
+    var cmOut = {
+      commas: document.getElementById("cm-commas"),
+      words: document.getElementById("cm-words"),
+      sents: document.getElementById("cm-sents"),
+      chars: document.getElementById("cm-chars"),
+      per: document.getElementById("cm-per"),
+      longest: document.getElementById("cm-longest")
+    };
+    var calcCm = function () {
+      var t = cm.value;
+      var commas = (t.match(/,/g) || []).length;
+      var words = countWords(t);
+      var parts = t.split(/[.!?]+(?:\s|$)/).filter(function (s) {
+        return s.trim().length > 0;
+      });
+      var longest = 0;
+      parts.forEach(function (s) {
+        longest = Math.max(longest, countWords(s));
+      });
+      cmOut.commas.textContent = fmt(commas);
+      cmOut.words.textContent = fmt(words);
+      cmOut.sents.textContent = fmt(parts.length);
+      cmOut.chars.textContent = fmt(t.length);
+      cmOut.per.textContent = commas ? fmt(Math.round(words / commas)) : "0";
+      cmOut.longest.textContent = fmt(longest);
+    };
+    cm.addEventListener("input", calcCm);
+    var cmSample = document.getElementById("cm-sample");
+    if (cmSample) {
+      cmSample.addEventListener("click", function () {
+        cm.value = "The plan was simple, the budget was not, and the timeline kept moving. We hired slowly, spent carefully, and shipped the first version in the spring. By summer the numbers worked, mostly because nobody panicked, and the second version paid for the first.";
+        calcCm();
+        cm.focus();
+      });
+    }
+    var cmClear = document.getElementById("cm-clear");
+    if (cmClear) {
+      cmClear.addEventListener("click", function () {
+        cm.value = "";
+        calcCm();
+        cm.focus();
+      });
+    }
+    calcCm();
+  }
+
+  /* ==========================================================
+     Tool 24 — character frequency counter
+     ========================================================== */
+  var cf = document.getElementById("cf-input");
+  if (cf) {
+    var cfOut = {
+      chars: document.getElementById("cf-chars"),
+      letters: document.getElementById("cf-letters"),
+      digits: document.getElementById("cf-digits"),
+      spaces: document.getElementById("cf-spaces"),
+      unique: document.getElementById("cf-unique"),
+      punct: document.getElementById("cf-punct"),
+      top: document.getElementById("cf-top")
+    };
+    var calcCf = function () {
+      var t = cf.value;
+      var freq = {};
+      var letters = 0;
+      var digits = 0;
+      var spaces = 0;
+      var punct = 0;
+      for (var i = 0; i < t.length; i++) {
+        var c = t[i];
+        if (/[a-zA-Z]/.test(c)) {
+          letters++;
+          var w = c.toLowerCase();
+          freq[w] = (freq[w] || 0) + 1;
+        } else if (/[0-9]/.test(c)) {
+          digits++;
+        } else if (c === " ") {
+          spaces++;
+        } else if (/\S/.test(c)) {
+          punct++;
+        }
+      }
+      cfOut.chars.textContent = fmt(t.length);
+      cfOut.letters.textContent = fmt(letters);
+      cfOut.digits.textContent = fmt(digits);
+      cfOut.spaces.textContent = fmt(spaces);
+      cfOut.unique.textContent = fmt(Object.keys(freq).length);
+      cfOut.punct.textContent = fmt(punct);
+      var top = Object.keys(freq).sort(function (a, b) {
+        return freq[b] - freq[a] || a.localeCompare(b);
+      }).slice(0, 10);
+      cfOut.top.innerHTML = top.length
+        ? top.map(function (w) {
+            return '<span class="chip" style="cursor:default">' + w + " " + freq[w] + "</span>";
+          }).join("")
+        : '<span style="font-size:13px;color:var(--gray-400)">Paste a text to see its most frequent letters.</span>';
+    };
+    cf.addEventListener("input", calcCf);
+    var cfSample = document.getElementById("cf-sample");
+    if (cfSample) {
+      cfSample.addEventListener("click", function () {
+        cf.value = "Set a watchman on the tower at the edge of the field. The storm is coming from the west, and the bridge will flood before midnight. Send word to the ferryman tonight.";
+        calcCf();
+        cf.focus();
+      });
+    }
+    var cfClear = document.getElementById("cf-clear");
+    if (cfClear) {
+      cfClear.addEventListener("click", function () {
+        cf.value = "";
+        calcCf();
+        cf.focus();
+      });
+    }
+    calcCf();
+  }
+
+  /* ==========================================================
+     Tool 25 — noun finder (listing nouns)
+     ========================================================== */
+  var LN_NOUNS = ("time year people way day man thing woman life child world school state family student group country problem hand part place case week company system program question work government number night point home water room mother area money story fact month lot right study book eye job word business issue side kind head house service friend father power hour game line end member law car city name team minute idea kid body information back parent face level office door health person art war history party result change morning reason research girl moment air teacher force education foot boy age policy process music market sense nation plan college interest death experience effect class control care field development role effort rate heart drug show leader light voice wife police mind price report decision son view relationship town road arm difference value building action model season society tax director position player record paper space ground form event matter range evening bridge river edge birds bird sun trail wind valley fog kitchen table chair cup afternoon window lesson fence children silence classroom stall gull pier stone boat fishing harbor sky customer courier parcel bell photo street delivery head heart hand eye foot face night limit section budget forecast summary client order flow noise weather").split(/\s+/);
+  var LN_SUFFIXES = ["tion", "sion", "ment", "ness", "ity", "ance", "ence", "ship", "ism"];
+  var ln = document.getElementById("ln-input");
+  if (ln) {
+    var lnSet = {};
+    LN_NOUNS.forEach(function (w) { lnSet[w] = true; });
+    var lnOut = {
+      nouns: document.getElementById("ln-nouns"),
+      words: document.getElementById("ln-words"),
+      unique: document.getElementById("ln-unique"),
+      sents: document.getElementById("ln-sents"),
+      chars: document.getElementById("ln-chars"),
+      per: document.getElementById("ln-per"),
+      top: document.getElementById("ln-top")
+    };
+    var lnCheck = function (raw) {
+      var w = raw.toLowerCase().replace(/[^a-z]/g, "");
+      if (!w) return false;
+      if (lnSet[w]) return true;
+      if (w.length > 3 && w.slice(-1) === "s" && lnSet[w.slice(0, -1)]) return true;
+      if (w.length > 4 && w.slice(-3) === "ies" && lnSet[w.slice(0, -3) + "y"]) return true;
+      if (w.length > 4 && w.slice(-2) === "es" && lnSet[w.slice(0, -2)]) return true;
+      for (var i = 0; i < LN_SUFFIXES.length; i++) {
+        if (w.length >= 6 && w.slice(-LN_SUFFIXES[i].length) === LN_SUFFIXES[i]) return true;
+      }
+      return false;
+    };
+    var calcLn = function () {
+      var t = ln.value;
+      var words = splitWords(t);
+      var nouns = [];
+      var seen = {};
+      words.forEach(function (w) {
+        if (lnCheck(w)) {
+          nouns.push(w);
+          seen[w.toLowerCase().replace(/[^a-z]/g, "")] = true;
+        }
+      });
+      lnOut.nouns.textContent = fmt(nouns.length);
+      lnOut.words.textContent = fmt(words.length);
+      lnOut.unique.textContent = fmt(Object.keys(seen).length);
+      lnOut.sents.textContent = fmt(countSentences(t));
+      lnOut.chars.textContent = fmt(t.length);
+      lnOut.per.textContent = parts_length_helper(t, nouns.length);
+      lnOut.top.innerHTML = nouns.length
+        ? nouns.slice(0, 12).map(function (w) {
+            return '<span class="chip" style="cursor:default">' + w + "</span>";
+          }).join("")
+        : '<span style="font-size:13px;color:var(--gray-400)">Paste a sentence to see the nouns in it.</span>';
+    };
+    function parts_length_helper(t, nouns) {
+      var parts = t.split(/[.!?]+(?:\s|$)/).filter(function (s) {
+        return s.trim().length > 0;
+      }).length;
+      return parts ? fmt(Math.round(nouns / parts)) : "0";
+    }
+    ln.addEventListener("input", calcLn);
+    var lnSample = document.getElementById("ln-sample");
+    if (lnSample) {
+      lnSample.addEventListener("click", function () {
+        ln.value = "The teacher opened the window because the classroom felt warm after the morning lesson. A bird landed on the fence outside, and the children watched it in silence.";
+        calcLn();
+        ln.focus();
+      });
+    }
+    var lnClear = document.getElementById("ln-clear");
+    if (lnClear) {
+      lnClear.addEventListener("click", function () {
+        ln.value = "";
+        calcLn();
+        ln.focus();
+      });
+    }
+    calcLn();
+  }
+
+  /* ==========================================================
+     Tool 26 — adverb checker
+     ========================================================== */
+  var LY_NOT = ("only family reply apply supply july fly multiply imply comply belly silly bully holly jelly rally tally valley ally assembly anatomy anomaly monopoly lily").split(/\s+/);
+  var ADV_IRREG = ("very quite rather too also well fast hard late early never always often sometimes usually rarely seldom here there now then just almost nearly really already soon still yet again away ago together instead perhaps maybe much forward afterward anyway everywhere somewhere nowhere abroad ahead aloud apart aside enough").split(/\s+/);
+  var av = document.getElementById("av-input");
+  if (av) {
+    var avNot = {};
+    LY_NOT.forEach(function (w) { avNot[w] = true; });
+    var avIrreg = {};
+    ADV_IRREG.forEach(function (w) { avIrreg[w] = true; });
+    var avOut = {
+      count: document.getElementById("av-count"),
+      words: document.getElementById("av-words"),
+      unique: document.getElementById("av-unique"),
+      sents: document.getElementById("av-sents"),
+      density: document.getElementById("av-density"),
+      chars: document.getElementById("av-chars"),
+      top: document.getElementById("av-top")
+    };
+    var avCheck = function (raw) {
+      var w = raw.toLowerCase().replace(/[^a-z]/g, "");
+      if (!w) return false;
+      if (avIrreg[w]) return true;
+      if (w.length >= 4 && w.slice(-2) === "ly" && !avNot[w]) return true;
+      return false;
+    };
+    var calcAv = function () {
+      var t = av.value;
+      var words = splitWords(t);
+      var adverbs = [];
+      var seen = {};
+      words.forEach(function (w) {
+        if (avCheck(w)) {
+          adverbs.push(w);
+          seen[w.toLowerCase().replace(/[^a-z]/g, "")] = true;
+        }
+      });
+      avOut.count.textContent = fmt(adverbs.length);
+      avOut.words.textContent = fmt(words.length);
+      avOut.unique.textContent = fmt(Object.keys(seen).length);
+      avOut.sents.textContent = fmt(countSentences(t));
+      avOut.density.textContent = words.length ? Math.round(adverbs.length / words.length * 100) + "%" : "0%";
+      avOut.chars.textContent = fmt(t.length);
+      avOut.top.innerHTML = adverbs.length
+        ? adverbs.slice(0, 12).map(function (w) {
+            return '<span class="chip" style="cursor:default">' + w + "</span>";
+          }).join("")
+        : '<span style="font-size:13px;color:var(--gray-400)">Paste a sentence to see the adverbs in it.</span>';
+    };
+    av.addEventListener("input", calcAv);
+    var avSample = document.getElementById("av-sample");
+    if (avSample) {
+      avSample.addEventListener("click", function () {
+        av.value = "She quickly finished the report and then carefully reviewed every number again. The summary was quite clear, and the client almost approved it immediately, but the budget section was slightly over the limit, so the team quietly adjusted the forecast.";
+        calcAv();
+        av.focus();
+      });
+    }
+    var avClear = document.getElementById("av-clear");
+    if (avClear) {
+      avClear.addEventListener("click", function () {
+        av.value = "";
+        calcAv();
+        av.focus();
+      });
+    }
+    calcAv();
+  }
+
+  /* ==========================================================
+     Tool 27 — verb finder
+     ========================================================== */
+  var VF_AUX = ("be am is are was were been being have has had do does did will would shall should may might must can could").split(/\s+/);
+  var VF_VERBS = ("say go get make know think take see come want look use find give tell work call try ask need feel become leave put mean keep let begin seem talk show turn start like help speak run move live believe bring happen write provide sit stand lose pay meet include continue set learn change lead understand watch follow stop create read spend grow open walk win teach offer remember consider appear buy wait serve die send expect build stay fall cut reach kill remain suggest raise pass sell require report decide pull return drive break hear hold bring carry wear catch choose cover deal draw drink eat fly forget forgive grow hide hit hold hurt keep lead lie lose make pay mean meet pay put quit ride ring rise run say see seek sell send shake shine shoot shut sing sink sit sleep slide speak spend stand steal stick strike swim swing take teach tear tell think throw understand wake wear win wind write answer arrive attack bake behave boil borrow brush cause chase climb collect combine compare complete consist contain correct count crash dance deliver destroy disappear discover drag dream dress employ escape examine excite exercise exist expand expect explain express fail fill finish fit flash float flow fold force form found gather greet guess handle hang happen hire hug imagine install invite jump kick kiss knit knock laugh lift light listen load lock mail manage march match measure miss mix mount move multiply observe obtain occur offer organize paint park perform pick point pour practice prepare press prevent print produce promise protect provide publish punish push question reach realize receive refuse regard regret relax release remind remove repair replace reply rescue rest retire review ride ring rise roll rot rub ruin rule rush satisfy scatter search settle sew shelter shift shock smile smoke snatch sneeze soak solve sort spark spell spill spoil spray squeeze stain stamp start steal step stick stir stop stretch stroke stuff suck supply support suppose surprise surrender suspect swallow sway tame taste tease tempt thank threaten throw tick tie touch tour trace travel treat trip trust twist type urge use vanish vary visit vote wake wander warn waste weave weigh welcome whip whisper whistle widen wipe wish wonder wrap wreck yell yell zip").split(/\s+/);
+  var VF_PAST = ("said went got made knew thought took saw came felt found gave told kept began seemed showed turned started helped spoke moved lived brought happened wrote sat stood lost paid met set led understood read spent grew opened walked won taught offered remembered bought waited served died expected built stayed fell cut reached remained suggested raised passed sold pulled returned broke called tried asked needed used included continued created followed stopped provided decided required reported drove rang left sent finished reviewed approved adjusted worked shipped hired panicked watched landed opened").split(/\s+/);
+  var vf = document.getElementById("vf-input");
+  if (vf) {
+    var vfAux = {};
+    VF_AUX.forEach(function (w) { vfAux[w] = true; });
+    var vfBase = {};
+    VF_VERBS.concat(VF_PAST).forEach(function (w) { vfBase[w] = true; });
+    var vfOut = {
+      count: document.getElementById("vf-count"),
+      words: document.getElementById("vf-words"),
+      aux: document.getElementById("vf-aux"),
+      unique: document.getElementById("vf-unique"),
+      sents: document.getElementById("vf-sents"),
+      per: document.getElementById("vf-per"),
+      top: document.getElementById("vf-top")
+    };
+    var vfStem = function (w) {
+      if (w.length > 4 && w.slice(-3) === "ing") {
+        var s = w.slice(0, -3);
+        if (vfBase[s]) return true;
+        if (s.length > 2 && s.slice(-1) === s.slice(-2) && vfBase[s.slice(0, -1)]) return true;
+      }
+      if (w.length > 3 && w.slice(-2) === "ed") {
+        var s2 = w.slice(0, -2);
+        if (vfBase[s2]) return true;
+        if (s2.length > 2 && s2.slice(-1) === s2.slice(-2) && vfBase[s2.slice(0, -1)]) return true;
+        if (vfBase[w.slice(0, -1)]) return true;
+      }
+      return false;
+    };
+    var vfCheck = function (raw) {
+      var w = raw.toLowerCase().replace(/[^a-z]/g, "");
+      if (!w) return false;
+      if (vfAux[w]) return true;
+      if (vfBase[w]) return true;
+      return vfStem(w);
+    };
+    var calcVf = function () {
+      var t = vf.value;
+      var words = splitWords(t);
+      var verbs = [];
+      var seen = {};
+      var aux = 0;
+      words.forEach(function (w) {
+        if (vfCheck(w)) {
+          verbs.push(w);
+          var k = w.toLowerCase().replace(/[^a-z]/g, "");
+          seen[k] = true;
+          if (vfAux[k]) aux++;
+        }
+      });
+      var parts = t.split(/[.!?]+(?:\s|$)/).filter(function (s) {
+        return s.trim().length > 0;
+      }).length;
+      vfOut.count.textContent = fmt(verbs.length);
+      vfOut.words.textContent = fmt(words.length);
+      vfOut.aux.textContent = fmt(aux);
+      vfOut.unique.textContent = fmt(Object.keys(seen).length);
+      vfOut.sents.textContent = fmt(parts);
+      vfOut.per.textContent = parts ? fmt(Math.round(verbs.length / parts)) : "0";
+      vfOut.top.innerHTML = verbs.length
+        ? verbs.slice(0, 12).map(function (w) {
+            return '<span class="chip" style="cursor:default">' + w + "</span>";
+          }).join("")
+        : '<span style="font-size:13px;color:var(--gray-400)">Paste a sentence to see the verbs in it.</span>';
+    };
+    vf.addEventListener("input", calcVf);
+    var vfSample = document.getElementById("vf-sample");
+    if (vfSample) {
+      vfSample.addEventListener("click", function () {
+        vf.value = "The courier left the parcel at the door and rang the bell twice, but nobody was home. He took a photo, sent it to the customer, and drove on to the next street, where another delivery was waiting.";
+        calcVf();
+        vf.focus();
+      });
+    }
+    var vfClear = document.getElementById("vf-clear");
+    if (vfClear) {
+      vfClear.addEventListener("click", function () {
+        vf.value = "";
+        calcVf();
+        vf.focus();
+      });
+    }
+    calcVf();
   }
 
   /* ---------- footer year ---------- */
