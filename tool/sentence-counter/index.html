@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sentence Counter: Count Sentences and Check Readability</title>
+<meta name="description" content="A free sentence counter. Paste text to count sentences, words and average sentence length, and check reading time. Everything runs in your browser.">
+<link rel="canonical" href="https://bohuainter.com/tool/sentence-counter/">
+<link rel="icon" type="image/png" href="/favicon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sentence Counter: Count Sentences and Check Readability">
+<meta property="og:description" content="A free sentence counter. Paste text to count sentences, words and average sentence length, and check reading time. Everything runs in your browser.">
+<meta property="og:url" content="https://bohuainter.com/tool/sentence-counter/">
+<meta property="og:site_name" content="Bohuainter">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="/assets/style.css?v=20261122a">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does this sentence counter work?","acceptedAnswer":{"@type":"Answer","text":"The tool reads your text and ends a sentence at a full stop, a question mark or an exclamation mark when it is followed by a space or the end of the text. It then reports the number of sentences, total words, average words per sentence, the longest sentence and an estimated reading time."}},{"@type":"Question","name":"How many sentences are in my paragraph?","acceptedAnswer":{"@type":"Answer","text":"Paste the paragraph into the box and the number appears at once. The sentence count updates as you type, so you can add or remove a sentence and watch the figure change without pressing a button."}},{"@type":"Question","name":"How do I count sentences in a long document?","acceptedAnswer":{"@type":"Answer","text":"Paste the whole document. A sentence counter online handles a single line or a full page the same way, scanning all the text and splitting on terminal punctuation. Longer text simply gives a higher count."}},{"@type":"Question","name":"What counts as one sentence?","acceptedAnswer":{"@type":"Answer","text":"A sentence is a run of text that ends when a full stop, question mark or exclamation mark is followed by whitespace or the end of the input. That rule is simple and fast, which is why the sentence count is predictable."}},{"@type":"Question","name":"What about abbreviations such as Dr. or e.g.?","acceptedAnswer":{"@type":"Answer","text":"Because a full stop followed by a space ends a sentence, an abbreviation like Dr. can be read as a sentence end. The same is true of initials. Proofread the result once if your text is full of abbreviations, since no simple sentence counter can tell Dr. Smith from a real stop."}},{"@type":"Question","name":"What does average words per sentence tell me?","acceptedAnswer":{"@type":"Answer","text":"It is a quick readability signal. A low number means short, punchy sentences. A high number means long sentences that may be hard to follow. Many writing guides aim for an average of around fifteen to twenty words, and the counter shows where your text sits."}},{"@type":"Question","name":"How is the reading time estimated?","acceptedAnswer":{"@type":"Answer","text":"Reading time is worked out from the word count at a typical adult reading speed. It is a rough guide for planning, not a precise measurement, but it is handy when you need to know whether a piece is a one minute read or a five minute one."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Sentence Counter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"A free sentence counter. Paste text to count sentences, words and average sentence length, and check reading time. Everything runs in your browser.","url":"https://bohuainter.com/tool/sentence-counter/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-mark"><img src="/favicon-180.png" alt="Bohuainter logo" width="30" height="30"></span>
+      <span class="brand-text"><b>bohua</b><span>inter</span></span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          Blog
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown" style="width:320px">
+          <div class="dropdown-head">Writing guides</div>
+          <a class="dropdown-item" href="/blog/how-do-you-get-word-count-on-pages/"><span><span class="dd-title">Tips to Get Word Count In Pages</span><span class="dd-desc">Find and pin the counter in Apple Pages</span></span></a>
+          <a class="dropdown-item" href="/blog/how-long-should-your-pages-title-tag-be/"><span><span class="dd-title">Guide to Seo Title Description Length</span><span class="dd-desc">Pixel limits for titles and meta descriptions</span></span></a>
+          <a class="dropdown-item" href="/blog/how-to-find-word-count-on-google-docs/"><span><span class="dd-title">Guide to Find Word Count On Google Docs</span><span class="dd-desc">Where Docs hides the word count panel</span></span></a>
+          <a class="dropdown-item" href="/blog/how-to-check-word-count-in-microsoft-word/"><span><span class="dd-title">How to Count Words in Microsoft Word</span><span class="dd-desc">Desktop, web and mobile routes that work</span></span></a>
+          <div class="dropdown-foot"><a href="/blog/">Read the blog <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          Tools
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown dropdown-tools">
+          <div class="dropdown-head">Free writing tools</div>
+          <a class="dropdown-item" href="/tool/character-counter/">
+            <span class="dd-icon">Aa</span>
+            <span>
+              <span class="dd-title">Character Counter</span>
+              <span class="dd-desc">Count characters, words, sentences and paragraphs as you type.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/words-to-page-calculator/">
+            <span class="dd-icon">¶</span>
+            <span>
+              <span class="dd-title">Words to Pages</span>
+              <span class="dd-desc">Convert words to pages, single or double spaced, for essays and reports.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/character-to-words-calculator/">
+            <span class="dd-icon">↔</span>
+            <span>
+              <span class="dd-title">Characters to Words</span>
+              <span class="dd-desc">Estimate how many words a given number of characters turns into.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/essay-word-counter/">
+            <span class="dd-icon">✎</span>
+            <span>
+              <span class="dd-title">Essay Word Counter</span>
+              <span class="dd-desc">Track essay length against a target with pages, reading time and averages.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/upper-case-generator/">
+            <span class="dd-icon">AB</span>
+            <span>
+              <span class="dd-title">Upper Case</span>
+              <span class="dd-desc">Convert any text to UPPER CASE, title case or sentence case instantly.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/lower-case-generator/">
+            <span class="dd-icon">ab</span>
+            <span>
+              <span class="dd-title">Lower Case</span>
+              <span class="dd-desc">Convert any text to lower case, title case or sentence case instantly.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/twitter-charactor-generator/">
+            <span class="dd-icon">𝕏</span>
+            <span>
+              <span class="dd-title">Twitter Counter</span>
+              <span class="dd-desc">Check your post against the 280 character limit before you publish.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/instagram-character-counter/">
+            <span class="dd-icon">IG</span>
+            <span>
+              <span class="dd-title">Instagram Counter</span>
+              <span class="dd-desc">Check captions, bios and comments against every Instagram limit.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/linkedin-character-counter/">
+            <span class="dd-icon">in</span>
+            <span>
+              <span class="dd-title">LinkedIn Counter</span>
+              <span class="dd-desc">Measure posts, headlines and About sections against LinkedIn limits.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/google-meta-counter/">
+            <span class="dd-icon">G</span>
+            <span>
+              <span class="dd-title">Google Meta Counter</span>
+              <span class="dd-desc">Write SEO titles and descriptions that fit Google's display width.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/website-word-counter/">
+            <span class="dd-icon">ww</span>
+            <span>
+              <span class="dd-title">Website Word Counter</span>
+              <span class="dd-desc">Paste a page and count words, unique terms and keyword density.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/link-counter/">
+            <span class="dd-icon">URL</span>
+            <span>
+              <span class="dd-title">Link Counter</span>
+              <span class="dd-desc">Count links in a list and check every URL against practical length limits.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/chinese-word-counter/">
+            <span class="dd-icon">中</span>
+            <span>
+              <span class="dd-title">Chinese Word Counter</span>
+              <span class="dd-desc">Count hanzi, words and punctuation in Chinese and mixed text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/number-counter/">
+            <span class="dd-icon">#</span>
+            <span>
+              <span class="dd-title">Number Counter</span>
+              <span class="dd-desc">Tap or click to count up, with steps, targets and a tally log.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/haiku-checker/">
+            <span class="dd-icon">5-7-5</span>
+            <span>
+              <span class="dd-title">Haiku Checker</span>
+              <span class="dd-desc">Count syllables line by line and check a poem against 5-7-5.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/alt-text-generator/">
+            <span class="dd-icon">Alt</span>
+            <span>
+              <span class="dd-title">Image Alt Text Generator</span>
+              <span class="dd-desc">Build Title Case alt text and a lowercase image name from one description.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/word-frequency-counter/">
+            <span class="dd-icon">123</span>
+            <span>
+              <span class="dd-title">Word Frequency</span>
+              <span class="dd-desc">See which words appear most often in any text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/sentence-counter/">
+            <span class="dd-icon">S</span>
+            <span>
+              <span class="dd-title">Sentence Counter</span>
+              <span class="dd-desc">Count sentences and check average sentence length.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/paragraph-counter/">
+            <span class="dd-icon">P</span>
+            <span>
+              <span class="dd-title">Paragraph Counter</span>
+              <span class="dd-desc">Count paragraphs and measure their length as you write.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/line-counter/">
+            <span class="dd-icon">L</span>
+            <span>
+              <span class="dd-title">Line Counter</span>
+              <span class="dd-desc">Count lines of text, including empty and non empty lines.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/syllable-counter/">
+            <span class="dd-icon">5-7</span>
+            <span>
+              <span class="dd-title">Syllable Counter</span>
+              <span class="dd-desc">Count syllables per word and average syllables in a text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/hashtag-counter/">
+            <span class="dd-icon">H</span>
+            <span>
+              <span class="dd-title">Hashtag Counter</span>
+              <span class="dd-desc">Pull every hashtag out of a caption and count duplicates.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/comma-counter/">
+            <span class="dd-icon">,</span>
+            <span>
+              <span class="dd-title">Comma Counter</span>
+              <span class="dd-desc">Count commas and see how heavy each sentence is.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/character-frequency-counter/">
+            <span class="dd-icon">e</span>
+            <span>
+              <span class="dd-title">Character Frequency</span>
+              <span class="dd-desc">Count letter frequency and see the top characters in a text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/listing-nouns/">
+            <span class="dd-icon">N</span>
+            <span>
+              <span class="dd-title">Noun Finder</span>
+              <span class="dd-desc">Find the nouns in a sentence and list them with counts.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/adverb-checker/">
+            <span class="dd-icon">ly</span>
+            <span>
+              <span class="dd-title">Adverb Checker</span>
+              <span class="dd-desc">Find adverbs in a sentence and see how dense they are.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/verb-finder/">
+            <span class="dd-icon">V</span>
+            <span>
+              <span class="dd-title">Verb Finder</span>
+              <span class="dd-desc">Find the verbs and auxiliaries in a sentence.</span>
+            </span>
+          </a>
+          <div class="dropdown-foot"><a href="/tool/">See all tools <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          More
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown" style="width:260px">
+          <div class="dropdown-head">Bohuainter</div>
+          <a class="dropdown-item" href="/about-us/"><span class="dd-icon">i</span><span><span class="dd-title">About Us</span><span class="dd-desc">Why this site exists</span></span></a>
+          <a class="dropdown-item" href="/contact-us/"><span class="dd-icon">@</span><span><span class="dd-title">Contact Us</span><span class="dd-desc">Questions and feedback</span></span></a>
+          <a class="dropdown-item" href="/privacy/"><span class="dd-icon">✓</span><span><span class="dd-title">Privacy</span><span class="dd-desc">What we do with your text</span></span></a>
+          <a class="dropdown-item" href="/terms/"><span class="dd-icon">§</span><span><span class="dd-title">Terms</span><span class="dd-desc">The rules of the road</span></span></a>
+          <div class="dropdown-foot"><a href="/blog/">Read the blog <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="wrap"><nav class="crumbs crumbs-bar" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/tool/">Tools</a><span class="sep">/</span><span aria-current="page">Sentence Counter</span></nav></div>
+<main id="main">
+
+<section class="page-hero hero-split">
+  <div class="wrap hero-split-grid">
+    <div class="hero-copy">
+      <span class="eyebrow"><i>★</i> Count sentences as you write</span>
+      <h1>Sentence Counter</h1>
+      <p>Paste a paragraph and see how many sentences it has, how long they run and how long the text takes to read. The counter finds sentences by full stops, question marks and exclamation marks.</p>
+    </div>
+    <figure class="hero-demo">
+      <img src="/assets/img/sc-demo.gif" alt="Sentence Counter showing sentence count, words per sentence and reading time" width="760" height="400" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="tool-layout">
+      <div>
+      <div class="tool-panel">
+        <div class="tool-toolbar">
+          <span class="chip active">Paste text</span>
+          <span class="spacer"></span>
+          <button type="button" class="btn btn-ghost" id="sc-sample" style="height:34px;padding:0 14px;font-size:13px">Try sample</button>
+          <button type="button" class="btn btn-ghost" id="sc-clear" style="height:34px;padding:0 14px;font-size:13px">Clear</button>
+        </div>
+        <textarea class="tool-input" id="sc-input" placeholder="Paste one or more sentences. The counter finds them by full stops, question marks and exclamation marks." style="min-height:240px"></textarea>
+        <div class="tool-stats">
+          <div class="stat"><div class="num" id="sc-sents">0</div><div class="lab">Sentences</div></div>
+          <div class="stat"><div class="num" id="sc-words">0</div><div class="lab">Words</div></div>
+          <div class="stat"><div class="num" id="sc-chars">0</div><div class="lab">Characters</div></div>
+          <div class="stat"><div class="num" id="sc-avg">0</div><div class="lab">Avg words per sentence</div></div>
+          <div class="stat"><div class="num" id="sc-longest">0</div><div class="lab">Longest sentence</div></div>
+          <div class="stat"><div class="num" id="sc-read">0 min</div><div class="lab">Reading time</div></div>
+        </div>
+      </div>
+        <div class="callout" style="margin-top:22px">
+          <span style="color:var(--blue);flex:0 0 20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span><b>Counted in your browser.</b> Your text is never uploaded, so the sentence count stays on this page only.</span>
+        </div>
+      </div>
+    <aside class="side-card">
+      <p class="side-card-title">More tools</p>
+      <ul>
+        <li><a href="/tool/character-counter/">Character Counter</a></li><li><a href="/tool/words-to-page-calculator/">Words to Pages Calculator</a></li><li><a href="/tool/character-to-words-calculator/">Character to Words Calculator</a></li><li><a href="/tool/essay-word-counter/">Essay Word Counter</a></li><li><a href="/tool/upper-case-generator/">Upper Case Generator</a></li><li><a href="/tool/lower-case-generator/">Lower Case Generator</a></li><li><a href="/tool/twitter-charactor-generator/">Twitter Character Counter</a></li><li><a href="/tool/instagram-character-counter/">Instagram Character Counter</a></li><li><a href="/tool/linkedin-character-counter/">LinkedIn Character Counter</a></li><li><a href="/tool/google-meta-counter/">Google Meta Counter</a></li><li><a href="/tool/website-word-counter/">Website Word Counter</a></li><li><a href="/tool/link-counter/">Link Counter and URL Length Checker</a></li><li><a href="/tool/chinese-word-counter/">Chinese Word Counter</a></li><li><a href="/tool/number-counter/">Number Counter</a></li><li><a href="/tool/haiku-checker/">Haiku Checker</a></li><li><a href="/tool/alt-text-generator/">Image Alt Text Generator</a></li><li><a href="/tool/word-frequency-counter/">Word Frequency Counter</a></li><li><a href="/tool/paragraph-counter/">Paragraph Counter</a></li><li><a href="/tool/line-counter/">Line Counter</a></li><li><a href="/tool/syllable-counter/">Syllable Counter</a></li><li><a href="/tool/hashtag-counter/">Hashtag Counter</a></li><li><a href="/tool/comma-counter/">Comma Counter</a></li><li><a href="/tool/character-frequency-counter/">Character Frequency Counter</a></li><li><a href="/tool/listing-nouns/">Noun Finder</a></li><li><a href="/tool/adverb-checker/">Adverb Checker</a></li><li><a href="/tool/verb-finder/">Verb Finder</a></li>
+      </ul>
+      <div class="dropdown-foot" style="margin-top:10px"><a href="/tool/">Browse all tools <span aria-hidden="true">→</span></a></div>
+    </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="prose">
+      <h2>What is a sentence counter?</h2>
+      <p>A sentence counter tells you how many sentences a piece of text contains. Paste a paragraph and it scans the text for sentence endings, then reports the sentence count together with the word total, average words per sentence, the longest sentence and an estimated reading time. It is a quick way to check the shape of a draft before you edit it.</p>
+      <p>The numbers work together. A high count with a low average means many short sentences. A low count with a high average means fewer, longer ones. Neither is right or wrong on its own, but the pair describes the rhythm of your writing better than a single figure.</p>
+
+      <h2>How the counter finds sentences</h2>
+      <p>The rule is deliberately plain. A sentence ends at a full stop, a question mark or an exclamation mark when that mark is followed by whitespace or the end of the text. Everything before the next ending counts as one sentence. This is why the tool can count sentences without understanding grammar, and why it runs entirely in your browser.</p>
+      <p>The trade off is that abbreviations with a full stop, such as Dr., can look like an ending to the tool. If your text is dense with initials or abbreviations, read the result once. For ordinary prose, the rule is reliable and fast.</p>
+
+      <h2>Sentence length and readability</h2>
+      <p>Average words per sentence is the most useful number for readability. Short sentences carry one idea and are easy to scan on a phone. Long sentences can hold more detail but ask more of the reader. A mix usually reads best, with a few long sentences broken up by short ones.</p>
+      <p>The longest sentence figure is the other signal worth watching. When it runs far above the average, it is often a sentence that grew by accretion and now carries two or three ideas. That is a good place to start editing, because splitting one long sentence usually improves more than trimming ten short ones.</p>
+
+      <h2>Sentence guidance by context</h2>
+      <table class="limits-table">
+        <thead>
+          <tr><th>Context</th><th>Sentence guidance</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Plain English writing</td><td>aim for 15 to 20 words per sentence</td></tr>
+          <tr><td>Academic prose</td><td>20 to 25 words is common</td></tr>
+          <tr><td>Web copy and landing pages</td><td>under 20 words reads best</td></tr>
+          <tr><td>Mobile screens</td><td>shorter sentences avoid wrapping</td></tr>
+          <tr><td>Social posts</td><td>one idea per sentence</td></tr>
+          <tr><td>Technical documentation</td><td>one instruction per sentence</td></tr>
+          <tr><td>Writing for children</td><td>10 to 15 words per sentence</td></tr>
+        </tbody>
+      </table>
+      <p>These are conventions, not laws. The value of the table is that it gives you a target to compare against your own average. If you write web copy and your average is thirty words, you already know which way to edit.</p>
+
+      <h2>Reading time and word count</h2>
+      <p>Reading time is estimated from the word total at a typical adult reading pace. It is a planning figure, useful when you are deciding whether a piece belongs in a short email or a long article. Treat it as a rough guide rather than a promise about any one reader.</p>
+      <p>The word total behind it is counted the same way as elsewhere on the site, by splitting on whitespace. That means the number you see here matches the word count you would get from a plain word counter, so you can count sentences and check length in one pass.</p>
+
+      <h2>How to write clearer sentences</h2>
+      <p>Start with one idea per sentence. Put the main point near the front, then add the detail. If you find yourself joining clauses with several commas, consider two sentences instead. Then look at how many sentences you have. If the answer to how many sentences is very low for a long paragraph, the ideas are probably bunched together.</p>
+      <p>Reading aloud still beats any rule. A sentence you can say in one breath is usually fine. A sentence that leaves you short of breath needs a full stop somewhere in the middle. The counter confirms what your ear already heard.</p>
+
+      <h2>Sentence counter online, in your browser</h2>
+      <p>This page is a sentence counter online that needs no install and no account. Paste your text, read the numbers, and close the tab when you are done. Nothing is uploaded, so a private draft never leaves the page, and a refresh clears it completely.</p>
+      <p>Because the counting happens locally, it works just as well on a phone as on a laptop. The same punctuation rule applies everywhere, so the sentence count you see is the one you will get next time.</p>
+
+      <h2>Sentence count questions in short</h2>
+      <ul>
+        <li><b>Sentence counter</b> finds endings at full stops, question marks and exclamation marks.</li>
+        <li><b>Sentence count</b> is the number reported beside total words and average words per sentence.</li>
+        <li><b>Count sentences</b> by pasting text, with no button press needed once it is in the box.</li>
+        <li><b>How many sentences</b> a paragraph has is one glance away, and the figure updates as you type.</li>
+      </ul>
+      <blockquote>Count sentences to see the rhythm of a draft. Edit the rhythm, and the clarity tends to follow.</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Questions</span>
+      <h2>Sentence Counter FAQ</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq">
+        <summary>How does this sentence counter work?</summary>
+        <div class="faq-body"><p>The tool reads your text and ends a sentence at a full stop, a question mark or an exclamation mark when it is followed by a space or the end of the text. It then reports the number of sentences, total words, average words per sentence, the longest sentence and an estimated reading time.</p></div>
+      </details>
+      <details class="faq">
+        <summary>How many sentences are in my paragraph?</summary>
+        <div class="faq-body"><p>Paste the paragraph into the box and the number appears at once. The sentence count updates as you type, so you can add or remove a sentence and watch the figure change without pressing a button.</p></div>
+      </details>
+      <details class="faq">
+        <summary>How do I count sentences in a long document?</summary>
+        <div class="faq-body"><p>Paste the whole document. A sentence counter online handles a single line or a full page the same way, scanning all the text and splitting on terminal punctuation. Longer text simply gives a higher count.</p></div>
+      </details>
+      <details class="faq">
+        <summary>What counts as one sentence?</summary>
+        <div class="faq-body"><p>A sentence is a run of text that ends when a full stop, question mark or exclamation mark is followed by whitespace or the end of the input. That rule is simple and fast, which is why the sentence count is predictable.</p></div>
+      </details>
+      <details class="faq">
+        <summary>What about abbreviations such as Dr. or e.g.?</summary>
+        <div class="faq-body"><p>Because a full stop followed by a space ends a sentence, an abbreviation like Dr. can be read as a sentence end. The same is true of initials. Proofread the result once if your text is full of abbreviations, since no simple sentence counter can tell Dr. Smith from a real stop.</p></div>
+      </details>
+      <details class="faq">
+        <summary>What does average words per sentence tell me?</summary>
+        <div class="faq-body"><p>It is a quick readability signal. A low number means short, punchy sentences. A high number means long sentences that may be hard to follow. Many writing guides aim for an average of around fifteen to twenty words, and the counter shows where your text sits.</p></div>
+      </details>
+      <details class="faq">
+        <summary>How is the reading time estimated?</summary>
+        <div class="faq-body"><p>Reading time is worked out from the word count at a typical adult reading speed. It is a rough guide for planning, not a precise measurement, but it is handy when you need to know whether a piece is a one minute read or a five minute one.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 style="font-size:clamp(22px,3vw,30px);margin-bottom:24px">Related tools</h2>
+    <div class="grid grid-3">
+      <a class="card" href="/tool/character-counter/">
+        <span class="card-icon"><img src="/assets/img/logos/character-counter-logo.png" alt="Character Counter logo" width="64" height="64" loading="lazy" decoding="async"></span>
+        <h3>Character Counter</h3>
+        <p>Count characters, words, sentences and paragraphs as you type.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/essay-word-counter/">
+        <span class="card-icon"><img src="/assets/img/logos/essay-word-counter-logo.png" alt="Essay Word Counter logo" width="64" height="64" loading="lazy" decoding="async"></span>
+        <h3>Essay Word Counter</h3>
+        <p>Track essay length against a target with pages, reading time and averages.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/words-to-page-calculator/">
+        <span class="card-icon"><img src="/assets/img/logos/words-to-page-calculator-logo.png" alt="Words to Pages Calculator logo" width="64" height="64" loading="lazy" decoding="async"></span>
+        <h3>Words to Pages Calculator</h3>
+        <p>Convert words to pages, single or double spaced, for essays and reports.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/">
+        <span class="card-icon"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#155EEF"/><path d="M15 24h18m-7-7 7 7-7 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+        <h3>See more tools</h3>
+        <p>Browse every free counting and text tool on one page.</p>
+        <span class="card-more">See all tools <span aria-hidden="true">→</span></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <span class="brand-mark"><img src="/favicon-180.png" alt="Bohuainter logo" width="30" height="30"></span>
+          <span class="brand-text"><b>bohua</b><span>inter</span></span>
+        </a>
+        <p>Free word and character counting tools built for people who write. Everything runs in your browser, so your drafts stay yours.</p>
+      </div>
+      <div class="footer-col footer-col-tools">
+        <p class="footer-col-title"><a href="/tool/">Tools</a></p>
+        <ul>
+          <li><a href="/tool/character-counter/">Character Counter</a></li>
+          <li><a href="/tool/words-to-page-calculator/">Words to Pages</a></li>
+          <li><a href="/tool/character-to-words-calculator/">Characters to Words</a></li>
+          <li><a href="/tool/essay-word-counter/">Essay Word Counter</a></li>
+          <li><a href="/tool/upper-case-generator/">Upper Case</a></li>
+          <li><a href="/tool/lower-case-generator/">Lower Case</a></li>
+          <li><a href="/tool/twitter-charactor-generator/">Twitter Counter</a></li>
+          <li><a href="/tool/instagram-character-counter/">Instagram Counter</a></li>
+          <li><a href="/tool/linkedin-character-counter/">LinkedIn Counter</a></li>
+          <li><a href="/tool/google-meta-counter/">Google Meta Counter</a></li>
+          <li><a href="/tool/website-word-counter/">Website Word Counter</a></li>
+          <li><a href="/tool/link-counter/">Link Counter</a></li>
+          <li><a href="/tool/chinese-word-counter/">Chinese Word Counter</a></li>
+          <li><a href="/tool/number-counter/">Number Counter</a></li>
+          <li><a href="/tool/haiku-checker/">Haiku Checker</a></li>
+          <li><a href="/tool/alt-text-generator/">Image Alt Text</a></li>
+          <li><a href="/tool/word-frequency-counter/">Word Frequency</a></li>
+          <li><a href="/tool/sentence-counter/">Sentence Counter</a></li>
+          <li><a href="/tool/paragraph-counter/">Paragraph Counter</a></li>
+          <li><a href="/tool/line-counter/">Line Counter</a></li>
+          <li><a href="/tool/syllable-counter/">Syllable Counter</a></li>
+          <li><a href="/tool/hashtag-counter/">Hashtag Counter</a></li>
+          <li><a href="/tool/comma-counter/">Comma Counter</a></li>
+          <li><a href="/tool/character-frequency-counter/">Char Frequency</a></li>
+          <li><a href="/tool/listing-nouns/">Noun Finder</a></li>
+          <li><a href="/tool/adverb-checker/">Adverb Checker</a></li>
+          <li><a href="/tool/verb-finder/">Verb Finder</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Company</p>
+        <ul>
+          <li><a href="/about-us/">About Us</a></li>
+          <li><a href="/contact-us/">Contact Us</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/terms/">Terms</a></li>
+          <li><!--email_off--><a href="mailto:contact@bohuainter.com">contact@bohuainter.com</a><!--/email_off--></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-wordmark" aria-hidden="true">bohuainter</div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Bohuainter. All rights reserved.</span>
+      <span>
+        <a href="/privacy/">Privacy</a> ·
+        <a href="/terms/">Terms</a> ·
+        <a href="/contact-us/">Contact</a>
+      </span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js?v=20261123a"></script>
+</body>
+</html>
