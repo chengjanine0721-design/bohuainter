@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Syllable Counter: Free Online Syllable Count and Checker</title>
+<meta name="description" content="A free syllable counter online. Paste any text to count syllables per word, see the syllable count, average per word and one syllable words. Runs locally.">
+<link rel="canonical" href="https://bohuainter.com/tool/syllable-counter/">
+<link rel="icon" type="image/png" href="/favicon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Syllable Counter: Free Online Syllable Count and Checker">
+<meta property="og:description" content="A free syllable counter online. Paste any text to count syllables per word, see the syllable count, average per word and one syllable words. Runs locally.">
+<meta property="og:url" content="https://bohuainter.com/tool/syllable-counter/">
+<meta property="og:site_name" content="Bohuainter">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="/assets/style.css?v=20261122a">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a syllable counter?","acceptedAnswer":{"@type":"Answer","text":"A syllable counter reads your text and estimates the number of beats in each word. This one reports the total syllable count, the word count, the average per word, the number of one syllable words and the highest count on a single word."}},{"@type":"Question","name":"How many syllables in a word can I check at once?","acceptedAnswer":{"@type":"Answer","text":"Paste a single word, one line of a poem or a full paragraph. The panel splits the text into words and counts syllables for each one, so a short line and a long document both work the same way."}},{"@type":"Question","name":"How do I count syllables by hand?","acceptedAnswer":{"@type":"Answer","text":"Say the word out loud and count the times your jaw drops. Each drop is one beat. This matches most English words and is the quickest way to check a result that looks wrong."}},{"@type":"Question","name":"How does this syllable counter online work?","acceptedAnswer":{"@type":"Answer","text":"It groups vowel runs into single sounds, drops a silent final e and treats words of three letters or fewer as one syllable. Those rules handle common English text well, and the whole count happens in your browser."}},{"@type":"Question","name":"Is the syllable count always accurate?","acceptedAnswer":{"@type":"Answer","text":"It is an estimate. Names, borrowed words and regional accents can shift the number, and words with a swallowed vowel are the usual disagreements. Use the most syllables figure to find those words and check them by ear."}},{"@type":"Question","name":"Why does the average syllables per word matter?","acceptedAnswer":{"@type":"Answer","text":"It is a simple signal of how heavy a passage reads. A higher average usually means longer words and a harder read, which is why reading level formulas make use of it."}},{"@type":"Question","name":"Does the tool keep my text?","acceptedAnswer":{"@type":"Answer","text":"No. The count runs locally in the browser and nothing is uploaded or stored. Close the tab and the text is gone, which makes it safe for unpublished drafts."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Syllable Counter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"A free syllable counter online. Paste any text to count syllables per word, see the syllable count, average per word and one syllable words. Runs locally.","url":"https://bohuainter.com/tool/syllable-counter/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-mark"><img src="/favicon-180.png" alt="Bohuainter logo" width="30" height="30"></span>
+      <span class="brand-text"><b>bohua</b><span>inter</span></span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          Blog
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown" style="width:320px">
+          <div class="dropdown-head">Writing guides</div>
+          <a class="dropdown-item" href="/blog/how-do-you-get-word-count-on-pages/"><span><span class="dd-title">Tips to Get Word Count In Pages</span><span class="dd-desc">Find and pin the counter in Apple Pages</span></span></a>
+          <a class="dropdown-item" href="/blog/how-long-should-your-pages-title-tag-be/"><span><span class="dd-title">Guide to Seo Title Description Length</span><span class="dd-desc">Pixel limits for titles and meta descriptions</span></span></a>
+          <a class="dropdown-item" href="/blog/how-to-find-word-count-on-google-docs/"><span><span class="dd-title">Guide to Find Word Count On Google Docs</span><span class="dd-desc">Where Docs hides the word count panel</span></span></a>
+          <a class="dropdown-item" href="/blog/how-to-check-word-count-in-microsoft-word/"><span><span class="dd-title">How to Count Words in Microsoft Word</span><span class="dd-desc">Desktop, web and mobile routes that work</span></span></a>
+          <div class="dropdown-foot"><a href="/blog/">Read the blog <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          Tools
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown dropdown-tools">
+          <div class="dropdown-head">Free writing tools</div>
+          <a class="dropdown-item" href="/tool/character-counter/">
+            <span class="dd-icon">Aa</span>
+            <span>
+              <span class="dd-title">Character Counter</span>
+              <span class="dd-desc">Count characters, words, sentences and paragraphs as you type.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/words-to-page-calculator/">
+            <span class="dd-icon">¶</span>
+            <span>
+              <span class="dd-title">Words to Pages</span>
+              <span class="dd-desc">Convert words to pages, single or double spaced, for essays and reports.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/character-to-words-calculator/">
+            <span class="dd-icon">↔</span>
+            <span>
+              <span class="dd-title">Characters to Words</span>
+              <span class="dd-desc">Estimate how many words a given number of characters turns into.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/essay-word-counter/">
+            <span class="dd-icon">✎</span>
+            <span>
+              <span class="dd-title">Essay Word Counter</span>
+              <span class="dd-desc">Track essay length against a target with pages, reading time and averages.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/upper-case-generator/">
+            <span class="dd-icon">AB</span>
+            <span>
+              <span class="dd-title">Upper Case</span>
+              <span class="dd-desc">Convert any text to UPPER CASE, title case or sentence case instantly.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/lower-case-generator/">
+            <span class="dd-icon">ab</span>
+            <span>
+              <span class="dd-title">Lower Case</span>
+              <span class="dd-desc">Convert any text to lower case, title case or sentence case instantly.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/twitter-charactor-generator/">
+            <span class="dd-icon">𝕏</span>
+            <span>
+              <span class="dd-title">Twitter Counter</span>
+              <span class="dd-desc">Check your post against the 280 character limit before you publish.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/instagram-character-counter/">
+            <span class="dd-icon">IG</span>
+            <span>
+              <span class="dd-title">Instagram Counter</span>
+              <span class="dd-desc">Check captions, bios and comments against every Instagram limit.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/linkedin-character-counter/">
+            <span class="dd-icon">in</span>
+            <span>
+              <span class="dd-title">LinkedIn Counter</span>
+              <span class="dd-desc">Measure posts, headlines and About sections against LinkedIn limits.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/google-meta-counter/">
+            <span class="dd-icon">G</span>
+            <span>
+              <span class="dd-title">Google Meta Counter</span>
+              <span class="dd-desc">Write SEO titles and descriptions that fit Google's display width.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/website-word-counter/">
+            <span class="dd-icon">ww</span>
+            <span>
+              <span class="dd-title">Website Word Counter</span>
+              <span class="dd-desc">Paste a page and count words, unique terms and keyword density.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/link-counter/">
+            <span class="dd-icon">URL</span>
+            <span>
+              <span class="dd-title">Link Counter</span>
+              <span class="dd-desc">Count links in a list and check every URL against practical length limits.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/chinese-word-counter/">
+            <span class="dd-icon">中</span>
+            <span>
+              <span class="dd-title">Chinese Word Counter</span>
+              <span class="dd-desc">Count hanzi, words and punctuation in Chinese and mixed text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/number-counter/">
+            <span class="dd-icon">#</span>
+            <span>
+              <span class="dd-title">Number Counter</span>
+              <span class="dd-desc">Tap or click to count up, with steps, targets and a tally log.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/haiku-checker/">
+            <span class="dd-icon">5-7-5</span>
+            <span>
+              <span class="dd-title">Haiku Checker</span>
+              <span class="dd-desc">Count syllables line by line and check a poem against 5-7-5.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/alt-text-generator/">
+            <span class="dd-icon">Alt</span>
+            <span>
+              <span class="dd-title">Image Alt Text Generator</span>
+              <span class="dd-desc">Build Title Case alt text and a lowercase image name from one description.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/word-frequency-counter/">
+            <span class="dd-icon">123</span>
+            <span>
+              <span class="dd-title">Word Frequency</span>
+              <span class="dd-desc">See which words appear most often in any text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/sentence-counter/">
+            <span class="dd-icon">S</span>
+            <span>
+              <span class="dd-title">Sentence Counter</span>
+              <span class="dd-desc">Count sentences and check average sentence length.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/paragraph-counter/">
+            <span class="dd-icon">P</span>
+            <span>
+              <span class="dd-title">Paragraph Counter</span>
+              <span class="dd-desc">Count paragraphs and measure their length as you write.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/line-counter/">
+            <span class="dd-icon">L</span>
+            <span>
+              <span class="dd-title">Line Counter</span>
+              <span class="dd-desc">Count lines of text, including empty and non empty lines.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/syllable-counter/">
+            <span class="dd-icon">5-7</span>
+            <span>
+              <span class="dd-title">Syllable Counter</span>
+              <span class="dd-desc">Count syllables per word and average syllables in a text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/hashtag-counter/">
+            <span class="dd-icon">H</span>
+            <span>
+              <span class="dd-title">Hashtag Counter</span>
+              <span class="dd-desc">Pull every hashtag out of a caption and count duplicates.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/comma-counter/">
+            <span class="dd-icon">,</span>
+            <span>
+              <span class="dd-title">Comma Counter</span>
+              <span class="dd-desc">Count commas and see how heavy each sentence is.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/character-frequency-counter/">
+            <span class="dd-icon">e</span>
+            <span>
+              <span class="dd-title">Character Frequency</span>
+              <span class="dd-desc">Count letter frequency and see the top characters in a text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/listing-nouns/">
+            <span class="dd-icon">N</span>
+            <span>
+              <span class="dd-title">Noun Finder</span>
+              <span class="dd-desc">Find the nouns in a sentence and list them with counts.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/adverb-checker/">
+            <span class="dd-icon">ly</span>
+            <span>
+              <span class="dd-title">Adverb Checker</span>
+              <span class="dd-desc">Find adverbs in a sentence and see how dense they are.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/verb-finder/">
+            <span class="dd-icon">V</span>
+            <span>
+              <span class="dd-title">Verb Finder</span>
+              <span class="dd-desc">Find the verbs and auxiliaries in a sentence.</span>
+            </span>
+          </a>
+          <div class="dropdown-foot"><a href="/tool/">See all tools <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          More
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown" style="width:260px">
+          <div class="dropdown-head">Bohuainter</div>
+          <a class="dropdown-item" href="/about-us/"><span class="dd-icon">i</span><span><span class="dd-title">About Us</span><span class="dd-desc">Why this site exists</span></span></a>
+          <a class="dropdown-item" href="/contact-us/"><span class="dd-icon">@</span><span><span class="dd-title">Contact Us</span><span class="dd-desc">Questions and feedback</span></span></a>
+          <a class="dropdown-item" href="/privacy/"><span class="dd-icon">✓</span><span><span class="dd-title">Privacy</span><span class="dd-desc">What we do with your text</span></span></a>
+          <a class="dropdown-item" href="/terms/"><span class="dd-icon">§</span><span><span class="dd-title">Terms</span><span class="dd-desc">The rules of the road</span></span></a>
+          <div class="dropdown-foot"><a href="/blog/">Read the blog <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="wrap"><nav class="crumbs crumbs-bar" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/tool/">Tools</a><span class="sep">/</span><span aria-current="page">Syllable Counter</span></nav></div>
+<main id="main">
+
+<section class="page-hero hero-split">
+  <div class="wrap hero-split-grid">
+    <div class="hero-copy">
+      <span class="eyebrow"><i>★</i> Count the beats</span>
+      <h1>Syllable Counter</h1>
+      <p>Paste a word, a line or a paragraph and see the syllable count for every word. The panel reports the total, the average per word and the one syllable words, all calculated in your browser.</p>
+    </div>
+    <figure class="hero-demo">
+      <img src="/assets/img/sy-demo.gif" alt="Syllable Counter counting syllables and average per word in a short paragraph" width="760" height="400" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="tool-layout">
+      <div>
+      <div class="tool-panel">
+        <div class="tool-toolbar">
+          <span class="chip active">Paste text</span>
+          <span class="spacer"></span>
+          <button type="button" class="btn btn-ghost" id="sy-sample" style="height:34px;padding:0 14px;font-size:13px">Try sample</button>
+          <button type="button" class="btn btn-ghost" id="sy-clear" style="height:34px;padding:0 14px;font-size:13px">Clear</button>
+        </div>
+        <textarea class="tool-input" id="sy-input" placeholder="Paste a word, a line of a poem or a paragraph. Syllables are estimated per word." style="min-height:240px"></textarea>
+        <div class="tool-stats">
+          <div class="stat"><div class="num" id="sy-syll">0</div><div class="lab">Syllables</div></div>
+          <div class="stat"><div class="num" id="sy-words">0</div><div class="lab">Words</div></div>
+          <div class="stat"><div class="num" id="sy-chars">0</div><div class="lab">Characters</div></div>
+          <div class="stat"><div class="num" id="sy-avg">0</div><div class="lab">Avg syllables per word</div></div>
+          <div class="stat"><div class="num" id="sy-one">0</div><div class="lab">One syllable words</div></div>
+          <div class="stat"><div class="num" id="sy-longest">0</div><div class="lab">Most syllables</div></div>
+        </div>
+      </div>
+        <div class="callout" style="margin-top:22px">
+          <span style="color:var(--blue);flex:0 0 20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span><b>Counted in your browser.</b> Text never leaves the page, so a draft stays private and the syllable count updates as you type.</span>
+        </div>
+      </div>
+    <aside class="side-card">
+      <p class="side-card-title">More tools</p>
+      <ul>
+        <li><a href="/tool/character-counter/">Character Counter</a></li><li><a href="/tool/words-to-page-calculator/">Words to Pages Calculator</a></li><li><a href="/tool/character-to-words-calculator/">Character to Words Calculator</a></li><li><a href="/tool/essay-word-counter/">Essay Word Counter</a></li><li><a href="/tool/upper-case-generator/">Upper Case Generator</a></li><li><a href="/tool/lower-case-generator/">Lower Case Generator</a></li><li><a href="/tool/twitter-charactor-generator/">Twitter Character Counter</a></li><li><a href="/tool/instagram-character-counter/">Instagram Character Counter</a></li><li><a href="/tool/linkedin-character-counter/">LinkedIn Character Counter</a></li><li><a href="/tool/google-meta-counter/">Google Meta Counter</a></li><li><a href="/tool/website-word-counter/">Website Word Counter</a></li><li><a href="/tool/link-counter/">Link Counter and URL Length Checker</a></li><li><a href="/tool/chinese-word-counter/">Chinese Word Counter</a></li><li><a href="/tool/number-counter/">Number Counter</a></li><li><a href="/tool/haiku-checker/">Haiku Checker</a></li><li><a href="/tool/alt-text-generator/">Image Alt Text Generator</a></li><li><a href="/tool/word-frequency-counter/">Word Frequency Counter</a></li><li><a href="/tool/sentence-counter/">Sentence Counter</a></li><li><a href="/tool/paragraph-counter/">Paragraph Counter</a></li><li><a href="/tool/line-counter/">Line Counter</a></li><li><a href="/tool/hashtag-counter/">Hashtag Counter</a></li><li><a href="/tool/comma-counter/">Comma Counter</a></li><li><a href="/tool/character-frequency-counter/">Character Frequency Counter</a></li><li><a href="/tool/listing-nouns/">Noun Finder</a></li><li><a href="/tool/adverb-checker/">Adverb Checker</a></li><li><a href="/tool/verb-finder/">Verb Finder</a></li>
+      </ul>
+      <div class="dropdown-foot" style="margin-top:10px"><a href="/tool/">Browse all tools <span aria-hidden="true">→</span></a></div>
+    </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="prose">
+      <h2>What is a syllable counter?</h2>
+      <p>A syllable counter is a small tool that reads a word or a passage and reports how many beats each word carries. Paste text into the box above and the panel shows the total syllable count, the number of words, the average syllables per word, how many words are one beat, and the highest syllable total on a single word. That last figure points straight at the word worth checking by ear.</p>
+      <p>People reach for a syllable counter when writing a poem, checking a reading level, fitting a line to a song or simply asking how many syllables in a word that looks simple but sounds longer. The tool answers in seconds and keeps the text on your device.</p>
+
+      <h2>How to count syllables in a word</h2>
+      <p>Start with the word that worries you and say it aloud. Count the places your jaw drops, not the letters on the page. Then compare your answer with the figure the counter gives. When the two disagree, the word usually has a silent letter, a vowel pair that makes one sound or an ending that English speakers often swallow. That is the moment to consult a dictionary or a recording rather than argue with the number.</p>
+      <p>Learn to count syllables this way a few times and the habit sticks. You will begin to spot the long words in a draft before you run any tool at all, which is the real benefit of understanding how many syllables in a word instead of trusting a figure blindly.</p>
+
+      <h2>How this syllable counter online works</h2>
+      <p>The counter uses a common English heuristic rather than a full pronunciation dictionary. It groups runs of vowels into single sounds, drops a silent final e, and treats a word of three letters or fewer as one syllable. Those three rules cover everyday prose well, and they are the same rules behind most free counters you will find online.</p>
+      <p>Because this syllable counter online runs in the browser, the estimate is made locally and nothing is uploaded. The syllable count refreshes on every keystroke, so you can try a synonym and watch the average change without clearing the box.</p>
+
+      <h2>Syllable count examples</h2>
+      <table class="limits-table">
+        <thead>
+          <tr><th>Word</th><th>Syllable count</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>cat</td><td>1 syllable</td></tr>
+          <tr><td>yellow</td><td>2 syllables</td></tr>
+          <tr><td>computer</td><td>3 syllables</td></tr>
+          <tr><td>beautiful</td><td>3 syllables</td></tr>
+          <tr><td>syllable</td><td>3 syllables</td></tr>
+          <tr><td>rhythm</td><td>2 syllables</td></tr>
+          <tr><td>international</td><td>5 syllables</td></tr>
+          <tr><td>at</td><td>1 syllable</td></tr>
+        </tbody>
+      </table>
+      <p>The examples show why length on the page is a poor guide. A short word such as rhythm carries two beats while the longer beautiful carries three, and a word such as syllable itself has three. The counter follows the vowel groups rather than the letter count, which is why it tends to agree with how the word sounds.</p>
+
+      <h2>Why syllable estimates can disagree</h2>
+      <p>English spelling is older than English pronunciation, and no short rule set can settle every word. Names, borrowed words and regional accents all move the count. A word such as every is two beats for most speakers and three for some counters. Treat the syllable count as a fast estimate that is right for the common case, then use your ear for the exceptions that matter to your line.</p>
+      <p>The figure labelled most syllables is the quickest way to find those exceptions. It shows the highest count on any single word in your text, so you can jump to that word and decide whether the tool or your ear is correct.</p>
+
+      <h2>Using a syllable count for poems and reading level</h2>
+      <p>Haiku and limerick form depend on syllables, and a draft that looks right often scans one beat long. A syllable counter turns the form into a number you can check. Paste one line at a time and use the one syllable words figure to see how much of the line is light and how much is heavy.</p>
+      <p>Reading level formulas also use syllables per word. A high average usually means longer words and a heavier read, which matters when you are writing for a general audience. The average shown above gives you that signal with no extra work.</p>
+
+      <h2>Syllable counter questions in short</h2>
+      <ul>
+        <li><b>Syllable counter</b> is the name of this page. Paste text and read the totals above the explanation.</li>
+        <li><b>Count syllables</b> by saying the word aloud and counting jaw drops, then check the number here.</li>
+        <li><b>How many syllables in a word</b> is answered by the per word estimate behind every figure in the panel.</li>
+        <li><b>Syllable counter online</b> describes a tool that needs no install and keeps your text in the browser.</li>
+      </ul>
+      <blockquote>Count the sounds, not the letters. A syllable is a beat you hear, and your ear is the last word.</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Questions</span>
+      <h2>Syllable Counter FAQ</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq">
+        <summary>What is a syllable counter?</summary>
+        <div class="faq-body"><p>A syllable counter reads your text and estimates the number of beats in each word. This one reports the total syllable count, the word count, the average per word, the number of one syllable words and the highest count on a single word.</p></div>
+      </details>
+      <details class="faq">
+        <summary>How many syllables in a word can I check at once?</summary>
+        <div class="faq-body"><p>Paste a single word, one line of a poem or a full paragraph. The panel splits the text into words and counts syllables for each one, so a short line and a long document both work the same way.</p></div>
+      </details>
+      <details class="faq">
+        <summary>How do I count syllables by hand?</summary>
+        <div class="faq-body"><p>Say the word out loud and count the times your jaw drops. Each drop is one beat. This matches most English words and is the quickest way to check a result that looks wrong.</p></div>
+      </details>
+      <details class="faq">
+        <summary>How does this syllable counter online work?</summary>
+        <div class="faq-body"><p>It groups vowel runs into single sounds, drops a silent final e and treats words of three letters or fewer as one syllable. Those rules handle common English text well, and the whole count happens in your browser.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Is the syllable count always accurate?</summary>
+        <div class="faq-body"><p>It is an estimate. Names, borrowed words and regional accents can shift the number, and words with a swallowed vowel are the usual disagreements. Use the most syllables figure to find those words and check them by ear.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Why does the average syllables per word matter?</summary>
+        <div class="faq-body"><p>It is a simple signal of how heavy a passage reads. A higher average usually means longer words and a harder read, which is why reading level formulas make use of it.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Does the tool keep my text?</summary>
+        <div class="faq-body"><p>No. The count runs locally in the browser and nothing is uploaded or stored. Close the tab and the text is gone, which makes it safe for unpublished drafts.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 style="font-size:clamp(22px,3vw,30px);margin-bottom:24px">Related tools</h2>
+    <div class="grid grid-3">
+      <a class="card" href="/tool/haiku-checker/">
+        <span class="card-icon"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#155EEF"/><text x="24" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#fff" font-family="Inter, sans-serif">5-7-5</text></svg></span>
+        <h3>Haiku Checker</h3>
+        <p>Count syllables line by line and check a poem against 5-7-5.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/character-counter/">
+        <span class="card-icon"><img src="/assets/img/logos/character-counter-logo.png" alt="Character Counter logo" width="64" height="64" loading="lazy" decoding="async"></span>
+        <h3>Character Counter</h3>
+        <p>Count characters, words, sentences and paragraphs as you type.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/essay-word-counter/">
+        <span class="card-icon"><img src="/assets/img/logos/essay-word-counter-logo.png" alt="Essay Word Counter logo" width="64" height="64" loading="lazy" decoding="async"></span>
+        <h3>Essay Word Counter</h3>
+        <p>Track essay length against a target with pages, reading time and averages.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/">
+        <span class="card-icon"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#155EEF"/><path d="M15 24h18m-7-7 7 7-7 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+        <h3>See more tools</h3>
+        <p>Browse every free counting and text tool on one page.</p>
+        <span class="card-more">See all tools <span aria-hidden="true">→</span></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <span class="brand-mark"><img src="/favicon-180.png" alt="Bohuainter logo" width="30" height="30"></span>
+          <span class="brand-text"><b>bohua</b><span>inter</span></span>
+        </a>
+        <p>Free word and character counting tools built for people who write. Everything runs in your browser, so your drafts stay yours.</p>
+      </div>
+      <div class="footer-col footer-col-tools">
+        <p class="footer-col-title"><a href="/tool/">Tools</a></p>
+        <ul>
+          <li><a href="/tool/character-counter/">Character Counter</a></li>
+          <li><a href="/tool/words-to-page-calculator/">Words to Pages</a></li>
+          <li><a href="/tool/character-to-words-calculator/">Characters to Words</a></li>
+          <li><a href="/tool/essay-word-counter/">Essay Word Counter</a></li>
+          <li><a href="/tool/upper-case-generator/">Upper Case</a></li>
+          <li><a href="/tool/lower-case-generator/">Lower Case</a></li>
+          <li><a href="/tool/twitter-charactor-generator/">Twitter Counter</a></li>
+          <li><a href="/tool/instagram-character-counter/">Instagram Counter</a></li>
+          <li><a href="/tool/linkedin-character-counter/">LinkedIn Counter</a></li>
+          <li><a href="/tool/google-meta-counter/">Google Meta Counter</a></li>
+          <li><a href="/tool/website-word-counter/">Website Word Counter</a></li>
+          <li><a href="/tool/link-counter/">Link Counter</a></li>
+          <li><a href="/tool/chinese-word-counter/">Chinese Word Counter</a></li>
+          <li><a href="/tool/number-counter/">Number Counter</a></li>
+          <li><a href="/tool/haiku-checker/">Haiku Checker</a></li>
+          <li><a href="/tool/alt-text-generator/">Image Alt Text</a></li>
+          <li><a href="/tool/word-frequency-counter/">Word Frequency</a></li>
+          <li><a href="/tool/sentence-counter/">Sentence Counter</a></li>
+          <li><a href="/tool/paragraph-counter/">Paragraph Counter</a></li>
+          <li><a href="/tool/line-counter/">Line Counter</a></li>
+          <li><a href="/tool/syllable-counter/">Syllable Counter</a></li>
+          <li><a href="/tool/hashtag-counter/">Hashtag Counter</a></li>
+          <li><a href="/tool/comma-counter/">Comma Counter</a></li>
+          <li><a href="/tool/character-frequency-counter/">Char Frequency</a></li>
+          <li><a href="/tool/listing-nouns/">Noun Finder</a></li>
+          <li><a href="/tool/adverb-checker/">Adverb Checker</a></li>
+          <li><a href="/tool/verb-finder/">Verb Finder</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Company</p>
+        <ul>
+          <li><a href="/about-us/">About Us</a></li>
+          <li><a href="/contact-us/">Contact Us</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/terms/">Terms</a></li>
+          <li><!--email_off--><a href="mailto:contact@bohuainter.com">contact@bohuainter.com</a><!--/email_off--></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-wordmark" aria-hidden="true">bohuainter</div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Bohuainter. All rights reserved.</span>
+      <span>
+        <a href="/privacy/">Privacy</a> ·
+        <a href="/terms/">Terms</a> ·
+        <a href="/contact-us/">Contact</a>
+      </span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js?v=20261123a"></script>
+</body>
+</html>
