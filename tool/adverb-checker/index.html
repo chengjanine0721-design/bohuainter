@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adverb Checker: Find Adverbs in a Sentence</title>
+<meta name="description" content="Paste a sentence and find its adverbs. An adverb checker using ly suffix rules and a small common adverb list, with a density score to cut clutter.">
+<link rel="canonical" href="https://bohuainter.com/tool/adverb-checker/">
+<link rel="icon" type="image/png" href="/favicon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Adverb Checker: Find Adverbs in a Sentence">
+<meta property="og:description" content="Paste a sentence and find its adverbs. An adverb checker using ly suffix rules and a small common adverb list, with a density score to cut clutter.">
+<meta property="og:url" content="https://bohuainter.com/tool/adverb-checker/">
+<meta property="og:site_name" content="Bohuainter">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="/assets/style.css?v=20261122a">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an adverb checker?","acceptedAnswer":{"@type":"Answer","text":"An adverb checker reads your text and lists the words it treats as adverbs. This free adverb tool uses an ly suffix rule and a short list of common irregular adverbs such as very and often. It also reports adverb density so you can see whether a paragraph is overloaded."}},{"@type":"Question","name":"How do I identify adverbs in a sentence?","acceptedAnswer":{"@type":"Answer","text":"Paste your text and read the strip under the box. It shows the adverbs in this sentence that the tool found. If you want to know how to identify an adverb or how to identify adverbs in general, look for words that modify a verb, an adjective or another adverb."}},{"@type":"Question","name":"What is the adverb in this sentence?","acceptedAnswer":{"@type":"Answer","text":"The highlighted list shows what is the adverb in this sentence as the tool sees it. For what is the adverb in the sentence with a more unusual word, remember the checker works from rules, not from a full parse, so verify against a dictionary."}},{"@type":"Question","name":"Is this an adverb generator?","acceptedAnswer":{"@type":"Answer","text":"No. This is an adverb finder and checker, not an adverb generator. It finds adverbs in text you paste, it does not invent new ones. Use a thesaurus when you want to replace a plain adverb with a stronger word."}},{"@type":"Question","name":"Why are only and family not counted?","acceptedAnswer":{"@type":"Answer","text":"They end in ly but are not adverbs. The checker keeps an exception list that includes only, family, reply, lonely and silly, so those words are skipped. That keeps the count honest for ordinary sentences."}},{"@type":"Question","name":"Does it find every adverb?","acceptedAnswer":{"@type":"Answer","text":"Not every one. The method is a heuristic built on suffixes and a small word list, so rare adverbs and adverbs buried in complex clauses can be missed. It is best on short, plain sentences, and I would not rely on it for a formal grammar assignment."}},{"@type":"Question","name":"How do I use adverb density?","acceptedAnswer":{"@type":"Answer","text":"Density is the share of words in your text that the tool counts as adverbs. A high number usually means the writing leans on modifiers, and cutting a few ly words makes sentences tighter. Compare two drafts by pasting each one in turn."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Adverb Checker","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Paste a sentence and find its adverbs. An adverb checker using ly suffix rules and a small common adverb list, with a density score to cut clutter.","url":"https://bohuainter.com/tool/adverb-checker/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-mark"><img src="/favicon-180.png" alt="Bohuainter logo" width="30" height="30"></span>
+      <span class="brand-text"><b>bohua</b><span>inter</span></span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          Blog
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown" style="width:320px">
+          <div class="dropdown-head">Writing guides</div>
+          <a class="dropdown-item" href="/blog/how-do-you-get-word-count-on-pages/"><span><span class="dd-title">Tips to Get Word Count In Pages</span><span class="dd-desc">Find and pin the counter in Apple Pages</span></span></a>
+          <a class="dropdown-item" href="/blog/how-long-should-your-pages-title-tag-be/"><span><span class="dd-title">Guide to Seo Title Description Length</span><span class="dd-desc">Pixel limits for titles and meta descriptions</span></span></a>
+          <a class="dropdown-item" href="/blog/how-to-find-word-count-on-google-docs/"><span><span class="dd-title">Guide to Find Word Count On Google Docs</span><span class="dd-desc">Where Docs hides the word count panel</span></span></a>
+          <a class="dropdown-item" href="/blog/how-to-check-word-count-in-microsoft-word/"><span><span class="dd-title">How to Count Words in Microsoft Word</span><span class="dd-desc">Desktop, web and mobile routes that work</span></span></a>
+          <div class="dropdown-foot"><a href="/blog/">Read the blog <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          Tools
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown dropdown-tools">
+          <div class="dropdown-head">Free writing tools</div>
+          <a class="dropdown-item" href="/tool/character-counter/">
+            <span class="dd-icon">Aa</span>
+            <span>
+              <span class="dd-title">Character Counter</span>
+              <span class="dd-desc">Count characters, words, sentences and paragraphs as you type.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/words-to-page-calculator/">
+            <span class="dd-icon">¶</span>
+            <span>
+              <span class="dd-title">Words to Pages</span>
+              <span class="dd-desc">Convert words to pages, single or double spaced, for essays and reports.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/character-to-words-calculator/">
+            <span class="dd-icon">↔</span>
+            <span>
+              <span class="dd-title">Characters to Words</span>
+              <span class="dd-desc">Estimate how many words a given number of characters turns into.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/essay-word-counter/">
+            <span class="dd-icon">✎</span>
+            <span>
+              <span class="dd-title">Essay Word Counter</span>
+              <span class="dd-desc">Track essay length against a target with pages, reading time and averages.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/upper-case-generator/">
+            <span class="dd-icon">AB</span>
+            <span>
+              <span class="dd-title">Upper Case</span>
+              <span class="dd-desc">Convert any text to UPPER CASE, title case or sentence case instantly.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/lower-case-generator/">
+            <span class="dd-icon">ab</span>
+            <span>
+              <span class="dd-title">Lower Case</span>
+              <span class="dd-desc">Convert any text to lower case, title case or sentence case instantly.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/twitter-charactor-generator/">
+            <span class="dd-icon">𝕏</span>
+            <span>
+              <span class="dd-title">Twitter Counter</span>
+              <span class="dd-desc">Check your post against the 280 character limit before you publish.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/instagram-character-counter/">
+            <span class="dd-icon">IG</span>
+            <span>
+              <span class="dd-title">Instagram Counter</span>
+              <span class="dd-desc">Check captions, bios and comments against every Instagram limit.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/linkedin-character-counter/">
+            <span class="dd-icon">in</span>
+            <span>
+              <span class="dd-title">LinkedIn Counter</span>
+              <span class="dd-desc">Measure posts, headlines and About sections against LinkedIn limits.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/google-meta-counter/">
+            <span class="dd-icon">G</span>
+            <span>
+              <span class="dd-title">Google Meta Counter</span>
+              <span class="dd-desc">Write SEO titles and descriptions that fit Google's display width.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/website-word-counter/">
+            <span class="dd-icon">ww</span>
+            <span>
+              <span class="dd-title">Website Word Counter</span>
+              <span class="dd-desc">Paste a page and count words, unique terms and keyword density.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/link-counter/">
+            <span class="dd-icon">URL</span>
+            <span>
+              <span class="dd-title">Link Counter</span>
+              <span class="dd-desc">Count links in a list and check every URL against practical length limits.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/chinese-word-counter/">
+            <span class="dd-icon">中</span>
+            <span>
+              <span class="dd-title">Chinese Word Counter</span>
+              <span class="dd-desc">Count hanzi, words and punctuation in Chinese and mixed text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/number-counter/">
+            <span class="dd-icon">#</span>
+            <span>
+              <span class="dd-title">Number Counter</span>
+              <span class="dd-desc">Tap or click to count up, with steps, targets and a tally log.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/haiku-checker/">
+            <span class="dd-icon">5-7-5</span>
+            <span>
+              <span class="dd-title">Haiku Checker</span>
+              <span class="dd-desc">Count syllables line by line and check a poem against 5-7-5.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/alt-text-generator/">
+            <span class="dd-icon">Alt</span>
+            <span>
+              <span class="dd-title">Image Alt Text Generator</span>
+              <span class="dd-desc">Build Title Case alt text and a lowercase image name from one description.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/word-frequency-counter/">
+            <span class="dd-icon">123</span>
+            <span>
+              <span class="dd-title">Word Frequency</span>
+              <span class="dd-desc">See which words appear most often in any text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/sentence-counter/">
+            <span class="dd-icon">S</span>
+            <span>
+              <span class="dd-title">Sentence Counter</span>
+              <span class="dd-desc">Count sentences and check average sentence length.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/paragraph-counter/">
+            <span class="dd-icon">P</span>
+            <span>
+              <span class="dd-title">Paragraph Counter</span>
+              <span class="dd-desc">Count paragraphs and measure their length as you write.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/line-counter/">
+            <span class="dd-icon">L</span>
+            <span>
+              <span class="dd-title">Line Counter</span>
+              <span class="dd-desc">Count lines of text, including empty and non empty lines.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/syllable-counter/">
+            <span class="dd-icon">5-7</span>
+            <span>
+              <span class="dd-title">Syllable Counter</span>
+              <span class="dd-desc">Count syllables per word and average syllables in a text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/hashtag-counter/">
+            <span class="dd-icon">H</span>
+            <span>
+              <span class="dd-title">Hashtag Counter</span>
+              <span class="dd-desc">Pull every hashtag out of a caption and count duplicates.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/comma-counter/">
+            <span class="dd-icon">,</span>
+            <span>
+              <span class="dd-title">Comma Counter</span>
+              <span class="dd-desc">Count commas and see how heavy each sentence is.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/character-frequency-counter/">
+            <span class="dd-icon">e</span>
+            <span>
+              <span class="dd-title">Character Frequency</span>
+              <span class="dd-desc">Count letter frequency and see the top characters in a text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/listing-nouns/">
+            <span class="dd-icon">N</span>
+            <span>
+              <span class="dd-title">Noun Finder</span>
+              <span class="dd-desc">Find the nouns in a sentence and list them with counts.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/adverb-checker/">
+            <span class="dd-icon">ly</span>
+            <span>
+              <span class="dd-title">Adverb Checker</span>
+              <span class="dd-desc">Find adverbs in a sentence and see how dense they are.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/verb-finder/">
+            <span class="dd-icon">V</span>
+            <span>
+              <span class="dd-title">Verb Finder</span>
+              <span class="dd-desc">Find the verbs and auxiliaries in a sentence.</span>
+            </span>
+          </a>
+          <div class="dropdown-foot"><a href="/tool/">See all tools <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          More
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown" style="width:260px">
+          <div class="dropdown-head">Bohuainter</div>
+          <a class="dropdown-item" href="/about-us/"><span class="dd-icon">i</span><span><span class="dd-title">About Us</span><span class="dd-desc">Why this site exists</span></span></a>
+          <a class="dropdown-item" href="/contact-us/"><span class="dd-icon">@</span><span><span class="dd-title">Contact Us</span><span class="dd-desc">Questions and feedback</span></span></a>
+          <a class="dropdown-item" href="/privacy/"><span class="dd-icon">✓</span><span><span class="dd-title">Privacy</span><span class="dd-desc">What we do with your text</span></span></a>
+          <a class="dropdown-item" href="/terms/"><span class="dd-icon">§</span><span><span class="dd-title">Terms</span><span class="dd-desc">The rules of the road</span></span></a>
+          <div class="dropdown-foot"><a href="/blog/">Read the blog <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="wrap"><nav class="crumbs crumbs-bar" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/tool/">Tools</a><span class="sep">/</span><span aria-current="page">Adverb Checker</span></nav></div>
+<main id="main">
+
+<section class="page-hero hero-split">
+  <div class="wrap hero-split-grid">
+    <div class="hero-copy">
+      <span class="eyebrow"><i>★</i> Spot the modifiers</span>
+      <h1>Adverb Checker</h1>
+      <p>Paste a sentence and the adverb checker lists the adverbs it finds, then shows how dense they are. It is a quick way to spot repeated ly words and trim them, using simple suffix rules and a small common adverb list.</p>
+    </div>
+    <figure class="hero-demo">
+      <img src="/assets/img/av-demo.gif" alt="Adverb Checker listing the adverbs found in a sample sentence and showing adverb density" width="760" height="400" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="tool-layout">
+      <div>
+      <div class="tool-panel">
+        <div class="tool-toolbar">
+          <span class="chip active">Paste text</span>
+          <span class="spacer"></span>
+          <button type="button" class="btn btn-ghost" id="av-sample" style="height:34px;padding:0 14px;font-size:13px">Try sample</button>
+          <button type="button" class="btn btn-ghost" id="av-clear" style="height:34px;padding:0 14px;font-size:13px">Clear</button>
+        </div>
+        <textarea class="tool-input" id="av-input" placeholder="Paste a sentence or a paragraph. The adverb checker lists the adverbs it finds so you can judge each one." style="min-height:240px"></textarea>
+<div style="padding:14px 24px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;gap:8px;align-items:center" id="av-top"><span style="font-size:13px;color:var(--gray-400)">Paste a sentence to see the adverbs in it.</span></div>
+        <div class="tool-stats">
+          <div class="stat"><div class="num" id="av-count">0</div><div class="lab">Adverbs found</div></div>
+          <div class="stat"><div class="num" id="av-words">0</div><div class="lab">Total words</div></div>
+          <div class="stat"><div class="num" id="av-unique">0</div><div class="lab">Unique adverbs</div></div>
+          <div class="stat"><div class="num" id="av-sents">0</div><div class="lab">Sentences</div></div>
+          <div class="stat"><div class="num" id="av-density">0%</div><div class="lab">Adverb density</div></div>
+          <div class="stat"><div class="num" id="av-chars">0</div><div class="lab">Characters</div></div>
+        </div>
+      </div>
+        <div class="callout" style="margin-top:22px">
+          <span style="color:var(--blue);flex:0 0 20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span><b>Checked in your browser.</b> Your sentence is analyzed on this page and is never uploaded or stored.</span>
+        </div>
+      </div>
+    <aside class="side-card">
+      <p class="side-card-title">More tools</p>
+      <ul>
+        <li><a href="/tool/character-counter/">Character Counter</a></li><li><a href="/tool/words-to-page-calculator/">Words to Pages Calculator</a></li><li><a href="/tool/character-to-words-calculator/">Character to Words Calculator</a></li><li><a href="/tool/essay-word-counter/">Essay Word Counter</a></li><li><a href="/tool/upper-case-generator/">Upper Case Generator</a></li><li><a href="/tool/lower-case-generator/">Lower Case Generator</a></li><li><a href="/tool/twitter-charactor-generator/">Twitter Character Counter</a></li><li><a href="/tool/instagram-character-counter/">Instagram Character Counter</a></li><li><a href="/tool/linkedin-character-counter/">LinkedIn Character Counter</a></li><li><a href="/tool/google-meta-counter/">Google Meta Counter</a></li><li><a href="/tool/website-word-counter/">Website Word Counter</a></li><li><a href="/tool/link-counter/">Link Counter and URL Length Checker</a></li><li><a href="/tool/chinese-word-counter/">Chinese Word Counter</a></li><li><a href="/tool/number-counter/">Number Counter</a></li><li><a href="/tool/haiku-checker/">Haiku Checker</a></li><li><a href="/tool/alt-text-generator/">Image Alt Text Generator</a></li><li><a href="/tool/word-frequency-counter/">Word Frequency Counter</a></li><li><a href="/tool/sentence-counter/">Sentence Counter</a></li><li><a href="/tool/paragraph-counter/">Paragraph Counter</a></li><li><a href="/tool/line-counter/">Line Counter</a></li><li><a href="/tool/syllable-counter/">Syllable Counter</a></li><li><a href="/tool/hashtag-counter/">Hashtag Counter</a></li><li><a href="/tool/comma-counter/">Comma Counter</a></li><li><a href="/tool/character-frequency-counter/">Character Frequency Counter</a></li><li><a href="/tool/listing-nouns/">Noun Finder</a></li><li><a href="/tool/verb-finder/">Verb Finder</a></li>
+      </ul>
+      <div class="dropdown-foot" style="margin-top:10px"><a href="/tool/">Browse all tools <span aria-hidden="true">→</span></a></div>
+    </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="prose">
+      <h2>What is an adverb checker?</h2>
+      <p>An adverb checker reads your text and marks the words that act as adverbs. This adverb checker is built for a fast pass over a sentence or a short paragraph. It lists the adverbs it finds, counts them and shows their share of the total words. Because everything happens in your browser, the text never leaves the page.</p>
+      <p>The point is not to replace a grammar book. It is to give you a quick read on where the modifiers are, so you can spot a string of ly words and decide which ones earn their place.</p>
+
+      <h2>How the adverb checker works</h2>
+      <p>Two rules do the work. The first is the ly suffix test: a word ending in ly is usually an adverb, as in quickly or carefully. The second is a short list of common irregular adverbs that do not end in ly, including very, quite, well, fast, never, always and often. An exception list removes false hits such as only, family and reply, which end in ly but are not adverbs.</p>
+      <p>This is a heuristic, a practical rule rather than a full grammar parse. It is fast and it works for the ordinary vocabulary of emails, essays and captions. Words outside that vocabulary are where it becomes less certain.</p>
+
+      <h2>How to identify an adverb by hand</h2>
+      <p>Paste your text and the strip under the box fills with the words the tool found. If you want to know how to identify adverbs yourself, ask what the word modifies. An adverb usually changes a verb (she ran quickly), an adjective (very good) or another adverb (quite slowly). If you remove it and the sentence keeps its core meaning, it was probably a modifier.</p>
+      <p>Learning how to identify an adverb this way makes the tool easier to judge. You will see when a listed word is right and when a rare adverb slipped past the rules.</p>
+
+      <h2>Adverb types at a glance</h2>
+      <table class="limits-table">
+        <thead>
+          <tr><th>Word type</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>ly suffix adverb</td><td>quickly, softly, carefully</td></tr>
+          <tr><td>Irregular adverb</td><td>very, quite, well</td></tr>
+          <tr><td>Frequency adverb</td><td>often, always, never</td></tr>
+          <tr><td>Short form adverb</td><td>fast, hard, late</td></tr>
+          <tr><td>Exception, not an adverb</td><td>only, family, reply</td></tr>
+          <tr><td>Exception, ly ending</td><td>lonely, lovely, silly</td></tr>
+        </tbody>
+      </table>
+      <p>The table shows why a word list alone is not enough. Some adverbs, such as fast and hard, carry no ly ending at all, while some ly words are adjectives. The checker handles both by pairing the suffix rule with exceptions.</p>
+
+      <h2>What is the adverb in this sentence</h2>
+      <p>Paste a single line to see what is the adverb in this sentence. The highlighted words are the exact matches the tool counted, and the unique figure tells you whether the same adverb appears twice. For what is the adverb in the sentence with a tricky word, check the result against a dictionary, because the rules cover common usage only.</p>
+
+      <h2>Using adverb density to cut clutter</h2>
+      <p>Density is the share of words in your text that the tool counts as adverbs. A paragraph where one word in six is an adverb is carrying a lot of modifiers. Cut the ones that repeat what the verb already says, and the sentence gets tighter. Try pasting two versions of the same paragraph to see which one reads cleaner.</p>
+
+      <h2>When the adverb finder misses a word</h2>
+      <p>No rule based tool is complete. Rare adverbs are missing from the small list, and an adverb inside a long clause may not match a simple suffix check. That is fine for a quick review of plain sentences and the reason the copy here is careful about what it claims. Use the adverb finder as a second pair of eyes, then make the final call yourself.</p>
+      <blockquote>Adverbs are easy to add and hard to justify. A checker that lists them is really a prompt to delete half of them.</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Questions</span>
+      <h2>Adverb Checker FAQ</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq">
+        <summary>What is an adverb checker?</summary>
+        <div class="faq-body"><p>An adverb checker reads your text and lists the words it treats as adverbs. This free adverb tool uses an ly suffix rule and a short list of common irregular adverbs such as very and often. It also reports adverb density so you can see whether a paragraph is overloaded.</p></div>
+      </details>
+      <details class="faq">
+        <summary>How do I identify adverbs in a sentence?</summary>
+        <div class="faq-body"><p>Paste your text and read the strip under the box. It shows the adverbs in this sentence that the tool found. If you want to know how to identify an adverb or how to identify adverbs in general, look for words that modify a verb, an adjective or another adverb.</p></div>
+      </details>
+      <details class="faq">
+        <summary>What is the adverb in this sentence?</summary>
+        <div class="faq-body"><p>The highlighted list shows what is the adverb in this sentence as the tool sees it. For what is the adverb in the sentence with a more unusual word, remember the checker works from rules, not from a full parse, so verify against a dictionary.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Is this an adverb generator?</summary>
+        <div class="faq-body"><p>No. This is an adverb finder and checker, not an adverb generator. It finds adverbs in text you paste, it does not invent new ones. Use a thesaurus when you want to replace a plain adverb with a stronger word.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Why are only and family not counted?</summary>
+        <div class="faq-body"><p>They end in ly but are not adverbs. The checker keeps an exception list that includes only, family, reply, lonely and silly, so those words are skipped. That keeps the count honest for ordinary sentences.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Does it find every adverb?</summary>
+        <div class="faq-body"><p>Not every one. The method is a heuristic built on suffixes and a small word list, so rare adverbs and adverbs buried in complex clauses can be missed. It is best on short, plain sentences, and I would not rely on it for a formal grammar assignment.</p></div>
+      </details>
+      <details class="faq">
+        <summary>How do I use adverb density?</summary>
+        <div class="faq-body"><p>Density is the share of words in your text that the tool counts as adverbs. A high number usually means the writing leans on modifiers, and cutting a few ly words makes sentences tighter. Compare two drafts by pasting each one in turn.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 style="font-size:clamp(22px,3vw,30px);margin-bottom:24px">Related tools</h2>
+    <div class="grid grid-3">
+      <a class="card" href="/tool/character-counter/">
+        <span class="card-icon"><img src="/assets/img/logos/character-counter-logo.png" alt="Character Counter logo" width="64" height="64" loading="lazy" decoding="async"></span>
+        <h3>Character Counter</h3>
+        <p>Count characters, words, sentences and paragraphs as you type.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/essay-word-counter/">
+        <span class="card-icon"><img src="/assets/img/logos/essay-word-counter-logo.png" alt="Essay Word Counter logo" width="64" height="64" loading="lazy" decoding="async"></span>
+        <h3>Essay Word Counter</h3>
+        <p>Track essay length against a target with pages, reading time and averages.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/website-word-counter/">
+        <span class="card-icon"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#155EEF"/><text x="24" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#fff" font-family="Inter, sans-serif">ww</text></svg></span>
+        <h3>Website Word Counter</h3>
+        <p>Paste a page and count words, unique terms and keyword density.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/">
+        <span class="card-icon"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#155EEF"/><path d="M15 24h18m-7-7 7 7-7 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+        <h3>See more tools</h3>
+        <p>Browse every free counting and text tool on one page.</p>
+        <span class="card-more">See all tools <span aria-hidden="true">→</span></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <span class="brand-mark"><img src="/favicon-180.png" alt="Bohuainter logo" width="30" height="30"></span>
+          <span class="brand-text"><b>bohua</b><span>inter</span></span>
+        </a>
+        <p>Free word and character counting tools built for people who write. Everything runs in your browser, so your drafts stay yours.</p>
+      </div>
+      <div class="footer-col footer-col-tools">
+        <p class="footer-col-title"><a href="/tool/">Tools</a></p>
+        <ul>
+          <li><a href="/tool/character-counter/">Character Counter</a></li>
+          <li><a href="/tool/words-to-page-calculator/">Words to Pages</a></li>
+          <li><a href="/tool/character-to-words-calculator/">Characters to Words</a></li>
+          <li><a href="/tool/essay-word-counter/">Essay Word Counter</a></li>
+          <li><a href="/tool/upper-case-generator/">Upper Case</a></li>
+          <li><a href="/tool/lower-case-generator/">Lower Case</a></li>
+          <li><a href="/tool/twitter-charactor-generator/">Twitter Counter</a></li>
+          <li><a href="/tool/instagram-character-counter/">Instagram Counter</a></li>
+          <li><a href="/tool/linkedin-character-counter/">LinkedIn Counter</a></li>
+          <li><a href="/tool/google-meta-counter/">Google Meta Counter</a></li>
+          <li><a href="/tool/website-word-counter/">Website Word Counter</a></li>
+          <li><a href="/tool/link-counter/">Link Counter</a></li>
+          <li><a href="/tool/chinese-word-counter/">Chinese Word Counter</a></li>
+          <li><a href="/tool/number-counter/">Number Counter</a></li>
+          <li><a href="/tool/haiku-checker/">Haiku Checker</a></li>
+          <li><a href="/tool/alt-text-generator/">Image Alt Text</a></li>
+          <li><a href="/tool/word-frequency-counter/">Word Frequency</a></li>
+          <li><a href="/tool/sentence-counter/">Sentence Counter</a></li>
+          <li><a href="/tool/paragraph-counter/">Paragraph Counter</a></li>
+          <li><a href="/tool/line-counter/">Line Counter</a></li>
+          <li><a href="/tool/syllable-counter/">Syllable Counter</a></li>
+          <li><a href="/tool/hashtag-counter/">Hashtag Counter</a></li>
+          <li><a href="/tool/comma-counter/">Comma Counter</a></li>
+          <li><a href="/tool/character-frequency-counter/">Char Frequency</a></li>
+          <li><a href="/tool/listing-nouns/">Noun Finder</a></li>
+          <li><a href="/tool/adverb-checker/">Adverb Checker</a></li>
+          <li><a href="/tool/verb-finder/">Verb Finder</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Company</p>
+        <ul>
+          <li><a href="/about-us/">About Us</a></li>
+          <li><a href="/contact-us/">Contact Us</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/terms/">Terms</a></li>
+          <li><!--email_off--><a href="mailto:contact@bohuainter.com">contact@bohuainter.com</a><!--/email_off--></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-wordmark" aria-hidden="true">bohuainter</div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Bohuainter. All rights reserved.</span>
+      <span>
+        <a href="/privacy/">Privacy</a> ·
+        <a href="/terms/">Terms</a> ·
+        <a href="/contact-us/">Contact</a>
+      </span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js?v=20261123a"></script>
+</body>
+</html>
