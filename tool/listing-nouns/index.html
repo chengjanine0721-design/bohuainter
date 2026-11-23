@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noun Finder: Listing Nouns in a Sentence</title>
+<meta name="description" content="Paste a sentence and list the nouns it contains. A fast noun finder using a common word list and suffix rules. Runs in your browser.">
+<link rel="canonical" href="https://bohuainter.com/tool/listing-nouns/">
+<link rel="icon" type="image/png" href="/favicon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Noun Finder: Listing Nouns in a Sentence">
+<meta property="og:description" content="Paste a sentence and list the nouns it contains. A fast noun finder using a common word list and suffix rules. Runs in your browser.">
+<meta property="og:url" content="https://bohuainter.com/tool/listing-nouns/">
+<meta property="og:site_name" content="Bohuainter">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="/assets/style.css?v=20261122a">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the noun finder do?","acceptedAnswer":{"@type":"Answer","text":"Paste a sentence and the tool lists the nouns it recognizes. It uses a built-in list of common nouns plus suffix patterns such as tion, ment and ness to spot likely noun names. It is meant for checking simple sentences, not for full grammar analysis."}},{"@type":"Question","name":"What are the nouns in this sentence?","acceptedAnswer":{"@type":"Answer","text":"Paste the text and press Try sample to see an example. The tool lists what are the nouns in this sentence in a strip below the box, and the Nouns found counter gives the total. To identify nouns in a sentence by hand, look for people, places, things and ideas. To find the noun in the sentence, start with the subject."}},{"@type":"Question","name":"Is this a noun or a verb?","acceptedAnswer":{"@type":"Answer","text":"That question depends on the sentence, because words such as work and light can be either. The tool answers is this a noun for common words only. For is this word a noun with a rare or technical term, check a dictionary, since the word list here is deliberately small."}},{"@type":"Question","name":"What is the noun in this sentence?","acceptedAnswer":{"@type":"Answer","text":"The tool highlights the words it treats as nouns so you can see what is the noun in this sentence at a glance. If the sentence has more than one, use the unique noun count to see how many distinct nouns appear."}},{"@type":"Question","name":"Can I use this as a noun word search?","acceptedAnswer":{"@type":"Answer","text":"Yes. Think of it as a noun word search across the text you paste. Every recognized noun is pulled out and counted, which helps when you want to list nouns before writing a summary or a caption."}},{"@type":"Question","name":"Does it find every noun?","acceptedAnswer":{"@type":"Answer","text":"No. The finder uses a common word list and suffix rules, so it is a heuristic rather than a full parser. It can miss proper nouns, rare words and nouns inside complex clauses. Use it as a quick check on short, plain sentences and read longer text yourself."}},{"@type":"Question","name":"Does the tool work on long paragraphs?","acceptedAnswer":{"@type":"Answer","text":"You can paste a paragraph and the sentence counter will show how many sentences were scanned. Accuracy drops as sentences get longer and more nested, so for a careful review paste one sentence at a time."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Noun Finder","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Paste a sentence and list the nouns it contains. A fast noun finder using a common word list and suffix rules. Runs in your browser.","url":"https://bohuainter.com/tool/listing-nouns/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-mark"><img src="/favicon-180.png" alt="Bohuainter logo" width="30" height="30"></span>
+      <span class="brand-text"><b>bohua</b><span>inter</span></span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          Blog
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown" style="width:320px">
+          <div class="dropdown-head">Writing guides</div>
+          <a class="dropdown-item" href="/blog/how-do-you-get-word-count-on-pages/"><span><span class="dd-title">Tips to Get Word Count In Pages</span><span class="dd-desc">Find and pin the counter in Apple Pages</span></span></a>
+          <a class="dropdown-item" href="/blog/how-long-should-your-pages-title-tag-be/"><span><span class="dd-title">Guide to Seo Title Description Length</span><span class="dd-desc">Pixel limits for titles and meta descriptions</span></span></a>
+          <a class="dropdown-item" href="/blog/how-to-find-word-count-on-google-docs/"><span><span class="dd-title">Guide to Find Word Count On Google Docs</span><span class="dd-desc">Where Docs hides the word count panel</span></span></a>
+          <a class="dropdown-item" href="/blog/how-to-check-word-count-in-microsoft-word/"><span><span class="dd-title">How to Count Words in Microsoft Word</span><span class="dd-desc">Desktop, web and mobile routes that work</span></span></a>
+          <div class="dropdown-foot"><a href="/blog/">Read the blog <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          Tools
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown dropdown-tools">
+          <div class="dropdown-head">Free writing tools</div>
+          <a class="dropdown-item" href="/tool/character-counter/">
+            <span class="dd-icon">Aa</span>
+            <span>
+              <span class="dd-title">Character Counter</span>
+              <span class="dd-desc">Count characters, words, sentences and paragraphs as you type.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/words-to-page-calculator/">
+            <span class="dd-icon">¶</span>
+            <span>
+              <span class="dd-title">Words to Pages</span>
+              <span class="dd-desc">Convert words to pages, single or double spaced, for essays and reports.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/character-to-words-calculator/">
+            <span class="dd-icon">↔</span>
+            <span>
+              <span class="dd-title">Characters to Words</span>
+              <span class="dd-desc">Estimate how many words a given number of characters turns into.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/essay-word-counter/">
+            <span class="dd-icon">✎</span>
+            <span>
+              <span class="dd-title">Essay Word Counter</span>
+              <span class="dd-desc">Track essay length against a target with pages, reading time and averages.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/upper-case-generator/">
+            <span class="dd-icon">AB</span>
+            <span>
+              <span class="dd-title">Upper Case</span>
+              <span class="dd-desc">Convert any text to UPPER CASE, title case or sentence case instantly.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/lower-case-generator/">
+            <span class="dd-icon">ab</span>
+            <span>
+              <span class="dd-title">Lower Case</span>
+              <span class="dd-desc">Convert any text to lower case, title case or sentence case instantly.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/twitter-charactor-generator/">
+            <span class="dd-icon">𝕏</span>
+            <span>
+              <span class="dd-title">Twitter Counter</span>
+              <span class="dd-desc">Check your post against the 280 character limit before you publish.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/instagram-character-counter/">
+            <span class="dd-icon">IG</span>
+            <span>
+              <span class="dd-title">Instagram Counter</span>
+              <span class="dd-desc">Check captions, bios and comments against every Instagram limit.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/linkedin-character-counter/">
+            <span class="dd-icon">in</span>
+            <span>
+              <span class="dd-title">LinkedIn Counter</span>
+              <span class="dd-desc">Measure posts, headlines and About sections against LinkedIn limits.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/google-meta-counter/">
+            <span class="dd-icon">G</span>
+            <span>
+              <span class="dd-title">Google Meta Counter</span>
+              <span class="dd-desc">Write SEO titles and descriptions that fit Google's display width.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/website-word-counter/">
+            <span class="dd-icon">ww</span>
+            <span>
+              <span class="dd-title">Website Word Counter</span>
+              <span class="dd-desc">Paste a page and count words, unique terms and keyword density.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/link-counter/">
+            <span class="dd-icon">URL</span>
+            <span>
+              <span class="dd-title">Link Counter</span>
+              <span class="dd-desc">Count links in a list and check every URL against practical length limits.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/chinese-word-counter/">
+            <span class="dd-icon">中</span>
+            <span>
+              <span class="dd-title">Chinese Word Counter</span>
+              <span class="dd-desc">Count hanzi, words and punctuation in Chinese and mixed text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/number-counter/">
+            <span class="dd-icon">#</span>
+            <span>
+              <span class="dd-title">Number Counter</span>
+              <span class="dd-desc">Tap or click to count up, with steps, targets and a tally log.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/haiku-checker/">
+            <span class="dd-icon">5-7-5</span>
+            <span>
+              <span class="dd-title">Haiku Checker</span>
+              <span class="dd-desc">Count syllables line by line and check a poem against 5-7-5.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/alt-text-generator/">
+            <span class="dd-icon">Alt</span>
+            <span>
+              <span class="dd-title">Image Alt Text Generator</span>
+              <span class="dd-desc">Build Title Case alt text and a lowercase image name from one description.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/word-frequency-counter/">
+            <span class="dd-icon">123</span>
+            <span>
+              <span class="dd-title">Word Frequency</span>
+              <span class="dd-desc">See which words appear most often in any text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/sentence-counter/">
+            <span class="dd-icon">S</span>
+            <span>
+              <span class="dd-title">Sentence Counter</span>
+              <span class="dd-desc">Count sentences and check average sentence length.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/paragraph-counter/">
+            <span class="dd-icon">P</span>
+            <span>
+              <span class="dd-title">Paragraph Counter</span>
+              <span class="dd-desc">Count paragraphs and measure their length as you write.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/line-counter/">
+            <span class="dd-icon">L</span>
+            <span>
+              <span class="dd-title">Line Counter</span>
+              <span class="dd-desc">Count lines of text, including empty and non empty lines.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/syllable-counter/">
+            <span class="dd-icon">5-7</span>
+            <span>
+              <span class="dd-title">Syllable Counter</span>
+              <span class="dd-desc">Count syllables per word and average syllables in a text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/hashtag-counter/">
+            <span class="dd-icon">H</span>
+            <span>
+              <span class="dd-title">Hashtag Counter</span>
+              <span class="dd-desc">Pull every hashtag out of a caption and count duplicates.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/comma-counter/">
+            <span class="dd-icon">,</span>
+            <span>
+              <span class="dd-title">Comma Counter</span>
+              <span class="dd-desc">Count commas and see how heavy each sentence is.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/character-frequency-counter/">
+            <span class="dd-icon">e</span>
+            <span>
+              <span class="dd-title">Character Frequency</span>
+              <span class="dd-desc">Count letter frequency and see the top characters in a text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/listing-nouns/">
+            <span class="dd-icon">N</span>
+            <span>
+              <span class="dd-title">Noun Finder</span>
+              <span class="dd-desc">Find the nouns in a sentence and list them with counts.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/adverb-checker/">
+            <span class="dd-icon">ly</span>
+            <span>
+              <span class="dd-title">Adverb Checker</span>
+              <span class="dd-desc">Find adverbs in a sentence and see how dense they are.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/verb-finder/">
+            <span class="dd-icon">V</span>
+            <span>
+              <span class="dd-title">Verb Finder</span>
+              <span class="dd-desc">Find the verbs and auxiliaries in a sentence.</span>
+            </span>
+          </a>
+          <div class="dropdown-foot"><a href="/tool/">See all tools <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          More
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown" style="width:260px">
+          <div class="dropdown-head">Bohuainter</div>
+          <a class="dropdown-item" href="/about-us/"><span class="dd-icon">i</span><span><span class="dd-title">About Us</span><span class="dd-desc">Why this site exists</span></span></a>
+          <a class="dropdown-item" href="/contact-us/"><span class="dd-icon">@</span><span><span class="dd-title">Contact Us</span><span class="dd-desc">Questions and feedback</span></span></a>
+          <a class="dropdown-item" href="/privacy/"><span class="dd-icon">✓</span><span><span class="dd-title">Privacy</span><span class="dd-desc">What we do with your text</span></span></a>
+          <a class="dropdown-item" href="/terms/"><span class="dd-icon">§</span><span><span class="dd-title">Terms</span><span class="dd-desc">The rules of the road</span></span></a>
+          <div class="dropdown-foot"><a href="/blog/">Read the blog <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="wrap"><nav class="crumbs crumbs-bar" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/tool/">Tools</a><span class="sep">/</span><span aria-current="page">Noun Finder</span></nav></div>
+<main id="main">
+
+<section class="page-hero hero-split">
+  <div class="wrap hero-split-grid">
+    <div class="hero-copy">
+      <span class="eyebrow"><i>★</i> Spot the nouns</span>
+      <h1>Noun Finder</h1>
+      <p>Paste a sentence and the noun finder lists the nouns it recognizes, with a count and the words grouped in one place. It is a quick way to check simple sentences, not a full grammar parser.</p>
+    </div>
+    <figure class="hero-demo">
+      <img src="/assets/img/ln-demo.gif" alt="Noun Finder listing the nouns found in a sample sentence" width="760" height="400" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="tool-layout">
+      <div>
+      <div class="tool-panel">
+        <div class="tool-toolbar">
+          <span class="chip active">Paste text</span>
+          <span class="spacer"></span>
+          <button type="button" class="btn btn-ghost" id="ln-sample" style="height:34px;padding:0 14px;font-size:13px">Try sample</button>
+          <button type="button" class="btn btn-ghost" id="ln-clear" style="height:34px;padding:0 14px;font-size:13px">Clear</button>
+        </div>
+        <textarea class="tool-input" id="ln-input" placeholder="Paste a sentence or a paragraph. The noun finder marks the nouns it recognises and lists them below." style="min-height:240px"></textarea>
+<div style="padding:14px 24px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;gap:8px;align-items:center" id="ln-top"><span style="font-size:13px;color:var(--gray-400)">Paste a sentence to see the nouns in it.</span></div>
+        <div class="tool-stats">
+          <div class="stat"><div class="num" id="ln-nouns">0</div><div class="lab">Nouns found</div></div>
+          <div class="stat"><div class="num" id="ln-words">0</div><div class="lab">Total words</div></div>
+          <div class="stat"><div class="num" id="ln-unique">0</div><div class="lab">Unique nouns</div></div>
+          <div class="stat"><div class="num" id="ln-sents">0</div><div class="lab">Sentences</div></div>
+          <div class="stat"><div class="num" id="ln-chars">0</div><div class="lab">Characters</div></div>
+          <div class="stat"><div class="num" id="ln-per">0</div><div class="lab">Nouns per sentence</div></div>
+        </div>
+      </div>
+        <div class="callout" style="margin-top:22px">
+          <span style="color:var(--blue);flex:0 0 20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span><b>Nothing leaves your browser.</b> The sentence you paste is read on this page and is never uploaded or stored.</span>
+        </div>
+      </div>
+    <aside class="side-card">
+      <p class="side-card-title">More tools</p>
+      <ul>
+        <li><a href="/tool/character-counter/">Character Counter</a></li><li><a href="/tool/words-to-page-calculator/">Words to Pages Calculator</a></li><li><a href="/tool/character-to-words-calculator/">Character to Words Calculator</a></li><li><a href="/tool/essay-word-counter/">Essay Word Counter</a></li><li><a href="/tool/upper-case-generator/">Upper Case Generator</a></li><li><a href="/tool/lower-case-generator/">Lower Case Generator</a></li><li><a href="/tool/twitter-charactor-generator/">Twitter Character Counter</a></li><li><a href="/tool/instagram-character-counter/">Instagram Character Counter</a></li><li><a href="/tool/linkedin-character-counter/">LinkedIn Character Counter</a></li><li><a href="/tool/google-meta-counter/">Google Meta Counter</a></li><li><a href="/tool/website-word-counter/">Website Word Counter</a></li><li><a href="/tool/link-counter/">Link Counter and URL Length Checker</a></li><li><a href="/tool/chinese-word-counter/">Chinese Word Counter</a></li><li><a href="/tool/number-counter/">Number Counter</a></li><li><a href="/tool/haiku-checker/">Haiku Checker</a></li><li><a href="/tool/alt-text-generator/">Image Alt Text Generator</a></li><li><a href="/tool/word-frequency-counter/">Word Frequency Counter</a></li><li><a href="/tool/sentence-counter/">Sentence Counter</a></li><li><a href="/tool/paragraph-counter/">Paragraph Counter</a></li><li><a href="/tool/line-counter/">Line Counter</a></li><li><a href="/tool/syllable-counter/">Syllable Counter</a></li><li><a href="/tool/hashtag-counter/">Hashtag Counter</a></li><li><a href="/tool/comma-counter/">Comma Counter</a></li><li><a href="/tool/character-frequency-counter/">Character Frequency Counter</a></li><li><a href="/tool/adverb-checker/">Adverb Checker</a></li><li><a href="/tool/verb-finder/">Verb Finder</a></li>
+      </ul>
+      <div class="dropdown-foot" style="margin-top:10px"><a href="/tool/">Browse all tools <span aria-hidden="true">→</span></a></div>
+    </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="prose">
+      <h2>What is a noun finder?</h2>
+      <p>A noun finder reads the text you paste and pulls out the words it treats as nouns. This page is a noun finder built for quick checks on short, plain sentences. Paste one line, and the tool lists the nouns in a strip under the box, counts them, and shows how many were distinct. It runs in your browser, so nothing you type is sent anywhere.</p>
+      <p>The goal is speed on simple text, not a full grammar analysis. If you are listing nouns in a sentence for a school exercise or a writing check, this gives you an answer in a second. It is deliberately honest about what it can and cannot recognize.</p>
+
+      <h2>How the noun finder works</h2>
+      <p>The tool combines two methods. First it looks up each word in a built-in list of common nouns, which covers everyday words such as cat, table, city and idea. Second it applies suffix patterns that English nouns often follow, including tion, ment, ness, ity, ance, ship and er. A word ending in tion, for example education, is very likely to be a noun even if it is not in the list.</p>
+      <p>That combination is a heuristic, which means a rule of thumb rather than a complete grammar engine. It catches the large majority of nouns in ordinary sentences and stays fast because it never makes a network request.</p>
+
+      <h2>How to find the noun in the sentence</h2>
+      <p>Paste your text into the box and the results appear as you type. The strip below the input shows every noun the tool recognizes, and the counters give the total words, the nouns found and the number of distinct nouns. To find the noun in the sentence yourself, start with the subject, the person or thing the sentence is about, then check for objects and names.</p>
+      <p>If you want to identify nouns in a sentence one at a time, paste a single line. The per sentence figure stays meaningful and the result is easier to trust than a long block of text.</p>
+
+      <h2>What are the nouns in this sentence</h2>
+      <table class="limits-table">
+        <thead>
+          <tr><th>Sentence</th><th>The nouns in it</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>The cat sat on the mat.</td><td>cat, mat</td></tr>
+          <tr><td>Education takes commitment.</td><td>education, commitment</td></tr>
+          <tr><td>She showed great kindness.</td><td>kindness</td></tr>
+          <tr><td>The builder finished the building.</td><td>builder, building</td></tr>
+          <tr><td>Happiness is a choice.</td><td>happiness, choice</td></tr>
+          <tr><td>The team won the championship.</td><td>team, championship</td></tr>
+          <tr><td>Knowledge brings power.</td><td>knowledge, power</td></tr>
+        </tbody>
+      </table>
+      <p>The pattern behind the table is the suffix rule at work. Words ending in tion, ment, ness, ity and er make up most of the examples, and the short concrete words such as cat and mat come straight from the common word list.</p>
+
+      <h2>Is this a noun? Questions people ask</h2>
+      <p>Is this word a noun depends on how it is used. Many English words shift class, so work can be a noun in hard work and a verb in I work. The tool answers for the common case, and it will not always catch a noun used in an unusual way. When a word is a proper name or a technical term, the small word list is the reason it may be skipped.</p>
+      <p>For what is the noun in this sentence, read the highlighted strip. It shows the exact words the tool counted, so you can agree or disagree with the result in seconds.</p>
+
+      <h2>When the noun finder can miss a word</h2>
+      <p>Because this is a heuristic, it has limits. Rare words are absent from the list. Nouns inside long, nested clauses can be overlooked. Words with more than one job may be labeled by a rule rather than by the sentence. None of that matters for a quick check on a simple line, and it is why the copy here says recognizes common nouns rather than parses every sentence perfectly.</p>
+
+      <h2>Using this as a noun word search</h2>
+      <p>You can treat the tool as a noun word search. Paste a paragraph, scan the list of noun names, and use the unique count to see how many different nouns you have used. That is handy before writing a summary, a caption or a title, when you want concrete words rather than vague ones. Note the total, clear the box, and paste the next line to keep each result separate.</p>
+      <blockquote>A short sentence with a clear noun is easier to read than a long one full of abstractions. Listing nouns is a quick way to see which you have.</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Questions</span>
+      <h2>Noun Finder FAQ</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq">
+        <summary>What does the noun finder do?</summary>
+        <div class="faq-body"><p>Paste a sentence and the tool lists the nouns it recognizes. It uses a built-in list of common nouns plus suffix patterns such as tion, ment and ness to spot likely noun names. It is meant for checking simple sentences, not for full grammar analysis.</p></div>
+      </details>
+      <details class="faq">
+        <summary>What are the nouns in this sentence?</summary>
+        <div class="faq-body"><p>Paste the text and press Try sample to see an example. The tool lists what are the nouns in this sentence in a strip below the box, and the Nouns found counter gives the total. To identify nouns in a sentence by hand, look for people, places, things and ideas. To find the noun in the sentence, start with the subject.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Is this a noun or a verb?</summary>
+        <div class="faq-body"><p>That question depends on the sentence, because words such as work and light can be either. The tool answers is this a noun for common words only. For is this word a noun with a rare or technical term, check a dictionary, since the word list here is deliberately small.</p></div>
+      </details>
+      <details class="faq">
+        <summary>What is the noun in this sentence?</summary>
+        <div class="faq-body"><p>The tool highlights the words it treats as nouns so you can see what is the noun in this sentence at a glance. If the sentence has more than one, use the unique noun count to see how many distinct nouns appear.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Can I use this as a noun word search?</summary>
+        <div class="faq-body"><p>Yes. Think of it as a noun word search across the text you paste. Every recognized noun is pulled out and counted, which helps when you want to list nouns before writing a summary or a caption.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Does it find every noun?</summary>
+        <div class="faq-body"><p>No. The finder uses a common word list and suffix rules, so it is a heuristic rather than a full parser. It can miss proper nouns, rare words and nouns inside complex clauses. Use it as a quick check on short, plain sentences and read longer text yourself.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Does the tool work on long paragraphs?</summary>
+        <div class="faq-body"><p>You can paste a paragraph and the sentence counter will show how many sentences were scanned. Accuracy drops as sentences get longer and more nested, so for a careful review paste one sentence at a time.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 style="font-size:clamp(22px,3vw,30px);margin-bottom:24px">Related tools</h2>
+    <div class="grid grid-3">
+      <a class="card" href="/tool/character-counter/">
+        <span class="card-icon"><img src="/assets/img/logos/character-counter-logo.png" alt="Character Counter logo" width="64" height="64" loading="lazy" decoding="async"></span>
+        <h3>Character Counter</h3>
+        <p>Count characters, words, sentences and paragraphs as you type.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/essay-word-counter/">
+        <span class="card-icon"><img src="/assets/img/logos/essay-word-counter-logo.png" alt="Essay Word Counter logo" width="64" height="64" loading="lazy" decoding="async"></span>
+        <h3>Essay Word Counter</h3>
+        <p>Track essay length against a target with pages, reading time and averages.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/website-word-counter/">
+        <span class="card-icon"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#155EEF"/><text x="24" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#fff" font-family="Inter, sans-serif">ww</text></svg></span>
+        <h3>Website Word Counter</h3>
+        <p>Paste a page and count words, unique terms and keyword density.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/">
+        <span class="card-icon"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#155EEF"/><path d="M15 24h18m-7-7 7 7-7 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+        <h3>See more tools</h3>
+        <p>Browse every free counting and text tool on one page.</p>
+        <span class="card-more">See all tools <span aria-hidden="true">→</span></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <span class="brand-mark"><img src="/favicon-180.png" alt="Bohuainter logo" width="30" height="30"></span>
+          <span class="brand-text"><b>bohua</b><span>inter</span></span>
+        </a>
+        <p>Free word and character counting tools built for people who write. Everything runs in your browser, so your drafts stay yours.</p>
+      </div>
+      <div class="footer-col footer-col-tools">
+        <p class="footer-col-title"><a href="/tool/">Tools</a></p>
+        <ul>
+          <li><a href="/tool/character-counter/">Character Counter</a></li>
+          <li><a href="/tool/words-to-page-calculator/">Words to Pages</a></li>
+          <li><a href="/tool/character-to-words-calculator/">Characters to Words</a></li>
+          <li><a href="/tool/essay-word-counter/">Essay Word Counter</a></li>
+          <li><a href="/tool/upper-case-generator/">Upper Case</a></li>
+          <li><a href="/tool/lower-case-generator/">Lower Case</a></li>
+          <li><a href="/tool/twitter-charactor-generator/">Twitter Counter</a></li>
+          <li><a href="/tool/instagram-character-counter/">Instagram Counter</a></li>
+          <li><a href="/tool/linkedin-character-counter/">LinkedIn Counter</a></li>
+          <li><a href="/tool/google-meta-counter/">Google Meta Counter</a></li>
+          <li><a href="/tool/website-word-counter/">Website Word Counter</a></li>
+          <li><a href="/tool/link-counter/">Link Counter</a></li>
+          <li><a href="/tool/chinese-word-counter/">Chinese Word Counter</a></li>
+          <li><a href="/tool/number-counter/">Number Counter</a></li>
+          <li><a href="/tool/haiku-checker/">Haiku Checker</a></li>
+          <li><a href="/tool/alt-text-generator/">Image Alt Text</a></li>
+          <li><a href="/tool/word-frequency-counter/">Word Frequency</a></li>
+          <li><a href="/tool/sentence-counter/">Sentence Counter</a></li>
+          <li><a href="/tool/paragraph-counter/">Paragraph Counter</a></li>
+          <li><a href="/tool/line-counter/">Line Counter</a></li>
+          <li><a href="/tool/syllable-counter/">Syllable Counter</a></li>
+          <li><a href="/tool/hashtag-counter/">Hashtag Counter</a></li>
+          <li><a href="/tool/comma-counter/">Comma Counter</a></li>
+          <li><a href="/tool/character-frequency-counter/">Char Frequency</a></li>
+          <li><a href="/tool/listing-nouns/">Noun Finder</a></li>
+          <li><a href="/tool/adverb-checker/">Adverb Checker</a></li>
+          <li><a href="/tool/verb-finder/">Verb Finder</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Company</p>
+        <ul>
+          <li><a href="/about-us/">About Us</a></li>
+          <li><a href="/contact-us/">Contact Us</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/terms/">Terms</a></li>
+          <li><!--email_off--><a href="mailto:contact@bohuainter.com">contact@bohuainter.com</a><!--/email_off--></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-wordmark" aria-hidden="true">bohuainter</div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Bohuainter. All rights reserved.</span>
+      <span>
+        <a href="/privacy/">Privacy</a> ·
+        <a href="/terms/">Terms</a> ·
+        <a href="/contact-us/">Contact</a>
+      </span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js?v=20261123a"></script>
+</body>
+</html>
