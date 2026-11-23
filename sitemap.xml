@@ -26,6 +26,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://bohuainter.com/blog/how-many-words-in-a-paragraph/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://bohuainter.com/blog/how-many-words-is-a-typical-novel/</loc>
     <lastmod>2026-11-12</lastmod>
     <priority>0.6</priority>
@@ -71,6 +76,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bohuainter.com/tool/adverb-checker/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://bohuainter.com/tool/alt-text-generator/</loc>
     <lastmod>2026-11-18</lastmod>
     <priority>0.6</priority>
@@ -81,6 +91,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://bohuainter.com/tool/character-frequency-counter/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://bohuainter.com/tool/character-to-words-calculator/</loc>
     <lastmod>2026-11-12</lastmod>
     <priority>0.6</priority>
@@ -88,6 +103,11 @@
   <url>
     <loc>https://bohuainter.com/tool/chinese-word-counter/</loc>
     <lastmod>2026-11-19</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bohuainter.com/tool/comma-counter/</loc>
+    <lastmod>2026-11-23</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -106,8 +126,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://bohuainter.com/tool/hashtag-counter/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://bohuainter.com/tool/instagram-character-counter/</loc>
     <lastmod>2026-11-22</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bohuainter.com/tool/line-counter/</loc>
+    <lastmod>2026-11-23</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -121,6 +151,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://bohuainter.com/tool/listing-nouns/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://bohuainter.com/tool/lower-case-generator/</loc>
     <lastmod>2026-11-12</lastmod>
     <priority>0.6</priority>
@@ -128,6 +163,21 @@
   <url>
     <loc>https://bohuainter.com/tool/number-counter/</loc>
     <lastmod>2026-11-22</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bohuainter.com/tool/paragraph-counter/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bohuainter.com/tool/sentence-counter/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bohuainter.com/tool/syllable-counter/</loc>
+    <lastmod>2026-11-23</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -141,8 +191,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://bohuainter.com/tool/verb-finder/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://bohuainter.com/tool/website-word-counter/</loc>
     <lastmod>2026-11-22</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bohuainter.com/tool/word-frequency-counter/</loc>
+    <lastmod>2026-11-23</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
