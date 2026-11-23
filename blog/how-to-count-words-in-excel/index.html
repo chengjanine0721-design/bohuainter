@@ -13,9 +13,12 @@
 <meta property="og:url" content="https://bohuainter.com/blog/how-to-count-words-in-excel/">
 <meta property="og:site_name" content="Bohuainter">
 <meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to Count Words in Excel","description":"Excel has no word count button. One short formula gives you the total for a cell, a column or a whole sheet.","datePublished":"2026-10-14","dateModified":"2026-10-14","inLanguage":"en","url":"https://bohuainter.com/blog/how-to-count-words-in-excel/","author":{"@type":"Organization","name":"Bohuainter"},"publisher":{"@type":"Organization","name":"Bohuainter"}}
+</script>
 <link rel="preconnect" href="https://rsms.me/">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-<link rel="stylesheet" href="/assets/style.css?v=20261122b">
+<link rel="stylesheet" href="/assets/style.css?v=20261122a">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -162,6 +165,83 @@
               <span class="dd-desc">Build Title Case alt text and a lowercase image name from one description.</span>
             </span>
           </a>
+          <a class="dropdown-item" href="/tool/word-frequency-counter/">
+            <span class="dd-icon">123</span>
+            <span>
+              <span class="dd-title">Word Frequency</span>
+              <span class="dd-desc">See which words appear most often in any text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/sentence-counter/">
+            <span class="dd-icon">S</span>
+            <span>
+              <span class="dd-title">Sentence Counter</span>
+              <span class="dd-desc">Count sentences and check average sentence length.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/paragraph-counter/">
+            <span class="dd-icon">P</span>
+            <span>
+              <span class="dd-title">Paragraph Counter</span>
+              <span class="dd-desc">Count paragraphs and measure their length as you write.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/line-counter/">
+            <span class="dd-icon">L</span>
+            <span>
+              <span class="dd-title">Line Counter</span>
+              <span class="dd-desc">Count lines of text, including empty and non empty lines.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/syllable-counter/">
+            <span class="dd-icon">5-7</span>
+            <span>
+              <span class="dd-title">Syllable Counter</span>
+              <span class="dd-desc">Count syllables per word and average syllables in a text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/hashtag-counter/">
+            <span class="dd-icon">H</span>
+            <span>
+              <span class="dd-title">Hashtag Counter</span>
+              <span class="dd-desc">Pull every hashtag out of a caption and count duplicates.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/comma-counter/">
+            <span class="dd-icon">,</span>
+            <span>
+              <span class="dd-title">Comma Counter</span>
+              <span class="dd-desc">Count commas and see how heavy each sentence is.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/character-frequency-counter/">
+            <span class="dd-icon">e</span>
+            <span>
+              <span class="dd-title">Character Frequency</span>
+              <span class="dd-desc">Count letter frequency and see the top characters in a text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/listing-nouns/">
+            <span class="dd-icon">N</span>
+            <span>
+              <span class="dd-title">Noun Finder</span>
+              <span class="dd-desc">Find the nouns in a sentence and list them with counts.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/adverb-checker/">
+            <span class="dd-icon">ly</span>
+            <span>
+              <span class="dd-title">Adverb Checker</span>
+              <span class="dd-desc">Find adverbs in a sentence and see how dense they are.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/verb-finder/">
+            <span class="dd-icon">V</span>
+            <span>
+              <span class="dd-title">Verb Finder</span>
+              <span class="dd-desc">Find the verbs and auxiliaries in a sentence.</span>
+            </span>
+          </a>
           <div class="dropdown-foot"><a href="/tool/">See all tools <span aria-hidden="true">→</span></a></div>
         </div>
       </div>
@@ -203,6 +283,9 @@
       <p class="post-toc-title">Quick Navigation</p>
       <ul>
         <li>
+          <a href="#how-do-you-count-words-in-excel">How do you count words in Excel?</a>
+        </li>
+        <li>
           <a href="#the-formula">The formula</a>
         </li>
         <li>
@@ -215,6 +298,14 @@
           <a href="#the-comma-problem">The comma problem</a>
         </li>
         <li>
+          <a href="#frequently-asked-questions">Frequently asked questions</a>
+          <ul>
+            <li><a href="#how-do-i-count-words-in-excel">How do I count words in Excel?</a></li>
+            <li><a href="#how-can-i-count-words-in-excel">How can I count words in Excel?</a></li>
+            <li><a href="#how-to-count-specific-words-in-excel-column">How to count specific words in Excel column</a></li>
+          </ul>
+        </li>
+        <li>
           <a href="#why-not-just-use-word">Why not just use Word</a>
         </li>
       </ul>
@@ -222,6 +313,8 @@
     <div class="prose">
 
       <p>Excel has no word count feature, no ribbon button and no formula function with that name. What it does have is enough string handling to count words with one line of arithmetic, and that calculation is more flexible than a button would be.</p>
+      <h2 id="how-do-you-count-words-in-excel">How do you count words in Excel?</h2>
+      <p>Yes, you can count words in Excel even though there is no built-in button. The method is to measure the length of the text, remove the spaces, and subtract one from the difference. For a value in cell A1, use <code>=LEN(TRIM(A1))-LEN(SUBSTITUTE(TRIM(A1)," ",""))+1</code>. That single line is the word count in excel that most people are looking for, and the rest of this page covers blank cells, whole columns, and unusual spacing.</p>
       <h2 id="the-formula">The formula</h2>
       <p>For text in cell A1, this is the word count</p>
       <p><code>=LEN(TRIM(A1))-LEN(SUBSTITUTE(TRIM(A1)," ",""))+1</code></p>
@@ -238,6 +331,14 @@
       <h2 id="the-comma-problem">The comma problem</h2>
       <p>Every formula above treats spaces as the only word separator. Text copied out of a PDF or a website often separates words with non breaking spaces, which look identical and are a different character. Those will merge two words into one.</p>
       <p>Two fixes. Clean the text first with Find and Replace, pasting a non breaking space into the find box. Or use Excel's own cleanup by running the text through <code>=SUBSTITUTE(A1,CHAR(160)," ")</code> before counting.</p>
+      <h2 id="frequently-asked-questions">Frequently asked questions</h2>
+      <h3 id="how-do-i-count-words-in-excel">How do I count words in Excel?</h3>
+      <p>If you are asking how do i count words in excel, start with the formula above in a free cell beside your text. A word count for excel rows works best when the helper column is filled down the full range, because a single cell only reports one value. Copy the formula down and then sum the column to get the total for the whole sheet.</p>
+      <h3 id="how-can-i-count-words-in-excel">How can I count words in Excel?</h3>
+      <p>The short answer to how can i count words in excel is to subtract two string lengths. LEN with TRIM measures the text after extra spaces are cleaned up, and SUBSTITUTE removes every space so you can measure again. The gap between the two numbers is the count of spaces, and one more than that is the word count in excel. If your text contains unusual spacing, clean it first as shown in the comma problem section.</p>
+      <h3 id="how-to-count-specific-words-in-excel-column">How to count specific words in Excel column</h3>
+      <p>If your question is how to count specific words in excel column, meaning how many times one particular term appears, use <code>=COUNTIF(A1:A200,"*target*")</code> to find the cells that contain it. For an exact count of repeated matches inside those cells, use <code>=SUMPRODUCT((LEN(A1:A200)-LEN(SUBSTITUTE(LOWER(A1:A200),"target","")))/LEN("target"))</code>, which removes the target from each cell and divides by its length.</p>
+
       <h2 id="why-not-just-use-word">Why not just use Word</h2>
       <p>Because the text is already in a spreadsheet with the rest of your data. Product descriptions in a catalogue, translations in a review queue and survey answers in a column all need their length checked in place, next to the things they relate to. Copying five hundred rows into a word processor is not a workflow.</p>
       <blockquote>A spreadsheet formula that handles edge cases beats a button that only handles the easy case. Spend two minutes getting the formula right and it will work on every file you open for years.</blockquote>
@@ -306,6 +407,17 @@
           <li><a href="/tool/number-counter/">Number Counter</a></li>
           <li><a href="/tool/haiku-checker/">Haiku Checker</a></li>
           <li><a href="/tool/alt-text-generator/">Image Alt Text</a></li>
+          <li><a href="/tool/word-frequency-counter/">Word Frequency</a></li>
+          <li><a href="/tool/sentence-counter/">Sentence Counter</a></li>
+          <li><a href="/tool/paragraph-counter/">Paragraph Counter</a></li>
+          <li><a href="/tool/line-counter/">Line Counter</a></li>
+          <li><a href="/tool/syllable-counter/">Syllable Counter</a></li>
+          <li><a href="/tool/hashtag-counter/">Hashtag Counter</a></li>
+          <li><a href="/tool/comma-counter/">Comma Counter</a></li>
+          <li><a href="/tool/character-frequency-counter/">Char Frequency</a></li>
+          <li><a href="/tool/listing-nouns/">Noun Finder</a></li>
+          <li><a href="/tool/adverb-checker/">Adverb Checker</a></li>
+          <li><a href="/tool/verb-finder/">Verb Finder</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -332,6 +444,6 @@
     </div>
   </div>
 </footer>
-<script src="/assets/site.js?v=20261122b"></script>
+<script src="/assets/site.js?v=20261123a"></script>
 </body>
 </html>
