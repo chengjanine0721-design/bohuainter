@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verb Finder: Find the Verbs in a Sentence</title>
+<meta name="description" content="Paste a sentence and find its verbs. A verb finder using a common verb list, auxiliaries and ing or ed endings. All checking runs in your browser.">
+<link rel="canonical" href="https://bohuainter.com/tool/verb-finder/">
+<link rel="icon" type="image/png" href="/favicon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Verb Finder: Find the Verbs in a Sentence">
+<meta property="og:description" content="Paste a sentence and find its verbs. A verb finder using a common verb list, auxiliaries and ing or ed endings. All checking runs in your browser.">
+<meta property="og:url" content="https://bohuainter.com/tool/verb-finder/">
+<meta property="og:site_name" content="Bohuainter">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="/assets/style.css?v=20261122a">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a verb finder?","acceptedAnswer":{"@type":"Answer","text":"A verb finder reads your text and lists the words it treats as verbs. This verb finder uses a built-in list of common verbs, a set of auxiliaries such as is, are and have, and simple ing and ed endings. It is a quick helper to identify verbs in plain sentences rather than a full grammar checker."}},{"@type":"Question","name":"How do I find the verb in a sentence?","acceptedAnswer":{"@type":"Answer","text":"Paste your text and read the list below the box. To find the verb in a sentence by hand, look for the action or the state of being. If you want to know how to find a verb in the sentence with more than one clause, check each clause separately."}},{"@type":"Question","name":"What are the verbs in this sentence?","acceptedAnswer":{"@type":"Answer","text":"The highlighted list shows what are the verbs in this sentence as the tool reads it, including any auxiliaries it spotted. A sentence such as She is running has both is and running, and both appear in the count."}},{"@type":"Question","name":"Is this a subject and verb finder?","acceptedAnswer":{"@type":"Answer","text":"No. This is a verb finder, not a subject and verb finder. It locates verbs and auxiliaries, but it does not identify the subject. Find the subject by asking who or what performs the action."}},{"@type":"Question","name":"What is a to be verb finder?","acceptedAnswer":{"@type":"Answer","text":"A to be verb finder looks for forms of be, such as am, is, are, was and were. Those words are included in the auxiliary list here, so a sentence with a linking verb still returns a result. They matter because they carry tense without an obvious action."}},{"@type":"Question","name":"Does it catch every verb?","acceptedAnswer":{"@type":"Answer","text":"Not always. The method is a heuristic built on a word list and endings, so irregular or rare verbs can be missed and a noun like work can be mistaken for a verb. Treat this verb checker as a sentence verb finder for quick drafts, not as a strict verb locator for formal work."}},{"@type":"Question","name":"Can I paste a long paragraph?","acceptedAnswer":{"@type":"Answer","text":"You can, but accuracy falls as clauses pile up. The per sentence figure gives an average, and the auxiliaries count shows how many helping verbs were found. For careful work, paste one sentence at a time."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Verb Finder","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Paste a sentence and find its verbs. A verb finder using a common verb list, auxiliaries and ing or ed endings. All checking runs in your browser.","url":"https://bohuainter.com/tool/verb-finder/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-mark"><img src="/favicon-180.png" alt="Bohuainter logo" width="30" height="30"></span>
+      <span class="brand-text"><b>bohua</b><span>inter</span></span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          Blog
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown" style="width:320px">
+          <div class="dropdown-head">Writing guides</div>
+          <a class="dropdown-item" href="/blog/how-do-you-get-word-count-on-pages/"><span><span class="dd-title">Tips to Get Word Count In Pages</span><span class="dd-desc">Find and pin the counter in Apple Pages</span></span></a>
+          <a class="dropdown-item" href="/blog/how-long-should-your-pages-title-tag-be/"><span><span class="dd-title">Guide to Seo Title Description Length</span><span class="dd-desc">Pixel limits for titles and meta descriptions</span></span></a>
+          <a class="dropdown-item" href="/blog/how-to-find-word-count-on-google-docs/"><span><span class="dd-title">Guide to Find Word Count On Google Docs</span><span class="dd-desc">Where Docs hides the word count panel</span></span></a>
+          <a class="dropdown-item" href="/blog/how-to-check-word-count-in-microsoft-word/"><span><span class="dd-title">How to Count Words in Microsoft Word</span><span class="dd-desc">Desktop, web and mobile routes that work</span></span></a>
+          <div class="dropdown-foot"><a href="/blog/">Read the blog <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          Tools
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown dropdown-tools">
+          <div class="dropdown-head">Free writing tools</div>
+          <a class="dropdown-item" href="/tool/character-counter/">
+            <span class="dd-icon">Aa</span>
+            <span>
+              <span class="dd-title">Character Counter</span>
+              <span class="dd-desc">Count characters, words, sentences and paragraphs as you type.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/words-to-page-calculator/">
+            <span class="dd-icon">¶</span>
+            <span>
+              <span class="dd-title">Words to Pages</span>
+              <span class="dd-desc">Convert words to pages, single or double spaced, for essays and reports.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/character-to-words-calculator/">
+            <span class="dd-icon">↔</span>
+            <span>
+              <span class="dd-title">Characters to Words</span>
+              <span class="dd-desc">Estimate how many words a given number of characters turns into.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/essay-word-counter/">
+            <span class="dd-icon">✎</span>
+            <span>
+              <span class="dd-title">Essay Word Counter</span>
+              <span class="dd-desc">Track essay length against a target with pages, reading time and averages.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/upper-case-generator/">
+            <span class="dd-icon">AB</span>
+            <span>
+              <span class="dd-title">Upper Case</span>
+              <span class="dd-desc">Convert any text to UPPER CASE, title case or sentence case instantly.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/lower-case-generator/">
+            <span class="dd-icon">ab</span>
+            <span>
+              <span class="dd-title">Lower Case</span>
+              <span class="dd-desc">Convert any text to lower case, title case or sentence case instantly.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/twitter-charactor-generator/">
+            <span class="dd-icon">𝕏</span>
+            <span>
+              <span class="dd-title">Twitter Counter</span>
+              <span class="dd-desc">Check your post against the 280 character limit before you publish.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/instagram-character-counter/">
+            <span class="dd-icon">IG</span>
+            <span>
+              <span class="dd-title">Instagram Counter</span>
+              <span class="dd-desc">Check captions, bios and comments against every Instagram limit.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/linkedin-character-counter/">
+            <span class="dd-icon">in</span>
+            <span>
+              <span class="dd-title">LinkedIn Counter</span>
+              <span class="dd-desc">Measure posts, headlines and About sections against LinkedIn limits.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/google-meta-counter/">
+            <span class="dd-icon">G</span>
+            <span>
+              <span class="dd-title">Google Meta Counter</span>
+              <span class="dd-desc">Write SEO titles and descriptions that fit Google's display width.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/website-word-counter/">
+            <span class="dd-icon">ww</span>
+            <span>
+              <span class="dd-title">Website Word Counter</span>
+              <span class="dd-desc">Paste a page and count words, unique terms and keyword density.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/link-counter/">
+            <span class="dd-icon">URL</span>
+            <span>
+              <span class="dd-title">Link Counter</span>
+              <span class="dd-desc">Count links in a list and check every URL against practical length limits.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/chinese-word-counter/">
+            <span class="dd-icon">中</span>
+            <span>
+              <span class="dd-title">Chinese Word Counter</span>
+              <span class="dd-desc">Count hanzi, words and punctuation in Chinese and mixed text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/number-counter/">
+            <span class="dd-icon">#</span>
+            <span>
+              <span class="dd-title">Number Counter</span>
+              <span class="dd-desc">Tap or click to count up, with steps, targets and a tally log.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/haiku-checker/">
+            <span class="dd-icon">5-7-5</span>
+            <span>
+              <span class="dd-title">Haiku Checker</span>
+              <span class="dd-desc">Count syllables line by line and check a poem against 5-7-5.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/alt-text-generator/">
+            <span class="dd-icon">Alt</span>
+            <span>
+              <span class="dd-title">Image Alt Text Generator</span>
+              <span class="dd-desc">Build Title Case alt text and a lowercase image name from one description.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/word-frequency-counter/">
+            <span class="dd-icon">123</span>
+            <span>
+              <span class="dd-title">Word Frequency</span>
+              <span class="dd-desc">See which words appear most often in any text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/sentence-counter/">
+            <span class="dd-icon">S</span>
+            <span>
+              <span class="dd-title">Sentence Counter</span>
+              <span class="dd-desc">Count sentences and check average sentence length.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/paragraph-counter/">
+            <span class="dd-icon">P</span>
+            <span>
+              <span class="dd-title">Paragraph Counter</span>
+              <span class="dd-desc">Count paragraphs and measure their length as you write.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/line-counter/">
+            <span class="dd-icon">L</span>
+            <span>
+              <span class="dd-title">Line Counter</span>
+              <span class="dd-desc">Count lines of text, including empty and non empty lines.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/syllable-counter/">
+            <span class="dd-icon">5-7</span>
+            <span>
+              <span class="dd-title">Syllable Counter</span>
+              <span class="dd-desc">Count syllables per word and average syllables in a text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/hashtag-counter/">
+            <span class="dd-icon">H</span>
+            <span>
+              <span class="dd-title">Hashtag Counter</span>
+              <span class="dd-desc">Pull every hashtag out of a caption and count duplicates.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/comma-counter/">
+            <span class="dd-icon">,</span>
+            <span>
+              <span class="dd-title">Comma Counter</span>
+              <span class="dd-desc">Count commas and see how heavy each sentence is.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/character-frequency-counter/">
+            <span class="dd-icon">e</span>
+            <span>
+              <span class="dd-title">Character Frequency</span>
+              <span class="dd-desc">Count letter frequency and see the top characters in a text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/listing-nouns/">
+            <span class="dd-icon">N</span>
+            <span>
+              <span class="dd-title">Noun Finder</span>
+              <span class="dd-desc">Find the nouns in a sentence and list them with counts.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/adverb-checker/">
+            <span class="dd-icon">ly</span>
+            <span>
+              <span class="dd-title">Adverb Checker</span>
+              <span class="dd-desc">Find adverbs in a sentence and see how dense they are.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/verb-finder/">
+            <span class="dd-icon">V</span>
+            <span>
+              <span class="dd-title">Verb Finder</span>
+              <span class="dd-desc">Find the verbs and auxiliaries in a sentence.</span>
+            </span>
+          </a>
+          <div class="dropdown-foot"><a href="/tool/">See all tools <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          More
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown" style="width:260px">
+          <div class="dropdown-head">Bohuainter</div>
+          <a class="dropdown-item" href="/about-us/"><span class="dd-icon">i</span><span><span class="dd-title">About Us</span><span class="dd-desc">Why this site exists</span></span></a>
+          <a class="dropdown-item" href="/contact-us/"><span class="dd-icon">@</span><span><span class="dd-title">Contact Us</span><span class="dd-desc">Questions and feedback</span></span></a>
+          <a class="dropdown-item" href="/privacy/"><span class="dd-icon">✓</span><span><span class="dd-title">Privacy</span><span class="dd-desc">What we do with your text</span></span></a>
+          <a class="dropdown-item" href="/terms/"><span class="dd-icon">§</span><span><span class="dd-title">Terms</span><span class="dd-desc">The rules of the road</span></span></a>
+          <div class="dropdown-foot"><a href="/blog/">Read the blog <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="wrap"><nav class="crumbs crumbs-bar" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/tool/">Tools</a><span class="sep">/</span><span aria-current="page">Verb Finder</span></nav></div>
+<main id="main">
+
+<section class="page-hero hero-split">
+  <div class="wrap hero-split-grid">
+    <div class="hero-copy">
+      <span class="eyebrow"><i>★</i> Locate the action</span>
+      <h1>Verb Finder</h1>
+      <p>Paste a sentence and the verb finder lists the verbs and auxiliary verbs it recognizes, with a count for each. It is a quick check on plain sentences using a word list and simple ing and ed rules, not a full grammar parse.</p>
+    </div>
+    <figure class="hero-demo">
+      <img src="/assets/img/vf-demo.gif" alt="Verb Finder listing the verbs and auxiliaries found in a sample sentence" width="760" height="400" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="tool-layout">
+      <div>
+      <div class="tool-panel">
+        <div class="tool-toolbar">
+          <span class="chip active">Paste text</span>
+          <span class="spacer"></span>
+          <button type="button" class="btn btn-ghost" id="vf-sample" style="height:34px;padding:0 14px;font-size:13px">Try sample</button>
+          <button type="button" class="btn btn-ghost" id="vf-clear" style="height:34px;padding:0 14px;font-size:13px">Clear</button>
+        </div>
+        <textarea class="tool-input" id="vf-input" placeholder="Paste a sentence or a paragraph. The verb finder lists the verbs and auxiliaries it recognises." style="min-height:240px"></textarea>
+<div style="padding:14px 24px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;gap:8px;align-items:center" id="vf-top"><span style="font-size:13px;color:var(--gray-400)">Paste a sentence to see the verbs in it.</span></div>
+        <div class="tool-stats">
+          <div class="stat"><div class="num" id="vf-count">0</div><div class="lab">Verbs found</div></div>
+          <div class="stat"><div class="num" id="vf-words">0</div><div class="lab">Total words</div></div>
+          <div class="stat"><div class="num" id="vf-aux">0</div><div class="lab">Auxiliaries</div></div>
+          <div class="stat"><div class="num" id="vf-unique">0</div><div class="lab">Unique verbs</div></div>
+          <div class="stat"><div class="num" id="vf-sents">0</div><div class="lab">Sentences</div></div>
+          <div class="stat"><div class="num" id="vf-per">0</div><div class="lab">Verbs per sentence</div></div>
+        </div>
+      </div>
+        <div class="callout" style="margin-top:22px">
+          <span style="color:var(--blue);flex:0 0 20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span><b>Nothing is uploaded.</b> The verb finder reads your sentence in the browser and keeps it on this page only.</span>
+        </div>
+      </div>
+    <aside class="side-card">
+      <p class="side-card-title">More tools</p>
+      <ul>
+        <li><a href="/tool/character-counter/">Character Counter</a></li><li><a href="/tool/words-to-page-calculator/">Words to Pages Calculator</a></li><li><a href="/tool/character-to-words-calculator/">Character to Words Calculator</a></li><li><a href="/tool/essay-word-counter/">Essay Word Counter</a></li><li><a href="/tool/upper-case-generator/">Upper Case Generator</a></li><li><a href="/tool/lower-case-generator/">Lower Case Generator</a></li><li><a href="/tool/twitter-charactor-generator/">Twitter Character Counter</a></li><li><a href="/tool/instagram-character-counter/">Instagram Character Counter</a></li><li><a href="/tool/linkedin-character-counter/">LinkedIn Character Counter</a></li><li><a href="/tool/google-meta-counter/">Google Meta Counter</a></li><li><a href="/tool/website-word-counter/">Website Word Counter</a></li><li><a href="/tool/link-counter/">Link Counter and URL Length Checker</a></li><li><a href="/tool/chinese-word-counter/">Chinese Word Counter</a></li><li><a href="/tool/number-counter/">Number Counter</a></li><li><a href="/tool/haiku-checker/">Haiku Checker</a></li><li><a href="/tool/alt-text-generator/">Image Alt Text Generator</a></li><li><a href="/tool/word-frequency-counter/">Word Frequency Counter</a></li><li><a href="/tool/sentence-counter/">Sentence Counter</a></li><li><a href="/tool/paragraph-counter/">Paragraph Counter</a></li><li><a href="/tool/line-counter/">Line Counter</a></li><li><a href="/tool/syllable-counter/">Syllable Counter</a></li><li><a href="/tool/hashtag-counter/">Hashtag Counter</a></li><li><a href="/tool/comma-counter/">Comma Counter</a></li><li><a href="/tool/character-frequency-counter/">Character Frequency Counter</a></li><li><a href="/tool/listing-nouns/">Noun Finder</a></li><li><a href="/tool/adverb-checker/">Adverb Checker</a></li>
+      </ul>
+      <div class="dropdown-foot" style="margin-top:10px"><a href="/tool/">Browse all tools <span aria-hidden="true">→</span></a></div>
+    </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="prose">
+      <h2>What is a verb finder?</h2>
+      <p>A verb finder reads text and pulls out the words that act as verbs. This verb finder runs in your browser and lists both action verbs and the auxiliaries that help them. It exists for the moments when you want to check a sentence quickly, without opening a grammar book or parsing the whole paragraph by hand.</p>
+      <p>The result is a list and a few counts, nothing more. That is deliberate. A tool that helps you identify verbs in a plain sentence is useful, and a tool that claims to understand every clause is usually wrong in quiet ways.</p>
+
+      <h2>How the verb finder works</h2>
+      <p>Three methods are combined. A built-in list covers common verbs such as run, write and build. An auxiliary list covers is, are, was, were, have, has, will and can. Finally, ing and ed endings catch forms such as running and finished that may not appear in the list. Together they handle the ordinary verbs of daily writing.</p>
+      <p>This is a heuristic rather than a full grammar parser. It is fast, it needs no network access, and it is honest about its edges. Rare verbs and unusual forms are where you should double-check the result.</p>
+
+      <h2>How to find the verb in a sentence</h2>
+      <p>Paste your text and the strip below the box fills with the matches. If you want to learn how to find a verb in the sentence yourself, look for the action first. In The dog barked, the action is barked. Then look for a helper such as is or has, because English verbs often come in pairs. To find the verb in a negative sentence, ignore the word not and look on either side of it.</p>
+
+      <h2>Verb types at a glance</h2>
+      <table class="limits-table">
+        <thead>
+          <tr><th>Word type</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Action verb</td><td>run, write, build</td></tr>
+          <tr><td>Auxiliary verb</td><td>is, are, was, were</td></tr>
+          <tr><td>Modal verb</td><td>will, can, must</td></tr>
+          <tr><td>Have verb</td><td>have, has, had</td></tr>
+          <tr><td>ing form</td><td>running, writing</td></tr>
+          <tr><td>ed form</td><td>walked, finished</td></tr>
+          <tr><td>Can be noun or verb</td><td>work, light</td></tr>
+        </tbody>
+      </table>
+      <p>The last row is the awkward one. Words such as work and light change class with the sentence, and no suffix rule settles that on its own. The verb finder takes its best guess from the word list, which is why a quick review still matters.</p>
+
+      <h2>What are the verbs in this sentence</h2>
+      <p>Paste one line to see what are the verbs in this sentence. Each match appears in the strip, and the counters show the total, the unique verbs and how many auxiliaries were present. A line such as She is running returns both is and running, which is correct, because English often builds a verb from more than one word.</p>
+
+      <h2>To be verbs and auxiliaries</h2>
+      <p>Forms of be are the most common helpers in English. A to be verb finder would look for am, is, are, was and were, and those words are already in the auxiliary list here. They carry tense and agreement even when the main action is elsewhere, so they are worth counting on their own. The auxiliaries figure in the panel tells you how many were found.</p>
+
+      <h2>When the verb finder can miss a verb</h2>
+      <p>The word list is small on purpose, so a rare or technical verb may not appear in it. An irregular past tense can slip past the ed rule. A noun that looks like a verb, such as work in hard work, can be counted by mistake. These are the normal limits of a heuristic, and they are why this page describes itself as a quick verb finder rather than a complete parser. Paste one sentence at a time for the clearest answer.</p>
+      <blockquote>The verb carries the sentence. Find it first, and the rest of the grammar usually falls into place.</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Questions</span>
+      <h2>Verb Finder FAQ</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq">
+        <summary>What is a verb finder?</summary>
+        <div class="faq-body"><p>A verb finder reads your text and lists the words it treats as verbs. This verb finder uses a built-in list of common verbs, a set of auxiliaries such as is, are and have, and simple ing and ed endings. It is a quick helper to identify verbs in plain sentences rather than a full grammar checker.</p></div>
+      </details>
+      <details class="faq">
+        <summary>How do I find the verb in a sentence?</summary>
+        <div class="faq-body"><p>Paste your text and read the list below the box. To find the verb in a sentence by hand, look for the action or the state of being. If you want to know how to find a verb in the sentence with more than one clause, check each clause separately.</p></div>
+      </details>
+      <details class="faq">
+        <summary>What are the verbs in this sentence?</summary>
+        <div class="faq-body"><p>The highlighted list shows what are the verbs in this sentence as the tool reads it, including any auxiliaries it spotted. A sentence such as She is running has both is and running, and both appear in the count.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Is this a subject and verb finder?</summary>
+        <div class="faq-body"><p>No. This is a verb finder, not a subject and verb finder. It locates verbs and auxiliaries, but it does not identify the subject. Find the subject by asking who or what performs the action.</p></div>
+      </details>
+      <details class="faq">
+        <summary>What is a to be verb finder?</summary>
+        <div class="faq-body"><p>A to be verb finder looks for forms of be, such as am, is, are, was and were. Those words are included in the auxiliary list here, so a sentence with a linking verb still returns a result. They matter because they carry tense without an obvious action.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Does it catch every verb?</summary>
+        <div class="faq-body"><p>Not always. The method is a heuristic built on a word list and endings, so irregular or rare verbs can be missed and a noun like work can be mistaken for a verb. Treat this verb checker as a sentence verb finder for quick drafts, not as a strict verb locator for formal work.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Can I paste a long paragraph?</summary>
+        <div class="faq-body"><p>You can, but accuracy falls as clauses pile up. The per sentence figure gives an average, and the auxiliaries count shows how many helping verbs were found. For careful work, paste one sentence at a time.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 style="font-size:clamp(22px,3vw,30px);margin-bottom:24px">Related tools</h2>
+    <div class="grid grid-3">
+      <a class="card" href="/tool/character-counter/">
+        <span class="card-icon"><img src="/assets/img/logos/character-counter-logo.png" alt="Character Counter logo" width="64" height="64" loading="lazy" decoding="async"></span>
+        <h3>Character Counter</h3>
+        <p>Count characters, words, sentences and paragraphs as you type.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/essay-word-counter/">
+        <span class="card-icon"><img src="/assets/img/logos/essay-word-counter-logo.png" alt="Essay Word Counter logo" width="64" height="64" loading="lazy" decoding="async"></span>
+        <h3>Essay Word Counter</h3>
+        <p>Track essay length against a target with pages, reading time and averages.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/website-word-counter/">
+        <span class="card-icon"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#155EEF"/><text x="24" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#fff" font-family="Inter, sans-serif">ww</text></svg></span>
+        <h3>Website Word Counter</h3>
+        <p>Paste a page and count words, unique terms and keyword density.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/">
+        <span class="card-icon"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#155EEF"/><path d="M15 24h18m-7-7 7 7-7 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+        <h3>See more tools</h3>
+        <p>Browse every free counting and text tool on one page.</p>
+        <span class="card-more">See all tools <span aria-hidden="true">→</span></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <span class="brand-mark"><img src="/favicon-180.png" alt="Bohuainter logo" width="30" height="30"></span>
+          <span class="brand-text"><b>bohua</b><span>inter</span></span>
+        </a>
+        <p>Free word and character counting tools built for people who write. Everything runs in your browser, so your drafts stay yours.</p>
+      </div>
+      <div class="footer-col footer-col-tools">
+        <p class="footer-col-title"><a href="/tool/">Tools</a></p>
+        <ul>
+          <li><a href="/tool/character-counter/">Character Counter</a></li>
+          <li><a href="/tool/words-to-page-calculator/">Words to Pages</a></li>
+          <li><a href="/tool/character-to-words-calculator/">Characters to Words</a></li>
+          <li><a href="/tool/essay-word-counter/">Essay Word Counter</a></li>
+          <li><a href="/tool/upper-case-generator/">Upper Case</a></li>
+          <li><a href="/tool/lower-case-generator/">Lower Case</a></li>
+          <li><a href="/tool/twitter-charactor-generator/">Twitter Counter</a></li>
+          <li><a href="/tool/instagram-character-counter/">Instagram Counter</a></li>
+          <li><a href="/tool/linkedin-character-counter/">LinkedIn Counter</a></li>
+          <li><a href="/tool/google-meta-counter/">Google Meta Counter</a></li>
+          <li><a href="/tool/website-word-counter/">Website Word Counter</a></li>
+          <li><a href="/tool/link-counter/">Link Counter</a></li>
+          <li><a href="/tool/chinese-word-counter/">Chinese Word Counter</a></li>
+          <li><a href="/tool/number-counter/">Number Counter</a></li>
+          <li><a href="/tool/haiku-checker/">Haiku Checker</a></li>
+          <li><a href="/tool/alt-text-generator/">Image Alt Text</a></li>
+          <li><a href="/tool/word-frequency-counter/">Word Frequency</a></li>
+          <li><a href="/tool/sentence-counter/">Sentence Counter</a></li>
+          <li><a href="/tool/paragraph-counter/">Paragraph Counter</a></li>
+          <li><a href="/tool/line-counter/">Line Counter</a></li>
+          <li><a href="/tool/syllable-counter/">Syllable Counter</a></li>
+          <li><a href="/tool/hashtag-counter/">Hashtag Counter</a></li>
+          <li><a href="/tool/comma-counter/">Comma Counter</a></li>
+          <li><a href="/tool/character-frequency-counter/">Char Frequency</a></li>
+          <li><a href="/tool/listing-nouns/">Noun Finder</a></li>
+          <li><a href="/tool/adverb-checker/">Adverb Checker</a></li>
+          <li><a href="/tool/verb-finder/">Verb Finder</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Company</p>
+        <ul>
+          <li><a href="/about-us/">About Us</a></li>
+          <li><a href="/contact-us/">Contact Us</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/terms/">Terms</a></li>
+          <li><!--email_off--><a href="mailto:contact@bohuainter.com">contact@bohuainter.com</a><!--/email_off--></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-wordmark" aria-hidden="true">bohuainter</div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Bohuainter. All rights reserved.</span>
+      <span>
+        <a href="/privacy/">Privacy</a> ·
+        <a href="/terms/">Terms</a> ·
+        <a href="/contact-us/">Contact</a>
+      </span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js?v=20261123a"></script>
+</body>
+</html>
