@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Line Counter: Count Lines of Text, Code and Data</title>
+<meta name="description" content="A free line counter. Paste text, code or data to count lines, non empty lines, empty lines and the longest line. Runs in your browser.">
+<link rel="canonical" href="https://bohuainter.com/tool/line-counter/">
+<link rel="icon" type="image/png" href="/favicon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Line Counter: Count Lines of Text, Code and Data">
+<meta property="og:description" content="A free line counter. Paste text, code or data to count lines, non empty lines, empty lines and the longest line. Runs in your browser.">
+<meta property="og:url" content="https://bohuainter.com/tool/line-counter/">
+<meta property="og:site_name" content="Bohuainter">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="/assets/style.css?v=20261122a">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does this line counter work?","acceptedAnswer":{"@type":"Answer","text":"The tool splits your text at every line break and reports the total lines, how many lines hold content, how many are empty, the word total, the character total and the longest line measured in characters."}},{"@type":"Question","name":"How many lines are in my text?","acceptedAnswer":{"@type":"Answer","text":"Paste the text and the line count appears at once. A line is any stretch of text between two breaks, including a blank one, so an empty line between two blocks still adds to the total."}},{"@type":"Question","name":"What is the line count based on?","acceptedAnswer":{"@type":"Answer","text":"It is based on line breaks and nothing else. The tool does not wrap long lines for you and does not reflow text to the width of the window, so the number matches the structure of what you pasted."}},{"@type":"Question","name":"How do I count lines of text in a list?","acceptedAnswer":{"@type":"Answer","text":"Paste the list with one item per line. The count of lines should match the number of items, and the non empty figure tells you how many of those lines actually hold text. Empty rows are reported separately."}},{"@type":"Question","name":"What is the difference between total lines and non empty lines?","acceptedAnswer":{"@type":"Answer","text":"Total lines includes every break, blank or not. Non empty lines counts only the ones with at least one character that is not a space. Empty lines is the difference between the two, which is handy when you are cleaning up extra spacing."}},{"@type":"Question","name":"Does it show the longest line?","acceptedAnswer":{"@type":"Answer","text":"Yes. The longest line figure is the character count of the single longest row in your text. It is useful for finding an overlong record in a data export or a line of code that needs wrapping."}},{"@type":"Question","name":"Can I use this for code and data?","acceptedAnswer":{"@type":"Answer","text":"Yes. Because the rule is just the line break, the tool works on source code, logs, CSV rows and configuration files as well as plain prose. It reads everything as text and makes no changes to what you pasted."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Line Counter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"A free line counter. Paste text, code or data to count lines, non empty lines, empty lines and the longest line. Runs in your browser.","url":"https://bohuainter.com/tool/line-counter/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-mark"><img src="/favicon-180.png" alt="Bohuainter logo" width="30" height="30"></span>
+      <span class="brand-text"><b>bohua</b><span>inter</span></span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          Blog
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown" style="width:320px">
+          <div class="dropdown-head">Writing guides</div>
+          <a class="dropdown-item" href="/blog/how-do-you-get-word-count-on-pages/"><span><span class="dd-title">Tips to Get Word Count In Pages</span><span class="dd-desc">Find and pin the counter in Apple Pages</span></span></a>
+          <a class="dropdown-item" href="/blog/how-long-should-your-pages-title-tag-be/"><span><span class="dd-title">Guide to Seo Title Description Length</span><span class="dd-desc">Pixel limits for titles and meta descriptions</span></span></a>
+          <a class="dropdown-item" href="/blog/how-to-find-word-count-on-google-docs/"><span><span class="dd-title">Guide to Find Word Count On Google Docs</span><span class="dd-desc">Where Docs hides the word count panel</span></span></a>
+          <a class="dropdown-item" href="/blog/how-to-check-word-count-in-microsoft-word/"><span><span class="dd-title">How to Count Words in Microsoft Word</span><span class="dd-desc">Desktop, web and mobile routes that work</span></span></a>
+          <div class="dropdown-foot"><a href="/blog/">Read the blog <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          Tools
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown dropdown-tools">
+          <div class="dropdown-head">Free writing tools</div>
+          <a class="dropdown-item" href="/tool/character-counter/">
+            <span class="dd-icon">Aa</span>
+            <span>
+              <span class="dd-title">Character Counter</span>
+              <span class="dd-desc">Count characters, words, sentences and paragraphs as you type.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/words-to-page-calculator/">
+            <span class="dd-icon">¶</span>
+            <span>
+              <span class="dd-title">Words to Pages</span>
+              <span class="dd-desc">Convert words to pages, single or double spaced, for essays and reports.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/character-to-words-calculator/">
+            <span class="dd-icon">↔</span>
+            <span>
+              <span class="dd-title">Characters to Words</span>
+              <span class="dd-desc">Estimate how many words a given number of characters turns into.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/essay-word-counter/">
+            <span class="dd-icon">✎</span>
+            <span>
+              <span class="dd-title">Essay Word Counter</span>
+              <span class="dd-desc">Track essay length against a target with pages, reading time and averages.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/upper-case-generator/">
+            <span class="dd-icon">AB</span>
+            <span>
+              <span class="dd-title">Upper Case</span>
+              <span class="dd-desc">Convert any text to UPPER CASE, title case or sentence case instantly.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/lower-case-generator/">
+            <span class="dd-icon">ab</span>
+            <span>
+              <span class="dd-title">Lower Case</span>
+              <span class="dd-desc">Convert any text to lower case, title case or sentence case instantly.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/twitter-charactor-generator/">
+            <span class="dd-icon">𝕏</span>
+            <span>
+              <span class="dd-title">Twitter Counter</span>
+              <span class="dd-desc">Check your post against the 280 character limit before you publish.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/instagram-character-counter/">
+            <span class="dd-icon">IG</span>
+            <span>
+              <span class="dd-title">Instagram Counter</span>
+              <span class="dd-desc">Check captions, bios and comments against every Instagram limit.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/linkedin-character-counter/">
+            <span class="dd-icon">in</span>
+            <span>
+              <span class="dd-title">LinkedIn Counter</span>
+              <span class="dd-desc">Measure posts, headlines and About sections against LinkedIn limits.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/google-meta-counter/">
+            <span class="dd-icon">G</span>
+            <span>
+              <span class="dd-title">Google Meta Counter</span>
+              <span class="dd-desc">Write SEO titles and descriptions that fit Google's display width.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/website-word-counter/">
+            <span class="dd-icon">ww</span>
+            <span>
+              <span class="dd-title">Website Word Counter</span>
+              <span class="dd-desc">Paste a page and count words, unique terms and keyword density.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/link-counter/">
+            <span class="dd-icon">URL</span>
+            <span>
+              <span class="dd-title">Link Counter</span>
+              <span class="dd-desc">Count links in a list and check every URL against practical length limits.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/chinese-word-counter/">
+            <span class="dd-icon">中</span>
+            <span>
+              <span class="dd-title">Chinese Word Counter</span>
+              <span class="dd-desc">Count hanzi, words and punctuation in Chinese and mixed text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/number-counter/">
+            <span class="dd-icon">#</span>
+            <span>
+              <span class="dd-title">Number Counter</span>
+              <span class="dd-desc">Tap or click to count up, with steps, targets and a tally log.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/haiku-checker/">
+            <span class="dd-icon">5-7-5</span>
+            <span>
+              <span class="dd-title">Haiku Checker</span>
+              <span class="dd-desc">Count syllables line by line and check a poem against 5-7-5.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/alt-text-generator/">
+            <span class="dd-icon">Alt</span>
+            <span>
+              <span class="dd-title">Image Alt Text Generator</span>
+              <span class="dd-desc">Build Title Case alt text and a lowercase image name from one description.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/word-frequency-counter/">
+            <span class="dd-icon">123</span>
+            <span>
+              <span class="dd-title">Word Frequency</span>
+              <span class="dd-desc">See which words appear most often in any text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/sentence-counter/">
+            <span class="dd-icon">S</span>
+            <span>
+              <span class="dd-title">Sentence Counter</span>
+              <span class="dd-desc">Count sentences and check average sentence length.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/paragraph-counter/">
+            <span class="dd-icon">P</span>
+            <span>
+              <span class="dd-title">Paragraph Counter</span>
+              <span class="dd-desc">Count paragraphs and measure their length as you write.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/line-counter/">
+            <span class="dd-icon">L</span>
+            <span>
+              <span class="dd-title">Line Counter</span>
+              <span class="dd-desc">Count lines of text, including empty and non empty lines.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/syllable-counter/">
+            <span class="dd-icon">5-7</span>
+            <span>
+              <span class="dd-title">Syllable Counter</span>
+              <span class="dd-desc">Count syllables per word and average syllables in a text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/hashtag-counter/">
+            <span class="dd-icon">H</span>
+            <span>
+              <span class="dd-title">Hashtag Counter</span>
+              <span class="dd-desc">Pull every hashtag out of a caption and count duplicates.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/comma-counter/">
+            <span class="dd-icon">,</span>
+            <span>
+              <span class="dd-title">Comma Counter</span>
+              <span class="dd-desc">Count commas and see how heavy each sentence is.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/character-frequency-counter/">
+            <span class="dd-icon">e</span>
+            <span>
+              <span class="dd-title">Character Frequency</span>
+              <span class="dd-desc">Count letter frequency and see the top characters in a text.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/listing-nouns/">
+            <span class="dd-icon">N</span>
+            <span>
+              <span class="dd-title">Noun Finder</span>
+              <span class="dd-desc">Find the nouns in a sentence and list them with counts.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/adverb-checker/">
+            <span class="dd-icon">ly</span>
+            <span>
+              <span class="dd-title">Adverb Checker</span>
+              <span class="dd-desc">Find adverbs in a sentence and see how dense they are.</span>
+            </span>
+          </a>
+          <a class="dropdown-item" href="/tool/verb-finder/">
+            <span class="dd-icon">V</span>
+            <span>
+              <span class="dd-title">Verb Finder</span>
+              <span class="dd-desc">Find the verbs and auxiliaries in a sentence.</span>
+            </span>
+          </a>
+          <div class="dropdown-foot"><a href="/tool/">See all tools <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" type="button" aria-haspopup="true" aria-expanded="false" data-dropdown="true">
+          More
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown" style="width:260px">
+          <div class="dropdown-head">Bohuainter</div>
+          <a class="dropdown-item" href="/about-us/"><span class="dd-icon">i</span><span><span class="dd-title">About Us</span><span class="dd-desc">Why this site exists</span></span></a>
+          <a class="dropdown-item" href="/contact-us/"><span class="dd-icon">@</span><span><span class="dd-title">Contact Us</span><span class="dd-desc">Questions and feedback</span></span></a>
+          <a class="dropdown-item" href="/privacy/"><span class="dd-icon">✓</span><span><span class="dd-title">Privacy</span><span class="dd-desc">What we do with your text</span></span></a>
+          <a class="dropdown-item" href="/terms/"><span class="dd-icon">§</span><span><span class="dd-title">Terms</span><span class="dd-desc">The rules of the road</span></span></a>
+          <div class="dropdown-foot"><a href="/blog/">Read the blog <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="wrap"><nav class="crumbs crumbs-bar" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/tool/">Tools</a><span class="sep">/</span><span aria-current="page">Line Counter</span></nav></div>
+<main id="main">
+
+<section class="page-hero hero-split">
+  <div class="wrap hero-split-grid">
+    <div class="hero-copy">
+      <span class="eyebrow"><i>★</i> Count lines as you paste</span>
+      <h1>Line Counter</h1>
+      <p>Paste any text, list, code block or data and see the total lines, how many are empty, how many hold content and how long the longest line is.</p>
+    </div>
+    <figure class="hero-demo">
+      <img src="/assets/img/lc-demo.gif" alt="Line Counter showing total lines, non empty lines, empty lines and the longest line" width="760" height="400" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="tool-layout">
+      <div>
+      <div class="tool-panel">
+        <div class="tool-toolbar">
+          <span class="chip active">Paste text</span>
+          <span class="spacer"></span>
+          <button type="button" class="btn btn-ghost" id="lc-sample" style="height:34px;padding:0 14px;font-size:13px">Try sample</button>
+          <button type="button" class="btn btn-ghost" id="lc-clear" style="height:34px;padding:0 14px;font-size:13px">Clear</button>
+        </div>
+        <textarea class="tool-input" id="lc-input" placeholder="Paste your text, a list, code or data. Every line break starts a new line." style="min-height:280px"></textarea>
+        <div class="tool-stats">
+          <div class="stat"><div class="num" id="lc-lines">0</div><div class="lab">Lines</div></div>
+          <div class="stat"><div class="num" id="lc-filled">0</div><div class="lab">Non empty lines</div></div>
+          <div class="stat"><div class="num" id="lc-empty">0</div><div class="lab">Empty lines</div></div>
+          <div class="stat"><div class="num" id="lc-words">0</div><div class="lab">Words</div></div>
+          <div class="stat"><div class="num" id="lc-chars">0</div><div class="lab">Characters</div></div>
+          <div class="stat"><div class="num" id="lc-longest">0</div><div class="lab">Longest line</div></div>
+        </div>
+      </div>
+        <div class="callout" style="margin-top:22px">
+          <span style="color:var(--blue);flex:0 0 20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span><b>Counted in your browser.</b> Your text is never uploaded, so every line stays on this page only.</span>
+        </div>
+      </div>
+    <aside class="side-card">
+      <p class="side-card-title">More tools</p>
+      <ul>
+        <li><a href="/tool/character-counter/">Character Counter</a></li><li><a href="/tool/words-to-page-calculator/">Words to Pages Calculator</a></li><li><a href="/tool/character-to-words-calculator/">Character to Words Calculator</a></li><li><a href="/tool/essay-word-counter/">Essay Word Counter</a></li><li><a href="/tool/upper-case-generator/">Upper Case Generator</a></li><li><a href="/tool/lower-case-generator/">Lower Case Generator</a></li><li><a href="/tool/twitter-charactor-generator/">Twitter Character Counter</a></li><li><a href="/tool/instagram-character-counter/">Instagram Character Counter</a></li><li><a href="/tool/linkedin-character-counter/">LinkedIn Character Counter</a></li><li><a href="/tool/google-meta-counter/">Google Meta Counter</a></li><li><a href="/tool/website-word-counter/">Website Word Counter</a></li><li><a href="/tool/link-counter/">Link Counter and URL Length Checker</a></li><li><a href="/tool/chinese-word-counter/">Chinese Word Counter</a></li><li><a href="/tool/number-counter/">Number Counter</a></li><li><a href="/tool/haiku-checker/">Haiku Checker</a></li><li><a href="/tool/alt-text-generator/">Image Alt Text Generator</a></li><li><a href="/tool/word-frequency-counter/">Word Frequency Counter</a></li><li><a href="/tool/sentence-counter/">Sentence Counter</a></li><li><a href="/tool/paragraph-counter/">Paragraph Counter</a></li><li><a href="/tool/syllable-counter/">Syllable Counter</a></li><li><a href="/tool/hashtag-counter/">Hashtag Counter</a></li><li><a href="/tool/comma-counter/">Comma Counter</a></li><li><a href="/tool/character-frequency-counter/">Character Frequency Counter</a></li><li><a href="/tool/listing-nouns/">Noun Finder</a></li><li><a href="/tool/adverb-checker/">Adverb Checker</a></li><li><a href="/tool/verb-finder/">Verb Finder</a></li>
+      </ul>
+      <div class="dropdown-foot" style="margin-top:10px"><a href="/tool/">Browse all tools <span aria-hidden="true">→</span></a></div>
+    </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="prose">
+      <h2>What is a line counter?</h2>
+      <p>A line counter tells you how many rows a piece of text contains. Paste text, code or data and it splits the input at every line break, then reports the total lines, the non empty lines, the empty lines, the word total, the character total and the longest line. It answers the question how many lines without any scrolling or guesswork.</p>
+      <p>The tool is built for practical jobs. Developers check the size of a snippet. Data workers count records in a pasted export. Writers check the length of a script or a list. In each case the line count is a quick structural check, not a judgement about the content.</p>
+
+      <h2>How the counter reads line breaks</h2>
+      <p>One line break starts one new line. The tool takes the text exactly as pasted and divides it at those breaks, so a line that wraps visually in the box is still one line. A final break at the very end does not create an extra row, which keeps the number in step with what you see in a text editor.</p>
+      <p>This is a simpler rule than a word or sentence count. There is no normalization and no punctuation handling to worry about, so the result is easy to predict. Count the breaks in your head and you will arrive at the same figure.</p>
+
+      <h2>Total lines, non empty lines and empty lines</h2>
+      <p>Three figures describe the same text from different angles. Total lines counts every row. Non empty lines counts the rows that actually hold something. Empty lines counts the gaps. Together they reveal how much of a file is content and how much is spacing, which matters when you are tidying a pasted list or a block of code.</p>
+      <p>A line holding only spaces is treated as empty. That is the sensible choice for cleanup work, because a row of spaces is usually an accidental gap rather than content you meant to keep.</p>
+
+      <h2>What counts as one line</h2>
+      <table class="limits-table">
+        <thead>
+          <tr><th>Text type</th><th>What counts as one</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Plain text</td><td>everything between two line breaks</td></tr>
+          <tr><td>A trailing final break</td><td>does not add an extra line</td></tr>
+          <tr><td>Blank line</td><td>counts as one empty line</td></tr>
+          <tr><td>Line with only spaces</td><td>counts as empty</td></tr>
+          <tr><td>Source code</td><td>each source line as written</td></tr>
+          <tr><td>CSV or log data</td><td>each record or row</td></tr>
+        </tbody>
+      </table>
+      <p>The table shows why a plain line counter is useful across so many jobs. A record in a log and a line of code are both just text between two breaks, so the same simple rule handles them both without a special mode.</p>
+
+      <h2>Count lines of text, code and data</h2>
+      <p>To count lines of text, paste the text and read the first figure. For a list, put one item per line and the line count becomes an item count. For a data export, each row is one record, so the non empty figure tells you how many real records survived the copy. The tool never changes the input, so you can paste straight from a spreadsheet or an editor.</p>
+      <p>Questions about how many lines come up most when something looks wrong, such as a list with a few blank rows in the middle. The empty line figure points at the problem immediately, and the total tells you the size of the original block before you clean it.</p>
+
+      <h2>Longest line and character count</h2>
+      <p>The longest line figure reports the character count of the single widest row. In prose that is often a paragraph that should be broken up. In code or data it is more often a record that grew too large, perhaps a field with an unexpected value. Either way it is the row worth looking at first.</p>
+      <p>Character counting here includes spaces and punctuation, which is the honest measure of line width. If a line has to fit a fixed display width or a column in a system, this is the number to compare against that limit.</p>
+
+      <h2>Line count questions in short</h2>
+      <ul>
+        <li><b>Line counter</b> splits text at each break and reports total, filled and empty lines.</li>
+        <li><b>Line count</b> is the total figure, with non empty and empty lines shown beside it.</li>
+        <li><b>Count lines of text</b> by pasting a list, a block of code or a data export.</li>
+        <li><b>How many lines</b> a passage has is the first number, and it updates as you type.</li>
+      </ul>
+      <blockquote>A line counter does not care what a line says. It only cares where one line ends and the next begins.</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Questions</span>
+      <h2>Line Counter FAQ</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq">
+        <summary>How does this line counter work?</summary>
+        <div class="faq-body"><p>The tool splits your text at every line break and reports the total lines, how many lines hold content, how many are empty, the word total, the character total and the longest line measured in characters.</p></div>
+      </details>
+      <details class="faq">
+        <summary>How many lines are in my text?</summary>
+        <div class="faq-body"><p>Paste the text and the line count appears at once. A line is any stretch of text between two breaks, including a blank one, so an empty line between two blocks still adds to the total.</p></div>
+      </details>
+      <details class="faq">
+        <summary>What is the line count based on?</summary>
+        <div class="faq-body"><p>It is based on line breaks and nothing else. The tool does not wrap long lines for you and does not reflow text to the width of the window, so the number matches the structure of what you pasted.</p></div>
+      </details>
+      <details class="faq">
+        <summary>How do I count lines of text in a list?</summary>
+        <div class="faq-body"><p>Paste the list with one item per line. The count of lines should match the number of items, and the non empty figure tells you how many of those lines actually hold text. Empty rows are reported separately.</p></div>
+      </details>
+      <details class="faq">
+        <summary>What is the difference between total lines and non empty lines?</summary>
+        <div class="faq-body"><p>Total lines includes every break, blank or not. Non empty lines counts only the ones with at least one character that is not a space. Empty lines is the difference between the two, which is handy when you are cleaning up extra spacing.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Does it show the longest line?</summary>
+        <div class="faq-body"><p>Yes. The longest line figure is the character count of the single longest row in your text. It is useful for finding an overlong record in a data export or a line of code that needs wrapping.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Can I use this for code and data?</summary>
+        <div class="faq-body"><p>Yes. Because the rule is just the line break, the tool works on source code, logs, CSV rows and configuration files as well as plain prose. It reads everything as text and makes no changes to what you pasted.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 style="font-size:clamp(22px,3vw,30px);margin-bottom:24px">Related tools</h2>
+    <div class="grid grid-3">
+      <a class="card" href="/tool/character-counter/">
+        <span class="card-icon"><img src="/assets/img/logos/character-counter-logo.png" alt="Character Counter logo" width="64" height="64" loading="lazy" decoding="async"></span>
+        <h3>Character Counter</h3>
+        <p>Count characters, words, sentences and paragraphs as you type.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/website-word-counter/">
+        <span class="card-icon"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#155EEF"/><text x="24" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#fff" font-family="Inter, sans-serif">ww</text></svg></span>
+        <h3>Website Word Counter</h3>
+        <p>Paste a page and count words, unique terms and keyword density.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/link-counter/">
+        <span class="card-icon"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#155EEF"/><text x="24" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#fff" font-family="Inter, sans-serif">URL</text></svg></span>
+        <h3>Link Counter and URL Length Checker</h3>
+        <p>Count links in a list and check every URL against practical length limits.</p>
+        <span class="card-more">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="/tool/">
+        <span class="card-icon"><svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#155EEF"/><path d="M15 24h18m-7-7 7 7-7 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+        <h3>See more tools</h3>
+        <p>Browse every free counting and text tool on one page.</p>
+        <span class="card-more">See all tools <span aria-hidden="true">→</span></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <span class="brand-mark"><img src="/favicon-180.png" alt="Bohuainter logo" width="30" height="30"></span>
+          <span class="brand-text"><b>bohua</b><span>inter</span></span>
+        </a>
+        <p>Free word and character counting tools built for people who write. Everything runs in your browser, so your drafts stay yours.</p>
+      </div>
+      <div class="footer-col footer-col-tools">
+        <p class="footer-col-title"><a href="/tool/">Tools</a></p>
+        <ul>
+          <li><a href="/tool/character-counter/">Character Counter</a></li>
+          <li><a href="/tool/words-to-page-calculator/">Words to Pages</a></li>
+          <li><a href="/tool/character-to-words-calculator/">Characters to Words</a></li>
+          <li><a href="/tool/essay-word-counter/">Essay Word Counter</a></li>
+          <li><a href="/tool/upper-case-generator/">Upper Case</a></li>
+          <li><a href="/tool/lower-case-generator/">Lower Case</a></li>
+          <li><a href="/tool/twitter-charactor-generator/">Twitter Counter</a></li>
+          <li><a href="/tool/instagram-character-counter/">Instagram Counter</a></li>
+          <li><a href="/tool/linkedin-character-counter/">LinkedIn Counter</a></li>
+          <li><a href="/tool/google-meta-counter/">Google Meta Counter</a></li>
+          <li><a href="/tool/website-word-counter/">Website Word Counter</a></li>
+          <li><a href="/tool/link-counter/">Link Counter</a></li>
+          <li><a href="/tool/chinese-word-counter/">Chinese Word Counter</a></li>
+          <li><a href="/tool/number-counter/">Number Counter</a></li>
+          <li><a href="/tool/haiku-checker/">Haiku Checker</a></li>
+          <li><a href="/tool/alt-text-generator/">Image Alt Text</a></li>
+          <li><a href="/tool/word-frequency-counter/">Word Frequency</a></li>
+          <li><a href="/tool/sentence-counter/">Sentence Counter</a></li>
+          <li><a href="/tool/paragraph-counter/">Paragraph Counter</a></li>
+          <li><a href="/tool/line-counter/">Line Counter</a></li>
+          <li><a href="/tool/syllable-counter/">Syllable Counter</a></li>
+          <li><a href="/tool/hashtag-counter/">Hashtag Counter</a></li>
+          <li><a href="/tool/comma-counter/">Comma Counter</a></li>
+          <li><a href="/tool/character-frequency-counter/">Char Frequency</a></li>
+          <li><a href="/tool/listing-nouns/">Noun Finder</a></li>
+          <li><a href="/tool/adverb-checker/">Adverb Checker</a></li>
+          <li><a href="/tool/verb-finder/">Verb Finder</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Company</p>
+        <ul>
+          <li><a href="/about-us/">About Us</a></li>
+          <li><a href="/contact-us/">Contact Us</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/terms/">Terms</a></li>
+          <li><!--email_off--><a href="mailto:contact@bohuainter.com">contact@bohuainter.com</a><!--/email_off--></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-wordmark" aria-hidden="true">bohuainter</div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Bohuainter. All rights reserved.</span>
+      <span>
+        <a href="/privacy/">Privacy</a> ·
+        <a href="/terms/">Terms</a> ·
+        <a href="/contact-us/">Contact</a>
+      </span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js?v=20261123a"></script>
+</body>
+</html>
