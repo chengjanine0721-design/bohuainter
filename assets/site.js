@@ -1945,22 +1945,33 @@
           return s.length > 0;
         }).join("/");
       }
-      var slug = tuSlugify(tu.value);
-      var url = "";
-      if (d && slug) {
-        url = d + "/" + (p ? p + "/" : "") + slug + "/";
-      }
+      var slugs = tu.value.split(/\n+/).map(function (t) {
+        return tuSlugify(t);
+      }).filter(function (s) {
+        return s.length > 0;
+      });
+      var urls = slugs.map(function (slug) {
+        var url = "";
+        if (d && slug) {
+          url = d + "/" + (p ? p + "/" : "") + slug + "/";
+        }
+        return url;
+      }).filter(function (u) {
+        return u.length > 0;
+      });
       var hostChars = d ? d.replace(/^https?:\/\//i, "").length : 0;
-      var segs = (p ? p.split("/").length : 0) + (slug ? 1 : 0);
-      tuOut.textContent = url || "Fill in a domain and some text to build your link.";
-      tuSlug.textContent = slug || "your-slug";
-      tuStats.urlchars.textContent = fmt(url.length);
-      tuStats.slugchars.textContent = fmt(slug.length);
-      tuStats.slugwords.textContent = fmt(slug ? slug.split("-").length : 0);
+      var segs = (p ? p.split("/").length : 0) + (slugs.length ? 1 : 0);
+      tuOut.textContent = urls.length ? urls.join("\n") : "Fill in a domain and some text to build your link. One link text per line gets its own URL.";
+      tuSlug.textContent = slugs.length ? slugs.join("\n") : "your-slug";
+      tuStats.urlchars.textContent = fmt(urls.join("").length);
+      tuStats.slugchars.textContent = fmt(slugs.join("").length);
+      tuStats.slugwords.textContent = fmt(slugs.reduce(function (n, s) {
+        return n + s.split("-").length;
+      }, 0));
       tuStats.segments.textContent = fmt(segs);
       tuStats.domainchars.textContent = fmt(hostChars);
-      tuStats.ready.textContent = url ? "Yes" : "No";
-      return url;
+      tuStats.ready.textContent = urls.length ? "Yes" : "No";
+      return urls.join("\n");
     };
     [tu, tuDomain, tuPath].forEach(function (el) {
       el.addEventListener("input", tuBuild);
@@ -1970,7 +1981,7 @@
       tuSample.addEventListener("click", function () {
         tuDomain.value = "https://bohuainter.com";
         tuPath.value = "tool";
-        tu.value = "text in link formatter";
+        tu.value = "text to url formatter\nhow to make text into link";
         tuBuild();
         tu.focus();
       });
