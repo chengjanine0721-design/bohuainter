@@ -1952,8 +1952,8 @@
       });
       var urls = slugs.map(function (slug) {
         var url = "";
-        if (d && slug) {
-          url = d + "/" + (p ? p + "/" : "") + slug + "/";
+        if (slug) {
+          url = (d ? d + "/" : "/") + (p ? p + "/" : "") + slug + "/";
         }
         return url;
       }).filter(function (u) {
@@ -1961,7 +1961,7 @@
       });
       var hostChars = d ? d.replace(/^https?:\/\//i, "").length : 0;
       var segs = (p ? p.split("/").length : 0) + (slugs.length ? 1 : 0);
-      tuOut.textContent = urls.length ? urls.join("\n") : "Fill in a domain and some text to build your link. One link text per line gets its own URL.";
+      tuOut.textContent = urls.length ? urls.join("\n") : "One link text per line gets its own URL. Add your domain for full links.";
       tuSlug.textContent = slugs.length ? slugs.join("\n") : "your-slug";
       tuStats.urlchars.textContent = fmt(urls.join("").length);
       tuStats.slugchars.textContent = fmt(slugs.join("").length);
