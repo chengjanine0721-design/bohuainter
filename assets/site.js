@@ -1915,6 +1915,104 @@
     calcVf();
   }
 
+  /* ==========================================================
+     Tool 28 — text to url formatter
+     ========================================================== */
+  var tu = document.getElementById("tu-text");
+  if (tu) {
+    var tuDomain = document.getElementById("tu-domain");
+    var tuPath = document.getElementById("tu-path");
+    var tuOut = document.getElementById("tu-url");
+    var tuSlug = document.getElementById("tu-slug");
+    var tuStats = {
+      urlchars: document.getElementById("tu-urlchars"),
+      slugchars: document.getElementById("tu-slugchars"),
+      slugwords: document.getElementById("tu-slugwords"),
+      segments: document.getElementById("tu-segments"),
+      domainchars: document.getElementById("tu-domainchars"),
+      ready: document.getElementById("tu-ready")
+    };
+    var tuSlugify = function (t) {
+      return t.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+    };
+    var tuBuild = function () {
+      var d = tuDomain.value.trim();
+      if (d && !/^https?:\/\//i.test(d)) d = "https://" + d;
+      d = d.replace(/\/+$/, "");
+      var p = tuPath.value.trim().replace(/^\/+|\/+$/g, "");
+      if (p) {
+        p = p.split("/").map(tuSlugify).filter(function (s) {
+          return s.length > 0;
+        }).join("/");
+      }
+      var slug = tuSlugify(tu.value);
+      var url = "";
+      if (d && slug) {
+        url = d + "/" + (p ? p + "/" : "") + slug + "/";
+      }
+      var hostChars = d ? d.replace(/^https?:\/\//i, "").length : 0;
+      var segs = (p ? p.split("/").length : 0) + (slug ? 1 : 0);
+      tuOut.textContent = url || "Fill in a domain and some text to build your link.";
+      tuSlug.textContent = slug || "your-slug";
+      tuStats.urlchars.textContent = fmt(url.length);
+      tuStats.slugchars.textContent = fmt(slug.length);
+      tuStats.slugwords.textContent = fmt(slug ? slug.split("-").length : 0);
+      tuStats.segments.textContent = fmt(segs);
+      tuStats.domainchars.textContent = fmt(hostChars);
+      tuStats.ready.textContent = url ? "Yes" : "No";
+      return url;
+    };
+    [tu, tuDomain, tuPath].forEach(function (el) {
+      el.addEventListener("input", tuBuild);
+    });
+    var tuSample = document.getElementById("tu-sample");
+    if (tuSample) {
+      tuSample.addEventListener("click", function () {
+        tuDomain.value = "https://bohuainter.com";
+        tuPath.value = "tool";
+        tu.value = "text in link formatter";
+        tuBuild();
+        tu.focus();
+      });
+    }
+    var tuCopy = document.getElementById("tu-copy");
+    if (tuCopy) {
+      tuCopy.addEventListener("click", function () {
+        var url = tuBuild();
+        if (!url) return;
+        var done = function () {
+          var old = tuCopy.textContent;
+          tuCopy.textContent = "Copied";
+          setTimeout(function () {
+            tuCopy.textContent = old;
+          }, 1200);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(done);
+        } else {
+          var ta = document.createElement("textarea");
+          ta.value = url;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+          done();
+        }
+      });
+    }
+    var tuClear = document.getElementById("tu-clear");
+    if (tuClear) {
+      tuClear.addEventListener("click", function () {
+        tuDomain.value = "";
+        tuPath.value = "";
+        tu.value = "";
+        tuBuild();
+        tu.focus();
+      });
+    }
+    tuBuild();
+  }
+
   /* ---------- footer year ---------- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();
