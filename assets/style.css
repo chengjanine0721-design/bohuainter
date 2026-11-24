@@ -572,6 +572,25 @@ textarea.tool-input:focus { background: #fff; }
   border-color: var(--blue);
   box-shadow: 0 0 0 3px rgba(21, 94, 239, 0.12);
 }
+.field textarea {
+  min-height: 88px;
+  resize: vertical;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  background: #fff;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.field textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(21, 94, 239, 0.12);
+}
+.field textarea::placeholder { color: var(--gray-400); }
 
 .result-box {
   display: grid;
