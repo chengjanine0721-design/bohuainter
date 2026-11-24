@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://rsms.me/">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-<link rel="stylesheet" href="/assets/style.css?v=20261122a">
+<link rel="stylesheet" href="/assets/style.css?v=20261124a">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a text to url formatter?","acceptedAnswer":{"@type":"Answer","text":"A text to url formatter turns ordinary words into a working link. You give it a domain, a subpage path and a line of text, and it lowercases the words, joins them with hyphens and attaches them to your domain as a clean URL you can copy."}},{"@type":"Question","name":"How do I make text into link form with this page?","acceptedAnswer":{"@type":"Answer","text":"Type your domain in the first field, the subpage in the second and your words in the third. The formatted URL appears as you type. Press Copy link and the full URL is on your clipboard, ready to paste anywhere."}},{"@type":"Question","name":"How do I turn a link into text?","acceptedAnswer":{"@type":"Answer","text":"Read the slug backwards. Replace every hyphen with a space and capitalise the words you need. A URL like bohuainter.com/tool/text-to-url-formatter/ reads as text to url formatter, which is exactly the phrase behind it."}},{"@type":"Question","name":"What makes a good slug?","acceptedAnswer":{"@type":"Answer","text":"Keep it lowercase, separate words with single hyphens and cut filler words. Three to five meaningful words describe a page well. The formatter does the joining for you, so you only need to pick the right words."}},{"@type":"Question","name":"Does the formatter upload my text anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Everything runs in your browser. The domain, the subpage and the link text never leave the page, so an unpublished project stays private."}},{"@type":"Question","name":"Can I build links several levels deep?","acceptedAnswer":{"@type":"Answer","text":"Yes. Type a path such as blog or docs/guides in the subpage field and the formatter keeps the levels. Each level is slugified, so mixed case and spaces are corrected on the way in."}}]}
 </script>
@@ -309,17 +309,17 @@
             <label style="flex:0 0 110px">Subpage path</label>
             <input type="text" id="tu-path" style="flex:1" placeholder="tool, blog, docs/guides" autocomplete="off" spellcheck="false">
           </div>
-          <div class="field" style="flex-direction:row;align-items:center;gap:14px">
-            <label style="flex:0 0 110px">Link text</label>
-            <input type="text" id="tu-text" style="flex:1" placeholder="text in link formatter, the words your slug is built from" autocomplete="off" spellcheck="false">
+          <div class="field" style="flex-direction:row;align-items:flex-start;gap:14px">
+            <label style="flex:0 0 110px;padding-top:12px">Link text</label>
+            <textarea id="tu-text" rows="3" style="flex:1" placeholder="One link text per line, e.g.&#10;text in link formatter&#10;how to make text into link" autocomplete="off" spellcheck="false"></textarea>
           </div>
           <div class="field" style="flex-direction:row;align-items:center;gap:14px">
             <label style="flex:0 0 110px">Formatted URL</label>
-            <div id="tu-url" style="flex:1;min-height:44px;display:flex;align-items:center;padding:0 14px;border:1px solid var(--blue);border-radius:11px;background:#f7fbff;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:14.5px;color:var(--blue);word-break:break-all">Fill in a domain and some text to build your link.</div>
+            <div id="tu-url" style="flex:1;min-height:44px;display:block;padding:10px 14px;border:1px solid var(--blue);border-radius:11px;background:#f7fbff;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:14.5px;color:var(--blue);word-break:break-all;white-space:pre-line;line-height:1.6">Fill in a domain and some text to build your link. One link text per line gets its own URL.</div>
           </div>
           <div class="field" style="flex-direction:row;align-items:center;gap:14px">
             <label style="flex:0 0 110px">Slug</label>
-            <div id="tu-slug" style="flex:1;min-height:36px;display:flex;align-items:center;padding:0 14px;border:1px solid var(--line);border-radius:11px;background:#fff;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:14px;color:var(--ink-2)">your-slug</div>
+            <div id="tu-slug" style="flex:1;min-height:36px;display:block;padding:8px 14px;border:1px solid var(--line);border-radius:11px;background:#fff;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:14px;color:var(--ink-2);word-break:break-all;white-space:pre-line;line-height:1.6">your-slug</div>
           </div>
         </div>
         <div class="tool-stats">
@@ -545,6 +545,6 @@
     </div>
   </div>
 </footer>
-<script src="/assets/site.js?v=20261124a"></script>
+<script src="/assets/site.js?v=20261124b"></script>
 </body>
 </html>
