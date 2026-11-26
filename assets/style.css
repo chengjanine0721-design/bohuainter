@@ -908,6 +908,15 @@ details.faq .faq-body p { margin-bottom: 10px; }
   padding-bottom: 34px;
 }
 .footer-brand p { margin-top: 14px; color: var(--gray-500); font-size: 14px; line-height: 1.7; max-width: 300px; }
+.footer-badges { margin-top: 18px; display: flex; flex-direction: column; gap: 8px; max-width: 300px; }
+.footer-badge {
+  display: flex; align-items: center; gap: 10px;
+  border: 1px solid var(--line); border-radius: 11px;
+  background: var(--bg); padding: 9px 12px;
+}
+.footer-badge .fb-t { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--ink); white-space: nowrap; }
+.footer-badge .fb-t svg { width: 15px; height: 15px; color: var(--blue); flex: 0 0 15px; }
+.footer-badge .fb-d { margin-left: auto; font-size: 12px; color: var(--gray-500); text-align: right; }
 .footer-col-title {
   margin: 0 0 14px;
   font-size: 12px;
