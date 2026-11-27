@@ -903,8 +903,8 @@ details.faq .faq-body p { margin-bottom: 10px; }
 }
 .footer-top {
   display: grid;
-  grid-template-columns: 1.6fr 1.9fr 1fr;
-  gap: 32px;
+  grid-template-columns: 1.6fr 3.6fr 1fr;
+  gap: 28px;
   padding-bottom: 34px;
 }
 .footer-brand p { margin-top: 14px; color: var(--gray-500); font-size: 14px; line-height: 1.7; max-width: 300px; }
@@ -928,8 +928,9 @@ details.faq .faq-body p { margin-bottom: 10px; }
 .footer-col-title a { color: inherit; text-decoration: none; }
 .footer-col-title a:hover { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
 .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
-.footer-col-tools ul { display: block; columns: 2; column-gap: 28px; }
-.footer-col-tools li { break-inside: avoid; margin: 0 0 10px; }
+.footer-col-tools ul { display: block; columns: 4; column-gap: 18px; }
+.footer-col-tools li { break-inside: avoid; margin: 0 0 9px; }
+.footer-col-tools a { font-size: 13.5px; }
 .footer-col a {
   font-size: 14.5px;
   color: var(--ink-2);
@@ -1147,6 +1148,7 @@ details.faq .faq-body p { margin-bottom: 10px; }
   .side-card { position: static; }
   .footer-top { grid-template-columns: 1.9fr 1fr; }
   .footer-brand { grid-column: 1 / -1; }
+  .footer-col-tools ul { columns: 3; }
 }
 
 @media (max-width: 860px) {
@@ -1195,6 +1197,7 @@ details.faq .faq-body p { margin-bottom: 10px; }
   .tool-stats { grid-template-columns: repeat(2, 1fr); }
   .stat:nth-child(2n) { border-right: 0; }
   .footer-top { grid-template-columns: 1fr; gap: 26px; }
+  .footer-col-tools ul { columns: 2; }
   .field-row { padding: 18px; }
   .field { width: 100%; }
   .field input, .field select { width: 100%; }
